@@ -39,7 +39,7 @@ function ClientLogo({ client }: { client: typeof clients[0] }) {
     <div className="flex-shrink-0 flex items-center justify-center w-48 h-24 px-4 hover:scale-105 transition-transform duration-300">
       {!imgError ? (
         <img
-          src={`https://logo.clearbit.com/${client.domain}`}
+          src={`/logos/${client.domain}.png`}
           alt={`${client.name} logo`}
           className="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
           onError={() => setImgError(true)}
