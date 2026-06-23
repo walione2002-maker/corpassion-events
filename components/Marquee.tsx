@@ -47,11 +47,6 @@ export default function Marquee() {
 
       {/* Marquee Container */}
       <div className="relative w-full max-w-[100vw] left-[50%] right-[50%] -ml-[50vw] -mr-[50vw]">
-        {/* Left gradient mask */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 z-10 bg-gradient-to-r from-[#1eb386] to-transparent pointer-events-none" />
-        {/* Right gradient mask */}
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 z-10 bg-gradient-to-l from-[#1eb386] to-transparent pointer-events-none" />
-
         {/* Row 1 — scrolls left */}
         <div className="flex animate-marquee">
           <MarqueeRow />
