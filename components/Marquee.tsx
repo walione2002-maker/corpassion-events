@@ -41,7 +41,7 @@ function ClientLogo({ client }: { client: typeof clients[0] }) {
         <img
           src={`/logos/${client.domain}.png`}
           alt={`${client.name} logo`}
-          className="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+          className="max-h-full max-w-full object-contain transition-all duration-300"
           onError={() => setImgError(true)}
         />
       ) : (
