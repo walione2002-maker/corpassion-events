@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
+import Marquee from "@/components/Marquee";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import WhyAttend from "@/components/WhyAttend";
@@ -17,6 +18,7 @@ export default function Home() {
       <main>
         <Hero />
         <StatsBar />
+        <Marquee />
         <About />
         <Services />
         <WhyAttend />
