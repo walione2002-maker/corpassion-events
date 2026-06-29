@@ -16,9 +16,9 @@ export default function Home() {
       <main>
         <Hero />
         <StatsBar />
-        <Marquee />
         <WhyAttend />
         <EventCatalog />
+        <Marquee />
         <Gallery />
         <FAQ />
         <Newsletter />
