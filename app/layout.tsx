@@ -15,21 +15,24 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Corpassion Events | Premier Corporate Training & Masterclasses",
+  title: "Corpassion Events | AI Leadership Summits & Global Tech Conferences",
   description:
-    "Elevate your team with world-class corporate training, leadership masterclasses, and transformative events. Corpassion Events delivers bespoke programs that drive measurable business results.",
+    "Join 500+ global leaders at the AI for Non-Technical Leaders Summit in Dubai. Gain frontier insights, curated networking, and hands-on workshops. Oct 14–16, 2026.",
   keywords: [
-    "corporate training",
-    "masterclasses",
-    "leadership development",
-    "team building",
+    "AI summit",
+    "AI leadership",
+    "tech conference Dubai",
+    "AI for non-technical leaders",
+    "enterprise AI",
     "corporate events",
-    "professional development",
+    "AI conference 2026",
+    "digital transformation",
+    "AI governance",
   ],
   openGraph: {
-    title: "Corpassion Events | Premier Corporate Training & Masterclasses",
+    title: "Corpassion Events | AI Leadership Summits & Global Tech Conferences",
     description:
-      "Elevate your team with world-class corporate training, leadership masterclasses, and transformative events.",
+      "Join 500+ global leaders at the AI for Non-Technical Leaders Summit in Dubai. Oct 14–16, 2026.",
     type: "website",
   },
 };

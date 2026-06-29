@@ -1,14 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { events } from '@/data/events';
 
-const stats = [
-  { value: '10+', label: 'Industries Served' },
-  { value: '50+', label: 'Masterclasses' },
-  { value: '∞', label: 'Global Reach' },
-  { value: '100%', label: 'Expert Trainers' },
-];
+const flagship = events.find((e) => e.flagship) ?? events[0];
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -19,15 +14,57 @@ const fadeInUp = {
   }),
 };
 
+const ctaButtons = [
+  {
+    label: 'Attend',
+    sub: 'Register as a Delegate',
+    href: '#tickets',
+    style: 'filled' as const,
+  },
+  {
+    label: 'Exhibit',
+    sub: 'Book Your Booth',
+    href: '#exhibit',
+    style: 'outlined' as const,
+  },
+  {
+    label: 'Sponsor',
+    sub: 'Promote Your Brand',
+    href: '#sponsorship',
+    style: 'outlined' as const,
+  },
+];
+
 export default function Hero() {
   return (
     <section
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Radial gradient overlay */}
+      {/* Radial gradient overlays */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.08)_0%,transparent_70%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(129,140,248,0.06)_0%,transparent_50%)]" />
+
+      {/* Animated grid pattern overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.04]"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(129,140,248,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(129,140,248,0.5) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+          animation: 'gridDrift 20s linear infinite',
+        }}
+      />
+      <style jsx>{`
+        @keyframes gridDrift {
+          0% {
+            background-position: 0px 0px;
+          }
+          100% {
+            background-position: 60px 60px;
+          }
+        }
+      `}</style>
 
       {/* Animated gradient orbs */}
       <motion.div
@@ -71,7 +108,7 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 pb-16">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-20">
         {/* Badge */}
         <motion.div
           custom={0}
@@ -80,8 +117,8 @@ export default function Hero() {
           variants={fadeInUp}
           className="mb-8 inline-flex"
         >
-          <span className="border border-brand-400/30 bg-brand-400/10 text-brand-300 text-sm rounded-full px-4 py-1.5">
-            The Premier Corporate Training Series
+          <span className="border border-brand-400/30 bg-brand-400/10 text-brand-300 text-sm rounded-full px-5 py-1.5 tracking-wide">
+            {flagship.location} &bull; {flagship.dates}
           </span>
         </motion.div>
 
@@ -91,77 +128,63 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
-          className="text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight mb-6"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight mb-6 leading-[1.08]"
         >
           <span className="bg-gradient-to-r from-white via-white to-brand-400 bg-clip-text text-transparent">
-            Shaping Future Leaders with Expertise and Innovation.
+            {flagship.title}
           </span>
         </motion.h1>
 
-        {/* Sub-headline */}
+        {/* Subtitle */}
         <motion.p
           custom={0.3}
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
-          className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-10"
+          className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12"
         >
-          Transforming knowledge into real-world impact through corporate
-          training, masterclasses, and AI-driven leadership conferences.
+          {flagship.taglines[0]}
         </motion.p>
 
-        {/* CTA Buttons */}
+        {/* Three CTA Buttons */}
         <motion.div
           custom={0.45}
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row items-stretch justify-center gap-4 max-w-2xl mx-auto"
         >
-          <a
-            href="#events"
-            className="group rounded-full bg-brand-600 hover:bg-brand-500 text-white px-8 py-3.5 font-medium transition-all hover:shadow-[0_0_24px_rgba(99,102,241,0.4)] inline-flex items-center gap-2"
-          >
-            Explore Upcoming Events
-            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </a>
-          <a
-            href="#services"
-            className="rounded-full border border-white/20 hover:border-white/40 text-white px-8 py-3.5 font-medium transition-all hover:bg-white/5"
-          >
-            View Our Services
-          </a>
-        </motion.div>
-
-        {/* Metrics Bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="mt-20"
-        >
-          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 sm:p-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0">
-              {stats.map((stat, i) => (
-                <div
-                  key={stat.label}
-                  className={`flex flex-col items-center gap-1 ${
-                    i < stats.length - 1
-                      ? 'md:border-r md:border-white/10'
-                      : ''
-                  }`}
-                >
-                  <span className="text-3xl font-display font-bold text-brand-400">
-                    {stat.value}
-                  </span>
-                  <span className="text-sm text-gray-400">{stat.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          {ctaButtons.map((cta, i) => (
+            <motion.a
+              key={cta.label}
+              href={cta.href}
+              custom={0.5 + i * 0.1}
+              initial="hidden"
+              animate="visible"
+              variants={fadeInUp}
+              className={`group flex-1 flex flex-col items-center justify-center gap-1 rounded-xl px-6 py-4 font-medium transition-all duration-300 ${
+                cta.style === 'filled'
+                  ? 'bg-gradient-to-r from-brand-500 to-brand-600 text-white hover:shadow-[0_0_30px_rgba(99,102,241,0.5)] hover:brightness-110 active:scale-[0.97]'
+                  : 'border border-white/20 text-white hover:border-brand-400/50 hover:bg-white/5 active:scale-[0.97]'
+              }`}
+            >
+              <span className="text-lg font-semibold">{cta.label}</span>
+              <span
+                className={`text-xs ${
+                  cta.style === 'filled'
+                    ? 'text-white/70'
+                    : 'text-gray-500 group-hover:text-gray-400'
+                } transition-colors`}
+              >
+                {cta.sub}
+              </span>
+            </motion.a>
+          ))}
         </motion.div>
       </div>
+
+      {/* Bottom fade into next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent pointer-events-none" />
     </section>
   );
 }

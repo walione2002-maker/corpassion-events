@@ -3,15 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-
-const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Masterclasses', href: '#events' },
-  { label: 'Clients', href: '#clients' },
-  { label: 'Contact', href: '#contact' },
-];
+import { navLinks } from '@/data/events';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -64,9 +56,10 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-gray-400 hover:text-white transition-colors"
+                className="text-sm text-gray-400 hover:text-white transition-colors duration-200 relative group"
               >
                 {link.label}
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-brand-400 transition-all duration-300 group-hover:w-full" />
               </a>
             ))}
           </div>
@@ -74,7 +67,7 @@ export default function Header() {
           {/* Desktop CTA */}
           <a
             href="#contact"
-            className="hidden lg:inline-flex rounded-full bg-brand-600 hover:bg-brand-500 text-white px-6 py-2.5 text-sm font-medium transition-all hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]"
+            className="hidden lg:inline-flex rounded-full bg-gradient-to-r from-brand-500 to-brand-600 text-white px-6 py-2.5 text-sm font-medium transition-all duration-300 hover:shadow-[0_0_24px_rgba(99,102,241,0.5)] hover:brightness-110 active:scale-[0.97]"
           >
             Register Now
           </a>
@@ -125,7 +118,7 @@ export default function Header() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.05 * navLinks.length, duration: 0.3 }}
-                className="mt-4 rounded-full bg-brand-600 hover:bg-brand-500 text-white px-8 py-3 text-lg font-medium transition-all hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]"
+                className="mt-4 rounded-full bg-gradient-to-r from-brand-500 to-brand-600 text-white px-8 py-3 text-lg font-medium transition-all duration-300 hover:shadow-[0_0_24px_rgba(99,102,241,0.5)] hover:brightness-110"
               >
                 Register Now
               </motion.a>
