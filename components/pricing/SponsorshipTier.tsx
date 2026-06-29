@@ -91,8 +91,12 @@ export default function SponsorshipTier({ pkg, index = 0 }: SponsorshipTierProps
           </ul>
 
           {/* CTA Button */}
-          <a
-            href="#contact"
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              window.dispatchEvent(new Event('open-checkout'));
+            }}
             className={`group/btn inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
               isExclusive
                 ? 'bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white shadow-lg shadow-amber-500/20 hover:shadow-amber-500/35'
@@ -101,7 +105,7 @@ export default function SponsorshipTier({ pkg, index = 0 }: SponsorshipTierProps
           >
             Become a Sponsor
             <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform duration-200" />
-          </a>
+          </button>
         </div>
       </div>
     </motion.div>
