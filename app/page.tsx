@@ -18,7 +18,6 @@ export default function Home() {
       <main>
         <Hero />
         <StatsBar />
-        <Marquee />
         <About />
         <Services />
         <WhyAttend />
@@ -26,6 +25,7 @@ export default function Home() {
         <Gallery />
         <FAQ />
         <Newsletter />
+        <Marquee />
       </main>
       <Footer />
     </>
