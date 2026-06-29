@@ -38,7 +38,7 @@ export function ThemeToggle() {
 
   return (
     <motion.button
-      className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-white/50 dark:bg-slate-800/50 backdrop-blur-xl border border-slate-200 dark:border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.1)] transition-colors"
+      className="relative flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/20 transition-colors"
       style={{ x: mouseX, y: mouseY }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -52,14 +52,14 @@ export function ThemeToggle() {
         animate={{ rotate: isDark ? 0 : 180, scale: isDark ? 1 : 0 }}
         className="absolute"
       >
-        <Moon className="h-6 w-6 text-slate-800 dark:text-white" />
+        <Moon className="h-5 w-5 text-slate-800 dark:text-white" />
       </motion.div>
       <motion.div
         initial={false}
         animate={{ rotate: isDark ? -180 : 0, scale: isDark ? 0 : 1 }}
         className="absolute"
       >
-        <Sun className="h-6 w-6 text-slate-800 dark:text-white" />
+        <Sun className="h-5 w-5 text-slate-800 dark:text-white" />
       </motion.div>
     </motion.button>
   );

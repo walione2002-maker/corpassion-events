@@ -3,7 +3,6 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import GlobalCheckoutModal from "@/components/checkout/GlobalCheckoutModal";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { ThemeToggle } from "@/components/ThemeToggle";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -87,12 +86,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white antialiased overflow-x-hidden transition-colors`}
+        className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-white dark:bg-black text-slate-900 dark:text-white antialiased overflow-x-hidden transition-colors`}
       >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           {children}
           <GlobalCheckoutModal />
-          <ThemeToggle />
         </ThemeProvider>
       </body>
     </html>

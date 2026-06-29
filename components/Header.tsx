@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { navLinks } from '@/data/events';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 export default function Header() {
   const pathname = usePathname();
@@ -34,11 +35,11 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/70 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-200 dark:border-white/5 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 dark:bg-black/80 backdrop-blur-xl border-b border-slate-200 dark:border-white/5 ${
         scrolled ? 'shadow-lg shadow-black/10 dark:shadow-black/40' : ''
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-0 shrink-0">
@@ -88,17 +89,20 @@ export default function Header() {
             ))}
           </div>
 
-          {/* Desktop CTA */}
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault();
-              window.dispatchEvent(new Event('open-checkout'));
-            }}
-            className="hidden lg:inline-flex rounded-full bg-brand-400 text-slate-950 px-6 py-2.5 text-sm font-semibold transition-all duration-300 hover:bg-brand-300 hover:shadow-[0_0_20px_rgba(251,191,36,0.3)] active:scale-[0.98]"
-          >
-            Register Now
-          </button>
+          {/* Desktop CTA & Theme Toggle */}
+          <div className="hidden lg:flex items-center gap-4">
+            <ThemeToggle />
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                window.dispatchEvent(new Event('open-checkout'));
+              }}
+              className="rounded-full bg-brand-400 text-slate-950 px-6 py-2.5 text-sm font-semibold transition-all duration-300 hover:bg-brand-300 hover:shadow-[0_0_20px_rgba(251,191,36,0.3)] active:scale-[0.98]"
+            >
+              Register Now
+            </button>
+          </div>
 
           {/* Mobile Menu Toggle */}
           <button
@@ -124,7 +128,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="fixed inset-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl lg:hidden"
+            className="fixed inset-0 z-40 bg-white/95 dark:bg-black/95 backdrop-blur-xl lg:hidden"
           >
             <div className="flex flex-col items-center justify-center min-h-screen gap-6">
               {navLinks.map((link, i) => (
