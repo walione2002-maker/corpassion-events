@@ -15,25 +15,64 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Corpassion Events | AI Leadership Summits & Global Tech Conferences",
+  metadataBase: new URL('https://corpassion-events.vercel.app'),
+  title: {
+    default: "Corpassion Events | Transformative Tech Summits for Global Leaders",
+    template: "%s | Corpassion Events",
+  },
   description:
-    "Join 500+ global leaders at the AI for Non-Technical Leaders Summit in Dubai. Gain frontier insights, curated networking, and hands-on workshops. Oct 14–16, 2026.",
+    "Empowering global leaders through transformative tech summits and innovation conferences. Connect with decision-makers worldwide.",
   keywords: [
     "AI summit",
-    "AI leadership",
-    "tech conference Dubai",
-    "AI for non-technical leaders",
+    "tech conference",
     "enterprise AI",
     "corporate events",
-    "AI conference 2026",
     "digital transformation",
-    "AI governance",
+    "innovation conference",
+    "global summits",
   ],
+  authors: [{ name: "Corpassion Events" }],
+  creator: "Corpassion Events",
+  publisher: "Corpassion Events",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
-    title: "Corpassion Events | AI Leadership Summits & Global Tech Conferences",
+    title: "Corpassion Events | Transformative Tech Summits",
     description:
-      "Join 500+ global leaders at the AI for Non-Technical Leaders Summit in Dubai. Oct 14–16, 2026.",
+      "Join global leaders and innovators at Corpassion Events. Discover our upcoming transformative tech summits worldwide.",
+    url: "https://corpassion-events.vercel.app",
+    siteName: "Corpassion Events",
+    images: [
+      {
+        url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=630&fit=crop",
+        width: 1200,
+        height: 630,
+        alt: "Corpassion Events Summit",
+      },
+    ],
+    locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Corpassion Events | Transformative Tech Summits",
+    description:
+      "Join global leaders and innovators at Corpassion Events. Discover our upcoming transformative tech summits worldwide.",
+    images: ["https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=630&fit=crop"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 };
 
