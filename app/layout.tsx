@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import GlobalCheckoutModal from "@/components/checkout/GlobalCheckoutModal";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -84,9 +85,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-[#0a0a0a] text-white antialiased overflow-x-hidden`}
+        className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-slate-900 text-white antialiased overflow-x-hidden`}
       >
         {children}
+        <GlobalCheckoutModal />
       </body>
     </html>
   );
