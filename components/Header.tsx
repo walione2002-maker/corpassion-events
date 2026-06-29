@@ -34,22 +34,22 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-slate-900/90 backdrop-blur-xl border-b border-white/5 ${
-        scrolled ? 'shadow-lg shadow-black/40' : ''
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/70 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-200 dark:border-white/5 ${
+        scrolled ? 'shadow-lg shadow-black/10 dark:shadow-black/40' : ''
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-0 shrink-0">
-            <span className="font-display text-xl font-bold text-white tracking-tight">
+            <span className="font-display text-xl font-bold text-slate-900 dark:text-white tracking-tight">
               Corpassion
             </span>
-            <span className="font-display text-xl font-bold text-brand-400">
+            <span className="font-display text-xl font-bold text-brand-500 dark:text-brand-400">
               .
             </span>
             {pathname !== '/' && (
-              <span className="text-xl font-normal text-gray-400 ml-1">
+              <span className="text-xl font-normal text-slate-500 dark:text-gray-400 ml-1">
                 Events
               </span>
             )}
@@ -58,10 +58,23 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
+              link.label === 'Register' ? (
+                <button
+                  key={link.label}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.dispatchEvent(new Event('open-checkout'));
+                  }}
+                  className="text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white transition-colors duration-200 relative group flex items-center gap-2"
+                >
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-400 transition-all duration-300 group-hover:w-full" />
+                </button>
+              ) : (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 relative group flex items-center gap-2"
+                className="text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white transition-colors duration-200 relative group flex items-center gap-2"
               >
                 {link.label}
                 {(link as any).isNew && (
@@ -71,6 +84,7 @@ export default function Header() {
                 )}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-400 transition-all duration-300 group-hover:w-full" />
               </Link>
+              )
             ))}
           </div>
 
@@ -90,7 +104,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden relative z-50 p-2 text-gray-400 hover:text-white transition-colors"
+            className="lg:hidden relative z-50 p-2 text-slate-500 hover:text-slate-900 dark:text-gray-400 dark:hover:text-white transition-colors"
             aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
             {mobileMenuOpen ? (
@@ -110,15 +124,34 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="fixed inset-0 z-40 bg-slate-900/95 backdrop-blur-xl lg:hidden"
+            className="fixed inset-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl lg:hidden"
           >
             <div className="flex flex-col items-center justify-center min-h-screen gap-6">
               {navLinks.map((link, i) => (
+                link.label === 'Register' ? (
+                <button
+                  key={link.label}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setMobileMenuOpen(false);
+                    window.dispatchEvent(new Event('open-checkout'));
+                  }}
+                  className="flex items-center gap-3 text-2xl font-display font-medium text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white transition-colors"
+                >
+                  <motion.span
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.05 * i, duration: 0.3 }}
+                  >
+                    {link.label}
+                  </motion.span>
+                </button>
+                ) : (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-3 text-2xl font-display font-medium text-gray-300 hover:text-white transition-colors"
+                  className="flex items-center gap-3 text-2xl font-display font-medium text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white transition-colors"
                 >
                   <motion.span
                     initial={{ opacity: 0, y: 20 }}
@@ -138,6 +171,7 @@ export default function Header() {
                     </motion.span>
                   )}
                 </Link>
+                )
               ))}
               <button
                 type="button"

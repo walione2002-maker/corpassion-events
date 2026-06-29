@@ -48,9 +48,9 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
-              className="text-5xl sm:text-6xl md:text-7xl font-display font-extrabold tracking-tight mb-6 leading-[1.05] text-white"
+              className="text-5xl sm:text-6xl md:text-7xl font-display font-extrabold tracking-tight mb-6 leading-[1.05] text-slate-900 dark:text-white"
             >
-              Where leaders shape the <span className="text-brand-400">AI era.</span>
+              Where leaders shape the <span className="text-brand-500 dark:text-brand-400">AI era.</span>
             </motion.h1>
 
             {/* Subtitle */}
@@ -59,7 +59,7 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
-              className="text-lg md:text-xl text-gray-400 max-w-xl mb-10 leading-relaxed"
+              className="text-lg md:text-xl text-slate-600 dark:text-gray-400 max-w-xl mb-10 leading-relaxed"
             >
               Connecting visionaries, executives, and decision-makers worldwide through immersive, unparalleled tech summits.
             </motion.p>
@@ -84,7 +84,7 @@ export default function Hero() {
               </button>
               <Link
                 href="#events"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-semibold transition-all duration-300 bg-white/5 text-white hover:bg-white/10 border border-white/10 hover:border-white/20 active:scale-[0.98] text-lg"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-semibold transition-all duration-300 bg-white/50 dark:bg-white/5 text-slate-900 dark:text-white hover:bg-white/80 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 active:scale-[0.98] text-lg"
               >
                 Explore Events
               </Link>
@@ -103,46 +103,46 @@ export default function Hero() {
             <div className="absolute -inset-1 bg-gradient-to-r from-brand-400 to-amber-600 rounded-2xl blur-xl opacity-20 animate-pulse"></div>
             
             {/* The Card */}
-            <div className="relative bg-slate-900/80 backdrop-blur-2xl border border-white/10 rounded-2xl p-8 shadow-2xl overflow-hidden">
+            <div className="relative bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl border border-slate-200 dark:border-white/10 rounded-2xl p-8 shadow-2xl overflow-hidden">
               <div className="absolute top-0 right-0 p-4">
                 <span className="bg-brand-400 text-slate-950 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                   Flagship Event
                 </span>
               </div>
               
-              <h3 className="text-2xl font-bold text-white mb-2 mt-4">Dubai AI Summit 2026</h3>
-              <p className="text-gray-400 mb-8">AI FOR NON-TECHNICAL LEADERS SUMMIT & SOLUTIONS SHOWCASE</p>
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 mt-4">Dubai AI Summit 2026</h3>
+              <p className="text-slate-500 dark:text-gray-400 mb-8">AI FOR NON-TECHNICAL LEADERS SUMMIT & SOLUTIONS SHOWCASE</p>
               
               <div className="space-y-4 mb-8">
-                <div className="flex items-center text-gray-300">
-                  <Calendar className="w-5 h-5 mr-3 text-brand-400" />
+                <div className="flex items-center text-slate-600 dark:text-gray-300">
+                  <Calendar className="w-5 h-5 mr-3 text-brand-500 dark:text-brand-400" />
                   <span>14–16 October 2026</span>
                 </div>
-                <div className="flex items-center text-gray-300">
-                  <MapPin className="w-5 h-5 mr-3 text-brand-400" />
+                <div className="flex items-center text-slate-600 dark:text-gray-300">
+                  <MapPin className="w-5 h-5 mr-3 text-brand-500 dark:text-brand-400" />
                   <span>Dubai, UAE</span>
                 </div>
               </div>
 
               {/* Stats Grid inside Card */}
-              <div className="grid grid-cols-3 gap-4 py-6 border-t border-white/10">
+              <div className="grid grid-cols-3 gap-4 py-6 border-t border-slate-200 dark:border-white/10">
                 <div className="text-center">
-                  <div className="text-xl font-bold text-white">3</div>
+                  <div className="text-xl font-bold text-slate-900 dark:text-white">3</div>
                   <div className="text-[10px] text-gray-500 font-semibold tracking-wider uppercase mt-1">Days</div>
                 </div>
-                <div className="text-center border-x border-white/10">
-                  <div className="text-xl font-bold text-white">40+</div>
+                <div className="text-center border-x border-slate-200 dark:border-white/10">
+                  <div className="text-xl font-bold text-slate-900 dark:text-white">40+</div>
                   <div className="text-[10px] text-gray-500 font-semibold tracking-wider uppercase mt-1">Talks</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-xl font-bold text-white">2K</div>
+                  <div className="text-xl font-bold text-slate-900 dark:text-white">2K</div>
                   <div className="text-[10px] text-gray-500 font-semibold tracking-wider uppercase mt-1">Attendees</div>
                 </div>
               </div>
 
               <Link
                 href="/events/dubai-ai-summit-2026"
-                className="block w-full text-center py-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition-colors text-white font-medium text-sm mt-2"
+                className="block w-full text-center py-3 rounded-lg bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 transition-colors text-slate-900 dark:text-white font-medium text-sm mt-2"
               >
                 View Full Agenda &rarr;
               </Link>
@@ -153,7 +153,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom fade into next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-900 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-50 dark:from-slate-900 to-transparent pointer-events-none" />
     </section>
   );
 }

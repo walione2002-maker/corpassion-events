@@ -4,6 +4,31 @@
 
 @layer base {
   :root {
+    --background: 210 40% 98%; /* #f8fafc */
+    --foreground: 222.2 47.4% 11.2%; /* #0f172a */
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+    --primary: 43 96% 56%; /* Gold #FBBF24 */
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 43 96% 56%;
+    --radius: 0.5rem;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: rgba(255, 255, 255, 0.6);
+  }
+
+  .dark {
     --background: 222.2 84% 4.9%; /* Deep Navy Slate 900ish */
     --foreground: 210 40% 98%;
     --card: 222.2 84% 4.9%;
@@ -34,7 +59,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-slate-900 text-foreground antialiased;
+    @apply bg-background text-foreground antialiased;
   }
 }
 
@@ -180,11 +205,22 @@ html {
 
 /* Glassmorphism base */
 @layer components {
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+
   .glass-card {
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--glass-border);
+  }
+
+  .glass-card-light {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
   }
 
   .glass-card-dark {

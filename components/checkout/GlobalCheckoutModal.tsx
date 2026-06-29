@@ -105,17 +105,17 @@ export default function GlobalCheckoutModal() {
     <DialogPrimitive.Root open={open} onOpenChange={handleOpenChange}>
       <DialogPrimitive.Portal>
         <DialogPrimitive.Overlay className="fixed inset-0 z-[100] bg-slate-950/80 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
-        <DialogPrimitive.Content className="fixed left-[50%] top-[50%] z-[100] grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border border-slate-800 bg-slate-900 p-0 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-2xl">
+        <DialogPrimitive.Content className="fixed left-[50%] top-[50%] z-[100] grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border border-slate-200/50 dark:border-white/10 bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl p-0 shadow-2xl duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-2xl">
           
           {/* Header */}
-          <div className="flex flex-col space-y-1.5 p-6 pb-4 border-b border-white/5 relative">
-            <DialogPrimitive.Title className="text-xl font-bold font-display text-white">
+          <div className="flex flex-col space-y-1.5 p-6 pb-4 border-b border-slate-200/50 dark:border-white/5 relative">
+            <DialogPrimitive.Title className="text-xl font-bold font-display text-slate-900 dark:text-white">
               Secure Registration
             </DialogPrimitive.Title>
-            <DialogPrimitive.Description className="text-sm text-slate-400">
+            <DialogPrimitive.Description className="text-sm text-slate-500 dark:text-slate-400">
               {step === 1 ? 'Step 1 of 2: Attendee Details' : 'Step 2 of 2: Order Review'}
             </DialogPrimitive.Description>
-            <DialogPrimitive.Close className="absolute right-6 top-6 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none disabled:pointer-events-none data-[state=open]:bg-slate-800 data-[state=open]:text-slate-400 text-slate-400 hover:bg-white/10 p-1">
+            <DialogPrimitive.Close className="absolute right-6 top-6 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none disabled:pointer-events-none data-[state=open]:bg-slate-100 dark:data-[state=open]:bg-slate-800 data-[state=open]:text-slate-500 dark:data-[state=open]:text-slate-400 text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-white/10 p-1">
               <X className="h-4 w-4" />
               <span className="sr-only">Close</span>
             </DialogPrimitive.Close>
@@ -137,8 +137,8 @@ export default function GlobalCheckoutModal() {
                     <label
                       className={`cursor-pointer rounded-xl border p-4 flex flex-col gap-1 transition-all ${
                         passType === 'standard'
-                          ? 'border-brand-400 bg-brand-400/10'
-                          : 'border-white/10 bg-white/5 hover:bg-white/10'
+                          ? 'border-brand-400 bg-brand-500/10 dark:bg-brand-400/10 shadow-[0_0_15px_rgba(251,191,36,0.1)]'
+                          : 'border-slate-200/50 dark:border-white/10 bg-white/40 dark:bg-white/5 hover:bg-white/60 dark:hover:bg-white/10 backdrop-blur-md'
                       }`}
                     >
                       <input
@@ -148,18 +148,18 @@ export default function GlobalCheckoutModal() {
                         {...form.register('passType')}
                       />
                       <div className="flex justify-between items-center w-full">
-                        <span className="font-semibold text-white">Standard</span>
-                        {passType === 'standard' && <Check className="w-4 h-4 text-brand-400" />}
+                        <span className="font-semibold text-slate-900 dark:text-white">Standard</span>
+                        {passType === 'standard' && <Check className="w-4 h-4 text-brand-500 dark:text-brand-400" />}
                       </div>
-                      <span className="text-2xl font-bold text-white mt-2">$599</span>
-                      <span className="text-xs text-slate-400 mt-1">Full summit access</span>
+                      <span className="text-2xl font-bold text-slate-900 dark:text-white mt-2">$599</span>
+                      <span className="text-xs text-slate-500 dark:text-slate-400 mt-1">Full summit access</span>
                     </label>
 
                     <label
                       className={`cursor-pointer rounded-xl border p-4 flex flex-col gap-1 transition-all ${
                         passType === 'vip'
-                          ? 'border-brand-400 bg-brand-400/10'
-                          : 'border-white/10 bg-white/5 hover:bg-white/10'
+                          ? 'border-brand-400 bg-brand-500/10 dark:bg-brand-400/10 shadow-[0_0_15px_rgba(251,191,36,0.1)]'
+                          : 'border-slate-200/50 dark:border-white/10 bg-white/40 dark:bg-white/5 hover:bg-white/60 dark:hover:bg-white/10 backdrop-blur-md'
                       }`}
                     >
                       <input
@@ -169,70 +169,70 @@ export default function GlobalCheckoutModal() {
                         {...form.register('passType')}
                       />
                       <div className="flex justify-between items-center w-full">
-                        <span className="font-semibold text-white">VIP</span>
-                        {passType === 'vip' && <Check className="w-4 h-4 text-brand-400" />}
+                        <span className="font-semibold text-slate-900 dark:text-white">VIP</span>
+                        {passType === 'vip' && <Check className="w-4 h-4 text-brand-500 dark:text-brand-400" />}
                       </div>
-                      <span className="text-2xl font-bold text-white mt-2">$999</span>
-                      <span className="text-xs text-slate-400 mt-1">Gala + Priority Access</span>
+                      <span className="text-2xl font-bold text-slate-900 dark:text-white mt-2">$999</span>
+                      <span className="text-xs text-slate-500 dark:text-slate-400 mt-1">Gala + Priority Access</span>
                     </label>
                   </div>
 
                   {/* Form Fields */}
                   <div className="space-y-4">
                     <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium leading-none text-slate-300">
+                      <label htmlFor="name" className="text-sm font-medium leading-none text-slate-700 dark:text-slate-300">
                         Full Name
                       </label>
                       <input
                         id="name"
-                        className="flex h-10 w-full rounded-md border border-slate-700 bg-slate-800/50 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="flex h-12 w-full rounded-xl border border-slate-200/50 dark:border-slate-700/50 bg-white/40 dark:bg-slate-800/40 backdrop-blur-md px-4 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-500 transition-all duration-300 hover:bg-white/60 dark:hover:bg-slate-800/60 focus:bg-white/80 dark:focus:bg-slate-800/80 focus:-translate-y-0.5 focus:shadow-[0_8px_20px_-8px_rgba(0,0,0,0.1)] dark:focus:shadow-[0_8px_20px_-8px_rgba(251,191,36,0.15)] focus-visible:outline-none focus-visible:border-brand-400 disabled:cursor-not-allowed disabled:opacity-50"
                         placeholder="Jane Doe"
                         {...form.register('name')}
                       />
                       {form.formState.errors.name && (
-                        <p className="text-sm text-red-400">{form.formState.errors.name.message}</p>
+                        <p className="text-sm text-red-500 dark:text-red-400">{form.formState.errors.name.message}</p>
                       )}
                     </div>
 
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium leading-none text-slate-300">
+                      <label htmlFor="email" className="text-sm font-medium leading-none text-slate-700 dark:text-slate-300">
                         Work Email
                       </label>
                       <input
                         id="email"
                         type="email"
-                        className="flex h-10 w-full rounded-md border border-slate-700 bg-slate-800/50 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="flex h-12 w-full rounded-xl border border-slate-200/50 dark:border-slate-700/50 bg-white/40 dark:bg-slate-800/40 backdrop-blur-md px-4 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-500 transition-all duration-300 hover:bg-white/60 dark:hover:bg-slate-800/60 focus:bg-white/80 dark:focus:bg-slate-800/80 focus:-translate-y-0.5 focus:shadow-[0_8px_20px_-8px_rgba(0,0,0,0.1)] dark:focus:shadow-[0_8px_20px_-8px_rgba(251,191,36,0.15)] focus-visible:outline-none focus-visible:border-brand-400 disabled:cursor-not-allowed disabled:opacity-50"
                         placeholder="jane@company.com"
                         {...form.register('email')}
                       />
                       {form.formState.errors.email && (
-                        <p className="text-sm text-red-400">{form.formState.errors.email.message}</p>
+                        <p className="text-sm text-red-500 dark:text-red-400">{form.formState.errors.email.message}</p>
                       )}
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <label htmlFor="company" className="text-sm font-medium leading-none text-slate-300">
+                        <label htmlFor="company" className="text-sm font-medium leading-none text-slate-700 dark:text-slate-300">
                           Company
                         </label>
                         <input
                           id="company"
-                          className="flex h-10 w-full rounded-md border border-slate-700 bg-slate-800/50 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 disabled:cursor-not-allowed disabled:opacity-50"
+                          className="flex h-12 w-full rounded-xl border border-slate-200/50 dark:border-slate-700/50 bg-white/40 dark:bg-slate-800/40 backdrop-blur-md px-4 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-500 transition-all duration-300 hover:bg-white/60 dark:hover:bg-slate-800/60 focus:bg-white/80 dark:focus:bg-slate-800/80 focus:-translate-y-0.5 focus:shadow-[0_8px_20px_-8px_rgba(0,0,0,0.1)] dark:focus:shadow-[0_8px_20px_-8px_rgba(251,191,36,0.15)] focus-visible:outline-none focus-visible:border-brand-400 disabled:cursor-not-allowed disabled:opacity-50"
                           placeholder="Acme Inc"
                           {...form.register('company')}
                         />
                         {form.formState.errors.company && (
-                          <p className="text-sm text-red-400">{form.formState.errors.company.message}</p>
+                          <p className="text-sm text-red-500 dark:text-red-400">{form.formState.errors.company.message}</p>
                         )}
                       </div>
 
                       <div className="space-y-2">
-                        <label htmlFor="role" className="text-sm font-medium leading-none text-slate-300">
+                        <label htmlFor="role" className="text-sm font-medium leading-none text-slate-700 dark:text-slate-300">
                           Job Title
                         </label>
                         <input
                           id="role"
-                          className="flex h-10 w-full rounded-md border border-slate-700 bg-slate-800/50 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 disabled:cursor-not-allowed disabled:opacity-50"
+                          className="flex h-12 w-full rounded-xl border border-slate-200/50 dark:border-slate-700/50 bg-white/40 dark:bg-slate-800/40 backdrop-blur-md px-4 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-500 transition-all duration-300 hover:bg-white/60 dark:hover:bg-slate-800/60 focus:bg-white/80 dark:focus:bg-slate-800/80 focus:-translate-y-0.5 focus:shadow-[0_8px_20px_-8px_rgba(0,0,0,0.1)] dark:focus:shadow-[0_8px_20px_-8px_rgba(251,191,36,0.15)] focus-visible:outline-none focus-visible:border-brand-400 disabled:cursor-not-allowed disabled:opacity-50"
                           placeholder="Director of AI"
                           {...form.register('role')}
                         />

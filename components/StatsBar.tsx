@@ -1,103 +1,61 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { stats } from '@/data/events';
-
-function AnimatedCounter({
-  target,
-  suffix,
-  started,
-}: {
-  target: number;
-  suffix: string;
-  started: boolean;
-}) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!started) return;
-
-    const duration = 2000; // ms
-    const startTime = performance.now();
-
-    let rafId: number;
-
-    const tick = (now: number) => {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-
-      // Ease-out cubic for a satisfying deceleration
-      const eased = 1 - Math.pow(1 - progress, 3);
-
-      setCount(Math.round(eased * target));
-
-      if (progress < 1) {
-        rafId = requestAnimationFrame(tick);
-      }
-    };
-
-    rafId = requestAnimationFrame(tick);
-
-    return () => cancelAnimationFrame(rafId);
-  }, [started, target]);
-
-  return (
-    <span>
-      {count}
-      {suffix}
-    </span>
-  );
-}
 
 export default function StatsBar() {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: '-80px' });
-  const [hasStarted, setHasStarted] = useState(false);
-
-  useEffect(() => {
-    if (isInView && !hasStarted) {
-      setHasStarted(true);
-    }
-  }, [isInView, hasStarted]);
 
   return (
     <section className="relative z-10 -mt-16 pb-8">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          ref={containerRef}
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{
-            duration: 0.7,
-            delay: 0.2,
-            ease: [0.25, 0.46, 0.45, 0.94],
-          }}
-          className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 sm:p-8"
-        >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0">
-            {stats.map((stat, i) => (
-              <div
-                key={stat.label}
-                className={`flex flex-col items-center gap-1 ${
-                  i < stats.length - 1
-                    ? 'md:border-r md:border-white/10'
-                    : ''
-                }`}
+        <div ref={containerRef} className="flex flex-wrap justify-center gap-4 md:gap-8">
+          {stats.map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 40 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 15,
+                delay: i * 0.1,
+              }}
+              className="flex-1 min-w-[200px]"
+            >
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: i * 0.2 }}
+                className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-full py-4 px-8 flex flex-col items-center justify-center shadow-[0_20px_50px_rgba(0,0,0,0.1)] glass-card h-full"
               >
-                <span className="text-3xl sm:text-4xl font-display font-bold text-brand-400">
-                  <AnimatedCounter
-                    target={stat.value}
-                    suffix={stat.suffix}
-                    started={hasStarted}
-                  />
+                <span className="text-3xl sm:text-4xl font-display font-bold text-brand-400 flex items-center overflow-hidden">
+                  <motion.span
+                    initial={{ y: 40, opacity: 0 }}
+                    animate={isInView ? { y: 0, opacity: 1 } : {}}
+                    transition={{
+                      type: "spring",
+                      stiffness: 120,
+                      damping: 10,
+                      delay: 0.3 + i * 0.1,
+                    }}
+                  >
+                    {stat.value}
+                  </motion.span>
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={isInView ? { opacity: 1 } : {}}
+                    transition={{ delay: 0.6 + i * 0.1 }}
+                  >
+                    {stat.suffix}
+                  </motion.span>
                 </span>
-                <span className="text-sm text-gray-400">{stat.label}</span>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+                <span className="text-sm text-gray-300 font-medium uppercase tracking-wider mt-1">{stat.label}</span>
+              </motion.div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

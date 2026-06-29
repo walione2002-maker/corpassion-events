@@ -80,8 +80,8 @@ export const navLinks = [
 // ─── Stats ────────────────────────────────────────────────────
 
 export const stats = [
-  { value: 500, suffix: '+', label: 'Delegates' },
-  { value: 30, suffix: '+', label: 'Speakers' },
+  { value: 100, suffix: '+', label: 'Delegates' },
+  { value: 10, suffix: '+', label: 'Speakers' },
   { value: 20, suffix: '+', label: 'Sponsors' },
   { value: 15, suffix: '', label: 'Countries' },
 ];
@@ -152,19 +152,11 @@ export const events: IEvent[] = [
       'Meet Manufacturers. Meet Buyers. Build Partnership',
     ],
     image:
-      'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&h=700&fit=crop',
+      '/chinahealth.png',
   },
 ];
 
-// ─── Ticket Tiers ─────────────────────────────────────────────
-
 export const ticketTiers: ITicketTier[] = [
-  {
-    id: 'super-early-bird',
-    name: 'Super Early Bird',
-    price: 399,
-    deadline: 'Until 31 July 2026',
-  },
   {
     id: 'early-bird',
     name: 'Early Bird',
@@ -463,4 +455,16 @@ export const partnerLogos = [
   { name: 'Accenture', domain: 'accenture.com' },
   { name: 'Deloitte', domain: 'deloitte.com' },
   { name: 'McKinsey', domain: 'mckinsey.com' },
+];
+
+
+// ─── Services ───────────────────────────────────────────────────
+
+export const services = [
+  { icon: 'Building', title: 'Conference Management', description: 'End-to-end planning and execution of world-class conferences.' },
+  { icon: 'Presentation', title: 'Exhibition Management', description: 'Comprehensive design and logistics for impactful exhibitions.' },
+  { icon: 'GraduationCap', title: 'Corporate Training', description: 'Tailored training programs to upskill your teams.' },
+  { icon: 'Handshake', title: 'Sponsorship Facilitation', description: 'Connecting brands with strategic sponsorship opportunities.' },
+  { icon: 'Mic', title: 'Speaker Curation', description: 'Sourcing industry leaders to deliver inspiring keynotes.' },
+  { icon: 'Megaphone', title: 'Event Marketing', description: 'Targeted marketing strategies to maximize event attendance.' },
 ];

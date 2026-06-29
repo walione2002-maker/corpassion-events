@@ -51,7 +51,7 @@ export default function PricingCards() {
         </motion.div>
 
         {/* Pricing Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {ticketTiers.map((tier, index) => {
             const isEmphasized = tier.emphasized === true;
 
@@ -67,8 +67,15 @@ export default function PricingCards() {
                 }}
                 className={isEmphasized ? 'sm:-mt-3 sm:mb-[-12px]' : ''}
               >
-                <div
-                  className={`relative h-full flex flex-col rounded-2xl p-[1px] transition-all duration-300 ${
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: index * 0.2,
+                  }}
+                  className={`relative h-full flex flex-col rounded-2xl p-[1px] transition-all duration-300 shadow-[0_20px_50px_rgba(0,0,0,0.05)] glass-card ${
                     isEmphasized
                       ? 'bg-gradient-to-b from-brand-400 via-brand-600 to-brand-900 shadow-lg shadow-brand-500/20'
                       : 'bg-white/[0.08]'
@@ -137,7 +144,7 @@ export default function PricingCards() {
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform duration-200" />
                     </button>
                   </div>
-                </div>
+                </motion.div>
               </motion.div>
             );
           })}
