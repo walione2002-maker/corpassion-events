@@ -1,12 +1,14 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { navLinks } from '@/data/events';
 
 export default function Header() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -46,9 +48,11 @@ export default function Header() {
             <span className="font-display text-xl font-bold text-brand-400">
               .
             </span>
-            <span className="text-xl font-normal text-gray-400 ml-1">
-              Events
-            </span>
+            {pathname !== '/' && (
+              <span className="text-xl font-normal text-gray-400 ml-1">
+                Events
+              </span>
+            )}
           </Link>
 
           {/* Desktop Navigation */}

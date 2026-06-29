@@ -2,6 +2,7 @@
 
 import { Linkedin, Twitter, Youtube, MapPin, Phone, Mail } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 
 const containerVariants = {
@@ -44,6 +45,8 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const pathname = usePathname();
+
   return (
     <footer id="contact" className="border-t border-white/10 bg-[#050505]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -58,7 +61,7 @@ export default function Footer() {
           <motion.div variants={itemVariants}>
             <div className="font-display text-xl font-bold text-white">
               Corpassion<span className="text-brand-400">.</span>{' '}
-              <span className="text-gray-400">Events</span>
+              {pathname !== '/' && <span className="text-gray-400">Events</span>}
             </div>
             <p className="mt-4 text-sm leading-relaxed text-gray-500">
               Empowering global leaders through transformative AI summits and
