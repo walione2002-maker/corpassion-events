@@ -67,11 +67,11 @@ export interface IWhyAttendPillar {
 // ─── Navigation ───────────────────────────────────────────────
 
 export const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'Explore Events', href: '#events' },
-  { label: 'Speakers', href: '#agenda' },
-  { label: 'Sponsorship', href: '#sponsorship' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Home', href: '/' },
+  { label: 'Explore Events', href: '/#events' },
+  { label: 'Speakers', href: '/events/dubai-ai-summit-2026#agenda' },
+  { label: 'Sponsorship', href: '/events/dubai-ai-summit-2026#sponsorship' },
+  { label: 'FAQ', href: '/#faq' },
   { label: 'Contact', href: '#contact' },
 ];
 

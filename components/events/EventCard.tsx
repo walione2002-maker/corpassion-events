@@ -85,7 +85,7 @@ export default function EventCard({ event, featured = false }: EventCardProps) {
             )}
 
             <a
-              href={`#${id}`}
+              href={`/events/${id}`}
               className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-400 transition-colors duration-200 hover:text-brand-300"
             >
               Learn More
@@ -160,7 +160,7 @@ export default function EventCard({ event, featured = false }: EventCardProps) {
 
           <div className="mt-auto pt-6">
             <a
-              href={`#${id}`}
+              href={`/events/${id}`}
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-brand-400 transition-colors duration-200 hover:text-brand-300"
             >
               Learn More

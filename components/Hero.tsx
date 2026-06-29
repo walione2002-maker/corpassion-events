@@ -1,9 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { events } from '@/data/events';
-
-const flagship = events.find((e) => e.flagship) ?? events[0];
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -13,27 +10,6 @@ const fadeInUp = {
     transition: { duration: 0.7, delay, ease: [0.25, 0.46, 0.45, 0.94] },
   }),
 };
-
-const ctaButtons = [
-  {
-    label: 'Attend',
-    sub: 'Register as a Delegate',
-    href: '#tickets',
-    style: 'filled' as const,
-  },
-  {
-    label: 'Exhibit',
-    sub: 'Book Your Booth',
-    href: '#exhibit',
-    style: 'outlined' as const,
-  },
-  {
-    label: 'Sponsor',
-    sub: 'Promote Your Brand',
-    href: '#sponsorship',
-    style: 'outlined' as const,
-  },
-];
 
 export default function Hero() {
   return (
@@ -117,8 +93,8 @@ export default function Hero() {
           variants={fadeInUp}
           className="mb-8 inline-flex"
         >
-          <span className="border border-brand-400/30 bg-brand-400/10 text-brand-300 text-sm rounded-full px-5 py-1.5 tracking-wide">
-            {flagship.location} &bull; {flagship.dates}
+          <span className="border border-brand-400/30 bg-brand-400/10 text-brand-300 text-sm rounded-full px-5 py-1.5 tracking-wide uppercase">
+            Corpassion Events
           </span>
         </motion.div>
 
@@ -131,7 +107,7 @@ export default function Hero() {
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight mb-6 leading-[1.08]"
         >
           <span className="bg-gradient-to-r from-white via-white to-brand-400 bg-clip-text text-transparent">
-            {flagship.title}
+            Transformative Tech Summits for Global Leaders
           </span>
         </motion.h1>
 
@@ -143,43 +119,23 @@ export default function Hero() {
           variants={fadeInUp}
           className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12"
         >
-          {flagship.taglines[0]}
+          Connecting innovators, executives, and decision-makers worldwide through unparalleled events.
         </motion.p>
 
-        {/* Three CTA Buttons */}
+        {/* Explore Events CTA Button */}
         <motion.div
           custom={0.45}
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
-          className="flex flex-col sm:flex-row items-stretch justify-center gap-4 max-w-2xl mx-auto"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto"
         >
-          {ctaButtons.map((cta, i) => (
-            <motion.a
-              key={cta.label}
-              href={cta.href}
-              custom={0.5 + i * 0.1}
-              initial="hidden"
-              animate="visible"
-              variants={fadeInUp}
-              className={`group flex-1 flex flex-col items-center justify-center gap-1 rounded-xl px-6 py-4 font-medium transition-all duration-300 ${
-                cta.style === 'filled'
-                  ? 'bg-gradient-to-r from-brand-500 to-brand-600 text-white hover:shadow-[0_0_30px_rgba(99,102,241,0.5)] hover:brightness-110 active:scale-[0.97]'
-                  : 'border border-white/20 text-white hover:border-brand-400/50 hover:bg-white/5 active:scale-[0.97]'
-              }`}
-            >
-              <span className="text-lg font-semibold">{cta.label}</span>
-              <span
-                className={`text-xs ${
-                  cta.style === 'filled'
-                    ? 'text-white/70'
-                    : 'text-gray-500 group-hover:text-gray-400'
-                } transition-colors`}
-              >
-                {cta.sub}
-              </span>
-            </motion.a>
-          ))}
+          <a
+            href="#events"
+            className="w-full flex items-center justify-center gap-2 rounded-full px-8 py-4 font-medium transition-all duration-300 bg-gradient-to-r from-brand-500 to-brand-600 text-white hover:shadow-[0_0_30px_rgba(99,102,241,0.5)] hover:brightness-110 active:scale-[0.97] text-lg"
+          >
+            Explore Upcoming Summits
+          </a>
         </motion.div>
       </div>
 

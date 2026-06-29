@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import Link from 'next/link';
 import { navLinks } from '@/data/events';
 
 export default function Header() {
@@ -38,7 +39,7 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#home" className="flex items-center gap-0 shrink-0">
+          <Link href="/" className="flex items-center gap-0 shrink-0">
             <span className="font-display text-xl font-bold text-white">
               Corpassion
             </span>
@@ -48,29 +49,29 @@ export default function Header() {
             <span className="text-xl font-normal text-gray-400 ml-1">
               Events
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="text-sm text-gray-400 hover:text-white transition-colors duration-200 relative group"
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-px bg-brand-400 transition-all duration-300 group-hover:w-full" />
-              </a>
+              </Link>
             ))}
           </div>
 
           {/* Desktop CTA */}
-          <a
-            href="#contact"
+          <Link
+            href="/#contact"
             className="hidden lg:inline-flex rounded-full bg-gradient-to-r from-brand-500 to-brand-600 text-white px-6 py-2.5 text-sm font-medium transition-all duration-300 hover:shadow-[0_0_24px_rgba(99,102,241,0.5)] hover:brightness-110 active:scale-[0.97]"
           >
             Register Now
-          </a>
+          </Link>
 
           {/* Mobile Menu Toggle */}
           <button
@@ -100,28 +101,34 @@ export default function Header() {
           >
             <div className="flex flex-col items-center justify-center min-h-screen gap-6">
               {navLinks.map((link, i) => (
-                <motion.a
+                <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.05 * i, duration: 0.3 }}
                   className="text-2xl font-display font-medium text-gray-300 hover:text-white transition-colors"
                 >
-                  {link.label}
-                </motion.a>
+                  <motion.span
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.05 * i, duration: 0.3 }}
+                  >
+                    {link.label}
+                  </motion.span>
+                </Link>
               ))}
-              <motion.a
-                href="#contact"
+              <Link
+                href="/#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.05 * navLinks.length, duration: 0.3 }}
                 className="mt-4 rounded-full bg-gradient-to-r from-brand-500 to-brand-600 text-white px-8 py-3 text-lg font-medium transition-all duration-300 hover:shadow-[0_0_24px_rgba(99,102,241,0.5)] hover:brightness-110"
               >
-                Register Now
-              </motion.a>
+                <motion.span
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.05 * navLinks.length, duration: 0.3 }}
+                >
+                  Register Now
+                </motion.span>
+              </Link>
             </div>
           </motion.div>
         )}

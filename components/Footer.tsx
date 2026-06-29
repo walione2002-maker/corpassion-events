@@ -1,7 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { Linkedin, Twitter, Youtube, MapPin, Phone, Mail } from 'lucide-react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const containerVariants = {
   hidden: {},
@@ -22,11 +23,11 @@ const itemVariants = {
 };
 
 const quickLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Global Summits', href: '#events' },
-  { label: 'Meet the Speakers', href: '#agenda' },
-  { label: 'Become a Sponsor', href: '#sponsorship' },
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/#about' },
+  { label: 'Global Summits', href: '/#events' },
+  { label: 'Meet the Speakers', href: '/events/dubai-ai-summit-2026#agenda' },
+  { label: 'Become a Sponsor', href: '/events/dubai-ai-summit-2026#sponsorship' },
 ];
 
 const legalLinks = [
@@ -88,12 +89,12 @@ export default function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-gray-400 transition-colors duration-200 hover:text-brand-400"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
