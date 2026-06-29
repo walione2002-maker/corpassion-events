@@ -75,12 +75,16 @@ export default function Header() {
           </div>
 
           {/* Desktop CTA */}
-          <Link
-            href="/#register"
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              window.dispatchEvent(new Event('open-checkout'));
+            }}
             className="hidden lg:inline-flex rounded-full bg-brand-400 text-slate-950 px-6 py-2.5 text-sm font-semibold transition-all duration-300 hover:bg-brand-300 hover:shadow-[0_0_20px_rgba(251,191,36,0.3)] active:scale-[0.98]"
           >
             Register Now
-          </Link>
+          </button>
 
           {/* Mobile Menu Toggle */}
           <button
@@ -135,9 +139,13 @@ export default function Header() {
                   )}
                 </Link>
               ))}
-              <Link
-                href="/#register"
-                onClick={() => setMobileMenuOpen(false)}
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMobileMenuOpen(false);
+                  window.dispatchEvent(new Event('open-checkout'));
+                }}
                 className="mt-6 rounded-full bg-brand-400 text-slate-950 px-8 py-3 text-lg font-semibold transition-all duration-300 hover:bg-brand-300"
               >
                 <motion.span
@@ -147,7 +155,7 @@ export default function Header() {
                 >
                   Register Now
                 </motion.span>
-              </Link>
+              </button>
             </div>
           </motion.div>
         )}

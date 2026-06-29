@@ -72,12 +72,16 @@ export default function Hero() {
               variants={fadeInUp}
               className="flex flex-col sm:flex-row items-start gap-4"
             >
-              <Link
-                href="/#register"
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.dispatchEvent(new Event('open-checkout'));
+                }}
                 className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-semibold transition-all duration-300 bg-brand-400 text-slate-950 hover:bg-brand-300 hover:shadow-[0_0_30px_rgba(251,191,36,0.3)] active:scale-[0.98] text-lg"
               >
                 Secure Your Pass
-              </Link>
+              </button>
               <Link
                 href="#events"
                 className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-semibold transition-all duration-300 bg-white/5 text-white hover:bg-white/10 border border-white/10 hover:border-white/20 active:scale-[0.98] text-lg"
