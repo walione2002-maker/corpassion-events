@@ -23,7 +23,7 @@ export default function SponsorshipTier({ pkg, index = 0 }: SponsorshipTierProps
       <div
         className={`relative h-full flex flex-col rounded-2xl p-[1px] transition-all duration-300 ${
           isExclusive
-            ? 'bg-gradient-to-b from-amber-400 via-amber-600 to-amber-900 shadow-lg shadow-amber-500/15'
+            ? 'bg-gradient-to-b from-brand-400 via-brand-600 to-brand-900 shadow-lg shadow-brand-500/15'
             : 'bg-white/[0.08]'
         }`}
       >
@@ -38,7 +38,7 @@ export default function SponsorshipTier({ pkg, index = 0 }: SponsorshipTierProps
           {/* Exclusive Badge */}
           {isExclusive && (
             <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-              <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg shadow-amber-500/30 tracking-wider uppercase">
+              <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-brand-500 to-brand-600 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg shadow-brand-500/30 tracking-wider uppercase">
                 <Crown className="w-3.5 h-3.5" />
                 Exclusive
               </span>
@@ -48,7 +48,7 @@ export default function SponsorshipTier({ pkg, index = 0 }: SponsorshipTierProps
           {/* Tier Name */}
           <h3
             className={`text-xl font-display font-bold mt-1 ${
-              isExclusive ? 'text-amber-300' : 'text-white'
+              isExclusive ? 'text-brand-300' : 'text-white'
             }`}
           >
             {pkg.tier}
@@ -77,7 +77,7 @@ export default function SponsorshipTier({ pkg, index = 0 }: SponsorshipTierProps
                 <span
                   className={`mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${
                     isExclusive
-                      ? 'bg-amber-500/20 text-amber-400'
+                      ? 'bg-brand-500/20 text-brand-400'
                       : 'bg-brand-500/20 text-brand-400'
                   }`}
                 >
@@ -99,7 +99,7 @@ export default function SponsorshipTier({ pkg, index = 0 }: SponsorshipTierProps
             }}
             className={`group/btn inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
               isExclusive
-                ? 'bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white shadow-lg shadow-amber-500/20 hover:shadow-amber-500/35'
+                ? 'bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-white shadow-lg shadow-brand-500/20 hover:shadow-brand-500/35'
                 : 'bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.08] hover:border-white/[0.15]'
             }`}
           >

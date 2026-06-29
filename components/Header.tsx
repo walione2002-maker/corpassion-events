@@ -98,7 +98,7 @@ export default function Header() {
                 e.preventDefault();
                 window.dispatchEvent(new Event('open-checkout'));
               }}
-              className="rounded-full bg-brand-400 text-slate-950 px-6 py-2.5 text-sm font-semibold transition-all duration-300 hover:bg-brand-300 hover:shadow-[0_0_20px_rgba(251,191,36,0.3)] active:scale-[0.98]"
+              className="rounded-full bg-brand-400 text-slate-950 px-6 py-2.5 text-sm font-semibold transition-all duration-300 hover:bg-brand-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.3)] active:scale-[0.98]"
             >
               Register Now
             </button>

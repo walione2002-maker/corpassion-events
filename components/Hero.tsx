@@ -20,8 +20,8 @@ export default function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
       {/* Radial gradient overlays (dark mode only for strict OLED, light mode is pure white) */}
-      <div className="absolute inset-0 hidden dark:block bg-[radial-gradient(ellipse_at_center,rgba(251,191,36,0.08)_0%,transparent_60%)]" />
-      <div className="absolute inset-0 hidden dark:block bg-[radial-gradient(ellipse_at_top_right,rgba(251,191,36,0.05)_0%,transparent_50%)]" />
+      <div className="absolute inset-0 hidden dark:block bg-[radial-gradient(ellipse_at_center,rgba(34,211,238,0.08)_0%,transparent_60%)]" />
+      <div className="absolute inset-0 hidden dark:block bg-[radial-gradient(ellipse_at_top_right,rgba(34,211,238,0.05)_0%,transparent_50%)]" />
 
       {/* Content Grid */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -78,7 +78,7 @@ export default function Hero() {
                   e.preventDefault();
                   window.dispatchEvent(new Event('open-checkout'));
                 }}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-semibold transition-all duration-300 bg-brand-400 text-slate-950 hover:bg-brand-300 hover:shadow-[0_0_30px_rgba(251,191,36,0.3)] active:scale-[0.98] text-lg"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-semibold transition-all duration-300 bg-brand-400 text-slate-950 hover:bg-brand-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] active:scale-[0.98] text-lg"
               >
                 Secure Your Pass
               </button>
@@ -100,7 +100,7 @@ export default function Hero() {
             className="relative lg:ml-auto w-full max-w-lg"
           >
             {/* Card Glow */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-brand-400 to-amber-600 rounded-2xl blur-xl opacity-20 animate-pulse"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-brand-400 to-brand-600 rounded-2xl blur-xl opacity-20 animate-pulse"></div>
             
             {/* The Card */}
             <div className="relative bg-white/80 dark:bg-slate-900/80 backdrop-blur-2xl border border-slate-200 dark:border-white/10 rounded-2xl p-8 shadow-2xl overflow-hidden">

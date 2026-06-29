@@ -27,9 +27,9 @@ const typeConfig: Record<
     label: 'Workshop',
   },
   networking: {
-    color: 'bg-amber-500/20 text-amber-300',
-    border: 'border-amber-500/60',
-    dot: 'bg-amber-400',
+    color: 'bg-brand-500/20 text-brand-300',
+    border: 'border-brand-500/60',
+    dot: 'bg-brand-400',
     label: 'Networking',
   },
   break: {

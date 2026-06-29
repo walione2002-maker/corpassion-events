@@ -137,7 +137,7 @@ export default function GlobalCheckoutModal() {
                     <label
                       className={`cursor-pointer rounded-xl border p-4 flex flex-col gap-1 transition-all ${
                         passType === 'standard'
-                          ? 'border-brand-400 bg-brand-500/10 dark:bg-brand-400/10 shadow-[0_0_15px_rgba(251,191,36,0.1)]'
+                          ? 'border-brand-400 bg-brand-500/10 dark:bg-brand-400/10 shadow-[0_0_15px_rgba(34,211,238,0.1)]'
                           : 'border-slate-200/50 dark:border-white/10 bg-white/40 dark:bg-white/5 hover:bg-white/60 dark:hover:bg-white/10 backdrop-blur-md'
                       }`}
                     >
@@ -158,7 +158,7 @@ export default function GlobalCheckoutModal() {
                     <label
                       className={`cursor-pointer rounded-xl border p-4 flex flex-col gap-1 transition-all ${
                         passType === 'vip'
-                          ? 'border-brand-400 bg-brand-500/10 dark:bg-brand-400/10 shadow-[0_0_15px_rgba(251,191,36,0.1)]'
+                          ? 'border-brand-400 bg-brand-500/10 dark:bg-brand-400/10 shadow-[0_0_15px_rgba(34,211,238,0.1)]'
                           : 'border-slate-200/50 dark:border-white/10 bg-white/40 dark:bg-white/5 hover:bg-white/60 dark:hover:bg-white/10 backdrop-blur-md'
                       }`}
                     >
@@ -185,7 +185,7 @@ export default function GlobalCheckoutModal() {
                       </label>
                       <input
                         id="name"
-                        className="flex h-12 w-full rounded-xl border border-slate-200/50 dark:border-slate-700/50 bg-white/40 dark:bg-slate-800/40 backdrop-blur-md px-4 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-500 transition-all duration-300 hover:bg-white/60 dark:hover:bg-slate-800/60 focus:bg-white/80 dark:focus:bg-slate-800/80 focus:-translate-y-0.5 focus:shadow-[0_8px_20px_-8px_rgba(0,0,0,0.1)] dark:focus:shadow-[0_8px_20px_-8px_rgba(251,191,36,0.15)] focus-visible:outline-none focus-visible:border-brand-400 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="flex h-12 w-full rounded-xl border border-slate-200/50 dark:border-slate-700/50 bg-white/40 dark:bg-slate-800/40 backdrop-blur-md px-4 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-500 transition-all duration-300 hover:bg-white/60 dark:hover:bg-slate-800/60 focus:bg-white/80 dark:focus:bg-slate-800/80 focus:-translate-y-0.5 focus:shadow-[0_8px_20px_-8px_rgba(0,0,0,0.1)] dark:focus:shadow-[0_8px_20px_-8px_rgba(34,211,238,0.15)] focus-visible:outline-none focus-visible:border-brand-400 disabled:cursor-not-allowed disabled:opacity-50"
                         placeholder="Jane Doe"
                         {...form.register('name')}
                       />
@@ -201,7 +201,7 @@ export default function GlobalCheckoutModal() {
                       <input
                         id="email"
                         type="email"
-                        className="flex h-12 w-full rounded-xl border border-slate-200/50 dark:border-slate-700/50 bg-white/40 dark:bg-slate-800/40 backdrop-blur-md px-4 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-500 transition-all duration-300 hover:bg-white/60 dark:hover:bg-slate-800/60 focus:bg-white/80 dark:focus:bg-slate-800/80 focus:-translate-y-0.5 focus:shadow-[0_8px_20px_-8px_rgba(0,0,0,0.1)] dark:focus:shadow-[0_8px_20px_-8px_rgba(251,191,36,0.15)] focus-visible:outline-none focus-visible:border-brand-400 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="flex h-12 w-full rounded-xl border border-slate-200/50 dark:border-slate-700/50 bg-white/40 dark:bg-slate-800/40 backdrop-blur-md px-4 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-500 transition-all duration-300 hover:bg-white/60 dark:hover:bg-slate-800/60 focus:bg-white/80 dark:focus:bg-slate-800/80 focus:-translate-y-0.5 focus:shadow-[0_8px_20px_-8px_rgba(0,0,0,0.1)] dark:focus:shadow-[0_8px_20px_-8px_rgba(34,211,238,0.15)] focus-visible:outline-none focus-visible:border-brand-400 disabled:cursor-not-allowed disabled:opacity-50"
                         placeholder="jane@company.com"
                         {...form.register('email')}
                       />
@@ -217,7 +217,7 @@ export default function GlobalCheckoutModal() {
                         </label>
                         <input
                           id="company"
-                          className="flex h-12 w-full rounded-xl border border-slate-200/50 dark:border-slate-700/50 bg-white/40 dark:bg-slate-800/40 backdrop-blur-md px-4 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-500 transition-all duration-300 hover:bg-white/60 dark:hover:bg-slate-800/60 focus:bg-white/80 dark:focus:bg-slate-800/80 focus:-translate-y-0.5 focus:shadow-[0_8px_20px_-8px_rgba(0,0,0,0.1)] dark:focus:shadow-[0_8px_20px_-8px_rgba(251,191,36,0.15)] focus-visible:outline-none focus-visible:border-brand-400 disabled:cursor-not-allowed disabled:opacity-50"
+                          className="flex h-12 w-full rounded-xl border border-slate-200/50 dark:border-slate-700/50 bg-white/40 dark:bg-slate-800/40 backdrop-blur-md px-4 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-500 transition-all duration-300 hover:bg-white/60 dark:hover:bg-slate-800/60 focus:bg-white/80 dark:focus:bg-slate-800/80 focus:-translate-y-0.5 focus:shadow-[0_8px_20px_-8px_rgba(0,0,0,0.1)] dark:focus:shadow-[0_8px_20px_-8px_rgba(34,211,238,0.15)] focus-visible:outline-none focus-visible:border-brand-400 disabled:cursor-not-allowed disabled:opacity-50"
                           placeholder="Acme Inc"
                           {...form.register('company')}
                         />
@@ -232,7 +232,7 @@ export default function GlobalCheckoutModal() {
                         </label>
                         <input
                           id="role"
-                          className="flex h-12 w-full rounded-xl border border-slate-200/50 dark:border-slate-700/50 bg-white/40 dark:bg-slate-800/40 backdrop-blur-md px-4 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-500 transition-all duration-300 hover:bg-white/60 dark:hover:bg-slate-800/60 focus:bg-white/80 dark:focus:bg-slate-800/80 focus:-translate-y-0.5 focus:shadow-[0_8px_20px_-8px_rgba(0,0,0,0.1)] dark:focus:shadow-[0_8px_20px_-8px_rgba(251,191,36,0.15)] focus-visible:outline-none focus-visible:border-brand-400 disabled:cursor-not-allowed disabled:opacity-50"
+                          className="flex h-12 w-full rounded-xl border border-slate-200/50 dark:border-slate-700/50 bg-white/40 dark:bg-slate-800/40 backdrop-blur-md px-4 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-500 transition-all duration-300 hover:bg-white/60 dark:hover:bg-slate-800/60 focus:bg-white/80 dark:focus:bg-slate-800/80 focus:-translate-y-0.5 focus:shadow-[0_8px_20px_-8px_rgba(0,0,0,0.1)] dark:focus:shadow-[0_8px_20px_-8px_rgba(34,211,238,0.15)] focus-visible:outline-none focus-visible:border-brand-400 disabled:cursor-not-allowed disabled:opacity-50"
                           placeholder="Director of AI"
                           {...form.register('role')}
                         />

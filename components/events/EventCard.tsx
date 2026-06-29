@@ -49,7 +49,7 @@ export default function EventCard({ event }: EventCardProps) {
       }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="group relative flex h-full flex-col overflow-visible rounded-2xl border border-slate-200 dark:border-white/10 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm transition-colors duration-300 hover:shadow-[0_20px_40px_-10px_rgba(251,191,36,0.15)] hover:border-brand-400/30"
+      className="group relative flex h-full flex-col overflow-visible rounded-2xl border border-slate-200 dark:border-white/10 bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm transition-colors duration-300 hover:shadow-[0_20px_40px_-10px_rgba(34,211,238,0.15)] hover:border-brand-400/30"
     >
       {/* Image Container */}
       <div 

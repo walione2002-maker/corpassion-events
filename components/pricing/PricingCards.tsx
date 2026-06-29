@@ -34,17 +34,16 @@ export default function PricingCards() {
           transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
           className="mb-12"
         >
-          <div className="bg-gradient-to-r from-amber-500/20 to-amber-600/20 border border-amber-500/30 rounded-xl p-4 sm:p-5 flex items-center gap-4">
-            <div className="shrink-0 w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center">
-              <Users className="w-5 h-5 text-amber-300" />
+          <div className="bg-gradient-to-r from-brand-500/20 to-brand-600/20 border border-brand-500/30 rounded-xl p-4 sm:p-5 flex items-center gap-4">
+            <div className="shrink-0 w-10 h-10 rounded-full bg-brand-500/20 flex items-center justify-center">
+              <Users className="w-5 h-5 text-brand-300" />
             </div>
             <div>
-              <p className="text-amber-200 font-semibold text-base sm:text-lg">
+              <p className="text-brand-200 font-semibold text-base sm:text-lg">
                 10% to 20% Group Discounts Available
               </p>
-              <p className="text-amber-300/70 text-sm mt-0.5">
-                Contact us at training@corpassionevent.com for group rates on 3+
-                delegates.
+              <p className="text-brand-300/70 text-sm mt-0.5">
+                Contact us at training@corpassionevent.com for group rates on 3+ delegates.
               </p>
             </div>
           </div>

@@ -34,7 +34,7 @@ export default function About() {
         className="absolute inset-0 z-10 pointer-events-none"
       >
         <div className="absolute top-32 right-32 w-20 h-20 bg-gradient-to-tr from-brand-400 to-indigo-500 rounded-full blur-xl opacity-40 animate-pulse" />
-        <div className="absolute bottom-40 left-20 w-32 h-32 bg-gradient-to-tr from-amber-400 to-orange-500 rounded-full blur-2xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-40 left-20 w-32 h-32 bg-gradient-to-tr from-brand-400 to-brand-600 rounded-full blur-2xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }} />
       </motion.div>
 
       <div className="max-w-6xl mx-auto relative z-20 w-full">
