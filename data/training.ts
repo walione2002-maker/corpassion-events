@@ -18,7 +18,7 @@ export const mockTrainingEvents: TrainingEvent[] = [
     venue: 'Johannesburg - SA',
     format: 'In-Person',
     status: 'Upcoming',
-    link: '#',
+    link: '/training-calendar/tr-01',
   },
   {
     id: 'tr-02',
@@ -28,7 +28,7 @@ export const mockTrainingEvents: TrainingEvent[] = [
     venue: 'Johannesburg - SA',
     format: 'In-Person',
     status: 'Upcoming',
-    link: '#',
+    link: '/training-calendar/tr-02',
   },
   {
     id: 'tr-03',
@@ -38,7 +38,7 @@ export const mockTrainingEvents: TrainingEvent[] = [
     venue: 'Dubai - UAE',
     format: 'Hybrid',
     status: 'Completed',
-    link: '#',
+    link: '/training-calendar/tr-03',
   },
   {
     id: 'tr-04',
@@ -48,6 +48,6 @@ export const mockTrainingEvents: TrainingEvent[] = [
     venue: 'Online',
     format: 'Online',
     status: 'Upcoming',
-    link: '#',
+    link: '/training-calendar/tr-04',
   }
 ];
