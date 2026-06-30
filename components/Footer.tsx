@@ -197,10 +197,10 @@ export default function Footer() {
         >
           <div className="w-full rounded-2xl bg-slate-100 dark:bg-white/[0.02] border border-slate-200 dark:border-white/5 p-5 text-center flex flex-col items-center justify-center gap-2">
             <p className="text-sm text-slate-800 dark:text-gray-400">
-              <strong className="text-slate-900 dark:text-white font-semibold">Corpassion Event</strong> is a business event brand operated by <strong className="text-slate-900 dark:text-white font-semibold">The Excellent Group LLC, Dubai, UAE</strong>.
+              <strong className="text-slate-900 dark:text-white font-semibold">Corpassion Event</strong> is a business event brand operated by <strong className="text-slate-900 dark:text-white font-semibold">The Excellent Group FZC, Dubai, UAE</strong>.
             </p>
             <p className="text-xs text-slate-600 dark:text-gray-500 max-w-3xl">
-              Payments are securely processed by The Excellent Group LLC (UAE) — a safe and registered company in the UAE with a proven track record of excellence and reliability.
+              Payments are securely processed by The Excellent Group FZC (UAE) — a safe and registered company in the UAE with a proven track record of excellence and reliability.
             </p>
           </div>
 

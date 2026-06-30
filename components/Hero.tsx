@@ -41,7 +41,7 @@ export default function Hero() {
                 Corpassion Events
               </span>
               <span className="text-xs font-medium text-slate-600 dark:text-gray-400 pl-2 border-l-2 border-brand-400/50">
-                Operated by The Excellent Group LLC, Dubai, UAE
+                Operated by The Excellent Group FZC, Dubai, UAE
               </span>
             </motion.div>
 

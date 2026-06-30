@@ -66,7 +66,7 @@ export default function About() {
                   Our mission is to engineer environments where innovation flows effortlessly and connections are made without boundaries. By merging spatial design, bleeding-edge technology, and unparalleled curation, we create spaces that elevate human potential.
                 </p>
                 <p className="border-l-2 border-brand-400/50 pl-4 py-1 text-base mt-2">
-                  <strong className="text-slate-900 dark:text-white">Corpassion Events</strong> is proudly operated by <strong className="text-slate-900 dark:text-white">The Excellent Group LLC</strong>, a registered and highly-trusted company based in Dubai, UAE, with a proven track record of delivering world-class business experiences.
+                  <strong className="text-slate-900 dark:text-white">Corpassion Events</strong> is proudly operated by <strong className="text-slate-900 dark:text-white">The Excellent Group FZC</strong>, a registered and highly-trusted company based in Dubai, UAE, with a proven track record of delivering world-class business experiences.
                 </p>
               </div>
             </div>

@@ -161,7 +161,7 @@ export default function PricingCards() {
               <span className="text-brand-700 dark:text-brand-400 font-bold text-sm tracking-tighter">EG</span>
             </div>
             <p className="text-xs text-slate-800 dark:text-gray-400 font-medium text-left leading-relaxed">
-              Payments securely processed by <strong className="text-slate-900 dark:text-white font-bold">The Excellent Group LLC</strong><br/>
+              Payments securely processed by <strong className="text-slate-900 dark:text-white font-bold">The Excellent Group FZC</strong><br/>
               <span className="text-[11px] text-slate-600 dark:text-gray-500 uppercase tracking-wider">Dubai, UAE — Safe & Registered</span>
             </p>
           </div>
