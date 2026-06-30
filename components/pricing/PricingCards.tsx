@@ -19,7 +19,7 @@ export default function PricingCards() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="text-center mb-10"
         >
-          <span className="text-sm tracking-widest text-brand-400 uppercase font-medium">
+          <span className="text-sm tracking-widest text-brand-700 dark:text-brand-400 uppercase font-medium">
             Pricing
           </span>
           <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-slate-900 dark:text-white mt-3">
@@ -36,13 +36,13 @@ export default function PricingCards() {
         >
           <div className="bg-gradient-to-r from-brand-500/20 to-brand-600/20 border border-brand-500/30 rounded-xl p-4 sm:p-5 flex items-center gap-4">
             <div className="shrink-0 w-10 h-10 rounded-full bg-brand-500/20 flex items-center justify-center">
-              <Users className="w-5 h-5 text-brand-300" />
+              <Users className="w-5 h-5 text-brand-700 dark:text-brand-300" />
             </div>
             <div>
-              <p className="text-brand-200 font-semibold text-base sm:text-lg">
+              <p className="text-brand-900 dark:text-brand-200 font-semibold text-base sm:text-lg">
                 10% to 20% Group Discounts Available
               </p>
-              <p className="text-brand-300/70 text-sm mt-0.5">
+              <p className="text-brand-700/70 dark:text-brand-300/70 text-sm mt-0.5">
                 Contact us at training@corpassionevent.com for group rates on 3+ delegates.
               </p>
             </div>
@@ -101,7 +101,7 @@ export default function PricingCards() {
                     {/* Tier Name */}
                     <h3
                       className={`text-lg font-display font-semibold mt-1 ${
-                        isEmphasized ? 'text-brand-300' : 'text-slate-900 dark:text-white'
+                        isEmphasized ? 'text-brand-700 dark:text-brand-300' : 'text-slate-900 dark:text-white'
                       }`}
                     >
                       {tier.name}
@@ -109,7 +109,7 @@ export default function PricingCards() {
 
                     {/* Price */}
                     <div className="mt-5 mb-4">
-                      <span className="text-slate-500 dark:text-gray-400 text-lg align-top">$</span>
+                      <span className="text-slate-800 dark:text-gray-400 text-lg align-top">$</span>
                       <span
                         className={`text-4xl font-bold tracking-tight ${
                           isEmphasized ? 'text-slate-900 dark:text-white' : 'text-slate-900 dark:text-white'
@@ -117,11 +117,11 @@ export default function PricingCards() {
                       >
                         {tier.price}
                       </span>
-                      <span className="text-slate-400 dark:text-gray-500 text-sm ml-1">/person</span>
+                      <span className="text-slate-800 dark:text-gray-500 text-sm ml-1">/person</span>
                     </div>
 
                     {/* Deadline */}
-                    <p className="text-slate-500 dark:text-gray-400 text-sm mb-6">{tier.deadline}</p>
+                    <p className="text-slate-800 dark:text-gray-400 text-sm mb-6">{tier.deadline}</p>
 
                     {/* Spacer */}
                     <div className="flex-1" />

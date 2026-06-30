@@ -35,7 +35,7 @@ export default function SponsorshipHub() {
           transition={{ duration: 0.6, ease: 'easeOut' }}
           className="text-center mb-14"
         >
-          <span className="text-sm tracking-widest text-brand-400 uppercase font-medium">
+          <span className="text-sm tracking-widest text-brand-700 dark:text-brand-400 uppercase font-medium">
             Partners
           </span>
           <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-slate-900 dark:text-white mt-3">
@@ -74,12 +74,12 @@ export default function SponsorshipHub() {
                   )}
                   <Icon
                     className={`relative z-10 w-4 h-4 ${
-                      isActive ? 'text-brand-400' : 'text-slate-400 dark:text-gray-500'
+                      isActive ? 'text-brand-700 dark:text-brand-400' : 'text-slate-800 dark:text-gray-500'
                     }`}
                   />
                   <span
                     className={`relative z-10 hidden sm:inline ${
-                      isActive ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-gray-400'
+                      isActive ? 'text-slate-900 dark:text-white' : 'text-slate-800 dark:text-gray-400'
                     }`}
                   >
                     {tab.label}
@@ -122,7 +122,7 @@ export default function SponsorshipHub() {
 
                     {/* Price */}
                     <div className="mt-4 mb-3">
-                      <span className="text-slate-500 dark:text-gray-400 text-lg align-top">
+                      <span className="text-slate-800 dark:text-gray-400 text-lg align-top">
                         $
                       </span>
                       <span className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
@@ -131,7 +131,7 @@ export default function SponsorshipHub() {
                     </div>
 
                     {/* Description */}
-                    <p className="text-slate-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
+                    <p className="text-slate-800 dark:text-gray-400 text-sm leading-relaxed mb-6">
                       {booth.description}
                     </p>
 
@@ -159,7 +159,7 @@ export default function SponsorshipHub() {
                 transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
                 className="bg-slate-50 dark:bg-white/[0.02] border border-slate-200 dark:border-white/[0.06] rounded-2xl p-6 sm:p-8"
               >
-                <h4 className="text-sm tracking-widest text-brand-400 uppercase font-medium mb-5">
+                <h4 className="text-sm tracking-widest text-brand-700 dark:text-brand-400 uppercase font-medium mb-5">
                   All Booths Include
                 </h4>
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -167,11 +167,11 @@ export default function SponsorshipHub() {
                     <div key={i} className="flex items-center gap-2.5">
                       <span className="shrink-0 w-5 h-5 rounded-full bg-brand-500/20 flex items-center justify-center">
                         <Check
-                          className="w-3 h-3 text-brand-400"
+                          className="w-3 h-3 text-brand-700 dark:text-brand-400"
                           strokeWidth={3}
                         />
                       </span>
-                      <span className="text-slate-600 dark:text-gray-300 text-sm">{feature}</span>
+                      <span className="text-slate-800 dark:text-gray-300 text-sm">{feature}</span>
                     </div>
                   ))}
                 </div>

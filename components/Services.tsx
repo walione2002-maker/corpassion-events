@@ -12,7 +12,7 @@ export default function Services() {
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a] relative overflow-hidden" id="services">
       <div className="max-w-7xl mx-auto text-center mb-16 relative z-10">
-        <span className="text-sm tracking-widest text-brand-400 uppercase font-medium">What We Do</span>
+        <span className="text-sm tracking-widest text-brand-700 dark:text-brand-400 uppercase font-medium">What We Do</span>
         <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-slate-900 dark:text-white mt-3">
           Our Services
         </h2>
@@ -50,10 +50,10 @@ export default function Services() {
                 }`}
               >
                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand-500/20 to-indigo-500/20 flex items-center justify-center mb-6">
-                  <IconComponent className="w-8 h-8 text-brand-300" />
+                  <IconComponent className="w-8 h-8 text-brand-700 dark:text-brand-300" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">{service.title}</h3>
-                <p className="text-slate-500 dark:text-gray-400">{service.description}</p>
+                <p className="text-slate-800 dark:text-gray-400">{service.description}</p>
               </div>
             </motion.div>
           );

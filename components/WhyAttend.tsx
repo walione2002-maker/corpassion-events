@@ -34,13 +34,13 @@ export default function WhyAttend() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mx-auto max-w-2xl text-center"
         >
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand-400">
+          <p className="text-sm font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-400">
             The Value
           </p>
           <h2 className="mt-3 font-display text-3xl font-bold text-slate-900 dark:text-white sm:text-4xl lg:text-5xl">
             Why Attend
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-slate-500 dark:text-gray-400">
+          <p className="mt-4 text-lg leading-relaxed text-slate-800 dark:text-gray-400">
             Four reasons this summit will transform your approach to AI
             leadership.
           </p>
@@ -71,7 +71,7 @@ export default function WhyAttend() {
                 <div className="relative">
                   {/* Icon */}
                   <div className="mb-5 w-fit rounded-xl bg-brand-600/20 p-3">
-                    <Icon className="h-6 w-6 text-brand-400" strokeWidth={1.8} />
+                    <Icon className="h-6 w-6 text-brand-700 dark:text-brand-400" strokeWidth={1.8} />
                   </div>
 
                   {/* Title */}
@@ -80,7 +80,7 @@ export default function WhyAttend() {
                   </h3>
 
                   {/* Description */}
-                  <p className="mt-3 leading-relaxed text-slate-500 dark:text-gray-400">
+                  <p className="mt-3 leading-relaxed text-slate-800 dark:text-gray-400">
                     {pillar.description}
                   </p>
                 </div>

@@ -37,7 +37,7 @@ export default function Hero() {
               variants={fadeInUp}
               className="mb-6 inline-flex"
             >
-              <span className="border border-brand-400/30 bg-brand-400/10 text-brand-400 text-xs font-bold tracking-widest rounded-full px-4 py-1.5 uppercase">
+              <span className="border border-brand-400/30 bg-brand-400/10 text-brand-700 dark:text-brand-400 text-xs font-bold tracking-widest rounded-full px-4 py-1.5 uppercase">
                 Corpassion Events
               </span>
             </motion.div>
@@ -59,7 +59,7 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
-              className="text-lg md:text-xl text-slate-600 dark:text-gray-400 max-w-xl mb-10 leading-relaxed"
+              className="text-lg md:text-xl text-slate-800 dark:text-gray-400 max-w-xl mb-10 leading-relaxed"
             >
               Connecting visionaries, executives, and decision-makers worldwide through immersive, unparalleled tech summits.
             </motion.p>
@@ -130,14 +130,14 @@ export default function Hero() {
               </div>
               
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 mt-4">Dubai AI Summit 2026</h3>
-              <p className="text-slate-500 dark:text-gray-400 mb-8">AI FOR NON-TECHNICAL LEADERS SUMMIT & SOLUTIONS SHOWCASE</p>
+              <p className="text-slate-800 dark:text-gray-400 mb-8">AI FOR NON-TECHNICAL LEADERS SUMMIT & SOLUTIONS SHOWCASE</p>
               
               <div className="space-y-4 mb-8">
-                <div className="flex items-center text-slate-600 dark:text-gray-300">
+                <div className="flex items-center text-slate-800 dark:text-gray-300">
                   <Calendar className="w-5 h-5 mr-3 text-brand-500 dark:text-brand-400" />
                   <span>14–16 October 2026</span>
                 </div>
-                <div className="flex items-center text-slate-600 dark:text-gray-300">
+                <div className="flex items-center text-slate-800 dark:text-gray-300">
                   <MapPin className="w-5 h-5 mr-3 text-brand-500 dark:text-brand-400" />
                   <span>Dubai, UAE</span>
                 </div>

@@ -58,7 +58,7 @@ export default function About() {
                 </h2>
               </div>
               
-              <div className="space-y-6 text-slate-600 dark:text-gray-300 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-800 dark:text-gray-300 text-lg leading-relaxed">
                 <p>
                   Corpassion Events brings an anti-gravity approach to the traditional corporate summit. We remove the friction, the weight, and the predictable formats that hold ideas down.
                 </p>
@@ -71,18 +71,18 @@ export default function About() {
             <div className="flex-1 w-full max-w-md space-y-6">
               <div className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 p-6 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/10 transition-colors duration-300 group">
                 <div className="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Target className="w-6 h-6 text-brand-400" />
+                  <Target className="w-6 h-6 text-brand-700 dark:text-brand-400" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Our Mission</h3>
-                <p className="text-slate-500 dark:text-gray-400">To shatter the mundane and deliver transformational knowledge in zero-gravity environments that foster genuine connection.</p>
+                <p className="text-slate-800 dark:text-gray-400">To shatter the mundane and deliver transformational knowledge in zero-gravity environments that foster genuine connection.</p>
               </div>
 
               <div className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 p-6 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/10 transition-colors duration-300 group">
                 <div className="w-12 h-12 rounded-full bg-indigo-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <Compass className="w-6 h-6 text-indigo-400" />
+                  <Compass className="w-6 h-6 text-indigo-700 dark:text-indigo-400" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Our Vision</h3>
-                <p className="text-slate-500 dark:text-gray-400">Becoming the global epicenter for leaders and visionaries to converge, align, and propel industries into the future.</p>
+                <p className="text-slate-800 dark:text-gray-400">Becoming the global epicenter for leaders and visionaries to converge, align, and propel industries into the future.</p>
               </div>
             </div>
 

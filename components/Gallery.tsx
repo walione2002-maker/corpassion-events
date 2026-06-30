@@ -40,14 +40,14 @@ export default function Gallery() {
           transition={{ duration: 0.7, ease: 'easeOut' }}
           className="text-center mb-16"
         >
-          <span className="inline-block rounded-full border border-brand-500/30 bg-brand-500/10 px-4 py-1.5 text-xs font-medium tracking-wider text-brand-400 uppercase mb-4">
+          <span className="inline-block rounded-full border border-brand-500/30 bg-brand-500/10 px-4 py-1.5 text-xs font-medium tracking-wider text-brand-700 dark:text-brand-400 uppercase mb-4">
             Gallery
           </span>
           <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-slate-900 dark:text-white">
             Past Event{' '}
             <span className="gradient-text">Highlights</span>
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-slate-500 dark:text-gray-400">
+          <p className="mt-4 max-w-2xl mx-auto text-slate-800 dark:text-gray-400">
             Relive the energy, insights, and connections from our previous summits.
             Every event is a catalyst for transformation.
           </p>

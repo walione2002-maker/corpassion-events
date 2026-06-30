@@ -30,9 +30,9 @@ export default function EventCatalog() {
           className="mx-auto max-w-3xl text-center mb-16"
         >
           <h2 className="font-display text-4xl font-extrabold text-slate-900 dark:text-white sm:text-5xl lg:text-6xl tracking-tight mb-6">
-            Find the right <span className="text-brand-400">room to be in.</span>
+            Find the right <span className="text-brand-700 dark:text-brand-400">room to be in.</span>
           </h2>
-          <p className="text-lg leading-relaxed text-slate-500 dark:text-gray-400">
+          <p className="text-lg leading-relaxed text-slate-800 dark:text-gray-400">
             From flagship summits to specialized forums, discover the events
             shaping the future of AI leadership across the globe.
           </p>

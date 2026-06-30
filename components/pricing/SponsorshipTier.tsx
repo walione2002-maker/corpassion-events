@@ -48,7 +48,7 @@ export default function SponsorshipTier({ pkg, index = 0 }: SponsorshipTierProps
           {/* Tier Name */}
           <h3
             className={`text-xl font-display font-bold mt-1 ${
-              isExclusive ? 'text-brand-300' : 'text-slate-900 dark:text-white'
+              isExclusive ? 'text-brand-700 dark:text-brand-300' : 'text-slate-900 dark:text-white'
             }`}
           >
             {pkg.tier}
@@ -56,14 +56,14 @@ export default function SponsorshipTier({ pkg, index = 0 }: SponsorshipTierProps
 
           {/* Price */}
           <div className="mt-4 mb-3">
-            <span className="text-slate-500 dark:text-gray-400 text-lg align-top">$</span>
+            <span className="text-slate-800 dark:text-gray-400 text-lg align-top">$</span>
             <span className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
               {pkg.price.toLocaleString()}
             </span>
           </div>
 
           {/* Pitch */}
-          <p className="text-slate-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
+          <p className="text-slate-800 dark:text-gray-400 text-sm leading-relaxed mb-6">
             {pkg.pitch}
           </p>
 
@@ -77,13 +77,13 @@ export default function SponsorshipTier({ pkg, index = 0 }: SponsorshipTierProps
                 <span
                   className={`mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center ${
                     isExclusive
-                      ? 'bg-brand-500/20 text-brand-400'
-                      : 'bg-brand-500/20 text-brand-400'
+                      ? 'bg-brand-500/20 text-brand-700 dark:text-brand-400'
+                      : 'bg-brand-500/20 text-brand-700 dark:text-brand-400'
                   }`}
                 >
                   <Check className="w-3 h-3" strokeWidth={3} />
                 </span>
-                <span className="text-slate-600 dark:text-gray-300 text-sm leading-snug">
+                <span className="text-slate-800 dark:text-gray-300 text-sm leading-snug">
                   {benefit}
                 </span>
               </li>

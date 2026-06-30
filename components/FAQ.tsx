@@ -64,14 +64,14 @@ export default function FAQ() {
             transition={{ duration: 0.7, ease: 'easeOut' }}
             className="text-center mb-12"
           >
-            <span className="inline-block rounded-full border border-brand-500/30 bg-brand-500/10 px-4 py-1.5 text-xs font-medium tracking-wider text-brand-400 uppercase mb-4">
+            <span className="inline-block rounded-full border border-brand-500/30 bg-brand-500/10 px-4 py-1.5 text-xs font-medium tracking-wider text-brand-700 dark:text-brand-400 uppercase mb-4">
               Support
             </span>
             <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-slate-900 dark:text-white">
               Frequently Asked{' '}
               <span className="gradient-text">Questions</span>
             </h2>
-            <p className="mt-4 text-slate-500 dark:text-gray-400">
+            <p className="mt-4 text-slate-800 dark:text-gray-400">
               Everything you need to know about attending, sponsoring, or exhibiting at our summits.
             </p>
           </motion.div>
@@ -91,7 +91,7 @@ export default function FAQ() {
                 className={`relative rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-300 ${
                   activeCategory === index
                     ? 'text-white'
-                    : 'text-slate-500 dark:text-gray-400 hover:text-slate-700 dark:hover:text-gray-200'
+                    : 'text-slate-800 dark:text-gray-400 hover:text-slate-900 dark:hover:text-gray-200'
                 }`}
               >
                 {activeCategory === index && (
@@ -144,7 +144,7 @@ export default function FAQ() {
                           transition={{ duration: 0.3, ease: 'easeInOut' }}
                           className="flex-shrink-0"
                         >
-                          <ChevronDown className="h-5 w-5 text-brand-400" />
+                          <ChevronDown className="h-5 w-5 text-brand-700 dark:text-brand-400" />
                         </motion.div>
                       </button>
 
@@ -162,7 +162,7 @@ export default function FAQ() {
                           >
                             <div className="px-6 pb-5 pt-0">
                               <div className="h-px bg-gradient-to-r from-brand-500/30 via-slate-200 dark:via-white/10 to-transparent mb-4" />
-                              <p className="text-sm leading-relaxed text-slate-500 dark:text-gray-400">
+                              <p className="text-sm leading-relaxed text-slate-800 dark:text-gray-400">
                                 {item.answer}
                               </p>
                             </div>
