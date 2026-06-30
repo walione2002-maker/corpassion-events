@@ -72,7 +72,6 @@ export const navLinks = [
   { label: 'Home', href: ROUTES.HOME },
   { label: 'Explore Events', href: ROUTES.EVENTS },
   { label: 'Services', href: ROUTES.SERVICES },
-  { label: 'Conferences', href: '/#conferences', isNew: true },
   { label: 'Training Calendar', href: ROUTES.TRAINING_CALENDAR, isNew: true },
   { label: 'Register', href: ROUTES.REGISTER },
   { label: 'FAQ', href: ROUTES.FAQ },
