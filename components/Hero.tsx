@@ -53,7 +53,7 @@ export default function Hero() {
               variants={fadeInUp}
               className="text-5xl sm:text-6xl md:text-7xl font-display font-extrabold tracking-tight mb-6 leading-[1.05] text-slate-900 dark:text-white"
             >
-              Where leaders shape the <span className="text-brand-500 dark:text-brand-400">AI era.</span>
+              Where leaders learn, connect & <span className="text-brand-500 dark:text-brand-400">innovate.</span>
             </motion.h1>
 
             {/* Subtitle */}
@@ -64,7 +64,7 @@ export default function Hero() {
               variants={fadeInUp}
               className="text-lg md:text-xl text-slate-800 dark:text-gray-400 max-w-xl mb-10 leading-relaxed"
             >
-              Connecting visionaries, executives, and decision-makers worldwide through immersive, unparalleled tech summits.
+              Empowering professionals. Inspiring industries. Where knowledge meets opportunity.
             </motion.p>
 
             {/* CTAs */}
