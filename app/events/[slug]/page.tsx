@@ -1,9 +1,11 @@
 import { notFound } from 'next/navigation';
 import { events } from '@/data/events';
 import EventHero from '@/components/events/EventHero';
-import AgendaTabs from '@/components/summit/AgendaTabs';
-import PricingCards from '@/components/pricing/PricingCards';
-import SponsorshipHub from '@/components/pricing/SponsorshipHub';
+import dynamic from 'next/dynamic';
+
+const AgendaTabs = dynamic(() => import('@/components/summit/AgendaTabs'), { ssr: true });
+const PricingCards = dynamic(() => import('@/components/pricing/PricingCards'), { ssr: true });
+const SponsorshipHub = dynamic(() => import('@/components/pricing/SponsorshipHub'), { ssr: true });
 
 interface EventPageProps {
   params: {

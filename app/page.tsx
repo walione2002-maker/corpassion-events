@@ -1,11 +1,14 @@
+import dynamic from 'next/dynamic';
 import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
-import Marquee from "@/components/Marquee";
-import About from "@/components/About";
-import EventCatalog from "@/components/events/EventCatalog";
-import Gallery from "@/components/Gallery";
-import FAQ from "@/components/FAQ";
-import Newsletter from "@/components/Newsletter";
+
+// Lazy load below-the-fold components
+const About = dynamic(() => import('@/components/About'), { ssr: true });
+const EventCatalog = dynamic(() => import('@/components/events/EventCatalog'), { ssr: true });
+const Gallery = dynamic(() => import('@/components/Gallery'), { ssr: true });
+const FAQ = dynamic(() => import('@/components/FAQ'), { ssr: true });
+const Newsletter = dynamic(() => import('@/components/Newsletter'), { ssr: true });
+const Marquee = dynamic(() => import('@/components/Marquee'), { ssr: true });
 
 export default function Home() {
   return (
