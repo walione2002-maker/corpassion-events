@@ -1,7 +1,5 @@
 import { notFound } from 'next/navigation';
 import { events } from '@/data/events';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import EventHero from '@/components/events/EventHero';
 import AgendaTabs from '@/components/summit/AgendaTabs';
 import PricingCards from '@/components/pricing/PricingCards';
@@ -33,31 +31,27 @@ export default function EventPage({ params }: EventPageProps) {
   const isFlagship = event.flagship;
 
   return (
-    <>
-      <Header />
-      <main>
-        <EventHero event={event} />
-        
-        {isFlagship ? (
-          <>
-            <AgendaTabs />
-            <PricingCards />
-            <SponsorshipHub />
-          </>
-        ) : (
-          <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0a0a0a] min-h-[50vh] flex items-center justify-center">
-            <div className="text-center max-w-2xl mx-auto">
-              <h2 className="text-3xl font-display font-bold text-white mb-4">
-                Registration Opens Soon
-              </h2>
-              <p className="text-gray-400">
-                Detailed agenda and pricing information for this event will be announced shortly. Please check back later or subscribe to our newsletter for updates.
-              </p>
-            </div>
-          </section>
-        )}
-      </main>
-      <Footer />
-    </>
+    <main>
+      <EventHero event={event} />
+      
+      {isFlagship ? (
+        <>
+          <AgendaTabs />
+          <PricingCards />
+          <SponsorshipHub />
+        </>
+      ) : (
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0a0a0a] min-h-[50vh] flex items-center justify-center">
+          <div className="text-center max-w-2xl mx-auto">
+            <h2 className="text-3xl font-display font-bold text-white mb-4">
+              Registration Opens Soon
+            </h2>
+            <p className="text-gray-400">
+              Detailed agenda and pricing information for this event will be announced shortly. Please check back later or subscribe to our newsletter for updates.
+            </p>
+          </div>
+        </section>
+      )}
+    </main>
   );
 }

@@ -3,6 +3,8 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import GlobalCheckoutModal from "@/components/checkout/GlobalCheckoutModal";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -89,8 +91,10 @@ export default function RootLayout({
         className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-white dark:bg-black text-slate-900 dark:text-white antialiased overflow-x-hidden transition-colors`}
       >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <Header />
           {children}
           <GlobalCheckoutModal />
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
