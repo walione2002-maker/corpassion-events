@@ -70,24 +70,43 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
-              className="flex flex-col sm:flex-row items-start gap-4"
+              className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 w-full"
             >
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.dispatchEvent(new Event('open-checkout'));
-                }}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-semibold transition-all duration-300 bg-brand-400 text-slate-950 hover:bg-brand-300 hover:shadow-[0_0_30px_rgba(34,211,238,0.3)] active:scale-[0.98] text-lg"
-              >
-                Secure Your Pass
-              </button>
-              <Link
-                href="#events"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-semibold transition-all duration-300 bg-white/50 dark:bg-white/5 text-slate-900 dark:text-white hover:bg-white/80 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 active:scale-[0.98] text-lg"
-              >
-                Explore Events
-              </Link>
+              {/* Primary Attend */}
+              <motion.div whileHover={{ scale: 1.05, y: -4, x: -2 }} transition={{ type: "spring", stiffness: 400, damping: 10 }} className="w-full sm:w-auto z-20">
+                <Link
+                  href="/events"
+                  className="group relative flex items-center justify-center gap-2 rounded-2xl px-8 py-4 font-semibold transition-all duration-300 bg-brand-400 text-slate-950 shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] active:scale-[0.98] w-full"
+                >
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-brand-300 to-brand-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <span className="relative z-10 text-lg flex flex-col items-center leading-tight">
+                    <span>Attend</span>
+                    <span className="text-[10px] uppercase tracking-wider opacity-80 mt-0.5">Register as a Delegate</span>
+                  </span>
+                </Link>
+              </motion.div>
+
+              {/* Secondary Exhibit */}
+              <motion.div whileHover={{ scale: 1.05, y: -4 }} transition={{ type: "spring", stiffness: 400, damping: 10 }} className="w-full sm:w-auto z-10">
+                <Link
+                  href="/events/dubai-ai-summit-2026#sponsorship"
+                  className="flex flex-col items-center justify-center gap-0.5 rounded-full px-7 py-3.5 font-semibold transition-all duration-300 bg-white/5 backdrop-blur-md border border-white/10 text-white hover:bg-white/10 hover:border-brand-400/50 hover:shadow-[0_0_20px_rgba(34,211,238,0.1)] active:scale-[0.98] w-full"
+                >
+                  <span className="text-base leading-tight">Exhibit</span>
+                  <span className="text-[10px] uppercase tracking-wider text-gray-400">Book Your Booth</span>
+                </Link>
+              </motion.div>
+
+              {/* Secondary Sponsor */}
+              <motion.div whileHover={{ scale: 1.05, y: -4, x: 2 }} transition={{ type: "spring", stiffness: 400, damping: 10 }} className="w-full sm:w-auto z-10">
+                <Link
+                  href="/events/dubai-ai-summit-2026#sponsorship"
+                  className="flex flex-col items-center justify-center gap-0.5 rounded-full px-7 py-3.5 font-semibold transition-all duration-300 bg-white/5 backdrop-blur-md border border-white/10 text-white hover:bg-white/10 hover:border-brand-400/50 hover:shadow-[0_0_20px_rgba(34,211,238,0.1)] active:scale-[0.98] w-full"
+                >
+                  <span className="text-base leading-tight">Sponsor</span>
+                  <span className="text-[10px] uppercase tracking-wider text-gray-400">Promote Your Brand</span>
+                </Link>
+              </motion.div>
             </motion.div>
           </div>
 

@@ -50,7 +50,7 @@ export default function PricingCards() {
         </motion.div>
 
         {/* Pricing Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {ticketTiers.map((tier, index) => {
             const isEmphasized = tier.emphasized === true;
 

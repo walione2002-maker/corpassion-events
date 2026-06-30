@@ -35,8 +35,8 @@ export async function POST(req: Request) {
     const validatedData = checkoutSchema.parse(body);
 
     // 2. Determine price based on pass type
-    const amountGBP = validatedData.passType === 'vip' ? 999 : 599;
-    const passName = validatedData.passType === 'vip' ? 'VIP Pass' : 'Standard Pass';
+    const amountGBP = validatedData.passType === 'early-bird' ? 499 : 599;
+    const passName = validatedData.passType === 'early-bird' ? 'Early Bird Pass' : 'Standard Pass';
     
     const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
 

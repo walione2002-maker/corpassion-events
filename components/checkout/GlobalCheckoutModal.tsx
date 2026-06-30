@@ -99,7 +99,7 @@ export default function GlobalCheckoutModal() {
 
   const passType = form.watch('passType');
   const paymentMethod = form.watch('paymentMethod');
-  const price = passType === 'standard' ? 599 : 999;
+  const price = passType === 'standard' ? 599 : 499;
 
   return (
     <DialogPrimitive.Root open={open} onOpenChange={handleOpenChange}>
@@ -157,23 +157,23 @@ export default function GlobalCheckoutModal() {
 
                     <label
                       className={`cursor-pointer rounded-xl border p-4 flex flex-col gap-1 transition-all ${
-                        passType === 'vip'
+                        passType === 'early-bird'
                           ? 'border-brand-400 bg-brand-500/10 dark:bg-brand-400/10 shadow-[0_0_15px_rgba(34,211,238,0.1)]'
                           : 'border-slate-200/50 dark:border-white/10 bg-white/40 dark:bg-white/5 hover:bg-white/60 dark:hover:bg-white/10 backdrop-blur-md'
                       }`}
                     >
                       <input
                         type="radio"
-                        value="vip"
+                        value="early-bird"
                         className="sr-only"
                         {...form.register('passType')}
                       />
                       <div className="flex justify-between items-center w-full">
-                        <span className="font-semibold text-slate-900 dark:text-white">VIP</span>
-                        {passType === 'vip' && <Check className="w-4 h-4 text-brand-500 dark:text-brand-400" />}
+                        <span className="font-semibold text-slate-900 dark:text-white">Early Bird</span>
+                        {passType === 'early-bird' && <Check className="w-4 h-4 text-brand-500 dark:text-brand-400" />}
                       </div>
-                      <span className="text-2xl font-bold text-slate-900 dark:text-white mt-2">$999</span>
-                      <span className="text-xs text-slate-500 dark:text-slate-400 mt-1">Gala + Priority Access</span>
+                      <span className="text-2xl font-bold text-slate-900 dark:text-white mt-2">$499</span>
+                      <span className="text-xs text-slate-500 dark:text-slate-400 mt-1">Discounted full access</span>
                     </label>
                   </div>
 

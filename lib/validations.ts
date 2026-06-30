@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const passTypeEnum = z.enum(['standard', 'vip']);
+export const passTypeEnum = z.enum(['early-bird', 'standard']);
 export const paymentMethodEnum = z.enum(['paypal', 'bank_transfer', 'whatsapp']);
 
 export const checkoutSchema = z.object({

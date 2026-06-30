@@ -60,17 +60,14 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               link.label === 'Register' ? (
-                <button
+                <Link
                   key={link.label}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.dispatchEvent(new Event('open-checkout'));
-                  }}
+                  href="/events"
                   className="text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white transition-colors duration-200 relative group flex items-center gap-2"
                 >
                   {link.label}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-400 transition-all duration-300 group-hover:w-full" />
-                </button>
+                </Link>
               ) : (
               <Link
                 key={link.href}
@@ -92,16 +89,12 @@ export default function Header() {
           {/* Desktop CTA & Theme Toggle */}
           <div className="hidden lg:flex items-center gap-4">
             <ThemeToggle />
-            <button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                window.dispatchEvent(new Event('open-checkout'));
-              }}
+            <Link
+              href="/events"
               className="rounded-full bg-brand-400 text-slate-950 px-6 py-2.5 text-sm font-semibold transition-all duration-300 hover:bg-brand-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.3)] active:scale-[0.98]"
             >
               Register Now
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -133,13 +126,10 @@ export default function Header() {
             <div className="flex flex-col items-center justify-center min-h-screen gap-6">
               {navLinks.map((link, i) => (
                 link.label === 'Register' ? (
-                <button
+                <Link
                   key={link.label}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setMobileMenuOpen(false);
-                    window.dispatchEvent(new Event('open-checkout'));
-                  }}
+                  href="/events"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center gap-3 text-2xl font-display font-medium text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white transition-colors"
                 >
                   <motion.span
@@ -149,7 +139,7 @@ export default function Header() {
                   >
                     {link.label}
                   </motion.span>
-                </button>
+                </Link>
                 ) : (
                 <Link
                   key={link.href}
@@ -177,13 +167,9 @@ export default function Header() {
                 </Link>
                 )
               ))}
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setMobileMenuOpen(false);
-                  window.dispatchEvent(new Event('open-checkout'));
-                }}
+              <Link
+                href="/events"
+                onClick={() => setMobileMenuOpen(false)}
                 className="mt-6 rounded-full bg-brand-400 text-slate-950 px-8 py-3 text-lg font-semibold transition-all duration-300 hover:bg-brand-300"
               >
                 <motion.span
@@ -193,7 +179,7 @@ export default function Header() {
                 >
                   Register Now
                 </motion.span>
-              </button>
+              </Link>
             </div>
           </motion.div>
         )}

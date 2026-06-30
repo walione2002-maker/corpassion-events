@@ -55,15 +55,15 @@ export default function Footer() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12"
         >
-          {/* Column 1 — Brand */}
-          <motion.div variants={itemVariants}>
+          {/* Column 1 — Brand (3 cols) */}
+          <motion.div variants={itemVariants} className="lg:col-span-4">
             <div className="font-display text-xl font-bold text-white">
               Corpassion<span className="text-brand-400">.</span>{' '}
               {pathname !== '/' && <span className="text-gray-400">Events</span>}
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-gray-500">
+            <p className="mt-4 text-sm leading-relaxed text-gray-500 max-w-sm">
               Empowering global leaders through transformative AI summits and
               innovation conferences.
             </p>
@@ -84,8 +84,8 @@ export default function Footer() {
             </div>
           </motion.div>
 
-          {/* Column 2 — Quick Links */}
-          <motion.div variants={itemVariants}>
+          {/* Column 2 — Quick Links (2 cols) */}
+          <motion.div variants={itemVariants} className="lg:col-span-2">
             <h3 className="mb-5 text-sm font-semibold uppercase tracking-wider text-white">
               Quick Links
             </h3>
@@ -103,8 +103,8 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* Column 3 — Legal */}
-          <motion.div variants={itemVariants}>
+          {/* Column 3 — Legal (2 cols) */}
+          <motion.div variants={itemVariants} className="lg:col-span-2">
             <h3 className="mb-5 text-sm font-semibold uppercase tracking-wider text-white">
               Legal
             </h3>
@@ -122,32 +122,61 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* Column 4 — Contact Us */}
-          <motion.div variants={itemVariants}>
-            <h3 className="mb-5 text-sm font-semibold uppercase tracking-wider text-white">
-              Contact Us
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gray-500" />
-                <span className="text-sm leading-relaxed text-gray-400">
-                  Office no. 6 Society Building, PECHS Block-2, Karachi, Pakistan
-                </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="h-4 w-4 shrink-0 text-gray-500" />
-                <a
-                  href="mailto:info@corpassion-events.com"
-                  className="text-sm text-brand-400 transition-colors duration-200 hover:text-brand-300"
-                >
-                  info@corpassion-events.com
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="h-4 w-4 shrink-0 text-gray-500" />
-                <span className="text-sm text-gray-400">+971 543770146</span>
-              </li>
-            </ul>
+          {/* Column 4 — Contact Us Glass Card (4 cols) */}
+          <motion.div variants={itemVariants} className="lg:col-span-4">
+            <div className="bg-white/5 backdrop-blur-2xl border border-white/5 rounded-3xl p-6 relative overflow-hidden group shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_40px_rgba(34,211,238,0.1)] transition-all duration-500 hover:-translate-y-1">
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <h3 className="mb-5 text-sm font-bold uppercase tracking-wider text-brand-400 relative z-10 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-brand-400 animate-pulse" />
+                Contact Us
+              </h3>
+              
+              <ul className="space-y-5 relative z-10">
+                <li className="flex items-start gap-3">
+                  <MapPin className="mt-1 h-4 w-4 shrink-0 text-brand-500/70" />
+                  <div>
+                    <span className="block text-xs font-semibold text-gray-400 uppercase mb-1">Primary Office</span>
+                    <span className="text-sm leading-snug text-gray-300 block">
+                      Office No1 Mezzanine floor Siddiqui Bridge View plot no 3 Main Road Nazimabad no 3 Karachi 74600 Pakistan
+                    </span>
+                  </div>
+                </li>
+                
+                <li className="flex items-start gap-3">
+                  <MapPin className="mt-1 h-4 w-4 shrink-0 text-brand-500/70" />
+                  <div>
+                    <span className="block text-xs font-semibold text-gray-400 uppercase mb-1">Regional Office</span>
+                    <span className="text-sm leading-snug text-gray-300 block">
+                      Office 22 Hashtag Business Center Bin Ham Diera Dubai UAE
+                    </span>
+                  </div>
+                </li>
+                
+                <li className="flex items-start gap-3">
+                  <Phone className="mt-1 h-4 w-4 shrink-0 text-brand-500/70" />
+                  <div>
+                    <span className="block text-xs font-semibold text-gray-400 uppercase mb-1">Phone & WhatsApp</span>
+                    <span className="text-sm text-gray-300 block">+92 309 1020225</span>
+                  </div>
+                </li>
+
+                <li className="flex items-start gap-3">
+                  <Mail className="mt-1 h-4 w-4 shrink-0 text-brand-500/70" />
+                  <div>
+                    <span className="block text-xs font-semibold text-gray-400 uppercase mb-1">Emails</span>
+                    <div className="flex flex-col gap-1">
+                      <a href="mailto:training@corpassionevent.com" className="text-sm text-brand-400 hover:text-brand-300 transition-colors">
+                        training@corpassionevent.com
+                      </a>
+                      <a href="mailto:info@corpassionevent.com" className="text-sm text-brand-400 hover:text-brand-300 transition-colors">
+                        info@corpassionevent.com
+                      </a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </motion.div>
         </motion.div>
 

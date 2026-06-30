@@ -169,12 +169,6 @@ export const ticketTiers: ITicketTier[] = [
     deadline: '16 Sep – 13 Oct',
     emphasized: true,
   },
-  {
-    id: 'last-minute',
-    name: 'Last Minute / On-site',
-    price: 699,
-    deadline: 'From 14 Oct 2026',
-  },
 ];
 
 // ─── Booth Options ────────────────────────────────────────────
@@ -228,7 +222,7 @@ export const sponsorshipPackages: ISponsorshipPackage[] = [
       '30-minute keynote presentation slot',
       'Premium exhibition booth (prime location)',
       '6 Delegate Passes included',
-      'VIP networking access',
+      'Executive networking access',
       'Company profile in official brochure',
       'Social media promotion before & after event',
     ],
@@ -445,7 +439,7 @@ export const galleryImages = [
   },
   {
     src: 'https://images.unsplash.com/photo-1559223607-a43c990c692c?w=600&h=400&fit=crop',
-    alt: 'VIP networking dinner',
+    alt: 'Executive networking dinner',
     span: 'col-span-1 row-span-1',
   },
 ];
