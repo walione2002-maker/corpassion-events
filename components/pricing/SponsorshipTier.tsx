@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { Check, Crown, ArrowRight } from 'lucide-react';
 import type { ISponsorshipPackage } from '@/data/events';
+import Link from 'next/link';
 
 interface SponsorshipTierProps {
   pkg: ISponsorshipPackage;
@@ -91,12 +92,8 @@ export default function SponsorshipTier({ pkg, index = 0 }: SponsorshipTierProps
           </ul>
 
           {/* CTA Button */}
-          <button
-            type="button"
-            onClick={(e) => {
-              e.preventDefault();
-              window.dispatchEvent(new Event('open-checkout'));
-            }}
+          <Link
+            href={`/checkout/sponsorship/${pkg.id}`}
             className={`group/btn inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
               isExclusive
                 ? 'bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-white shadow-lg shadow-brand-500/20 hover:shadow-brand-500/35'
@@ -105,7 +102,7 @@ export default function SponsorshipTier({ pkg, index = 0 }: SponsorshipTierProps
           >
             Become a Sponsor
             <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform duration-200" />
-          </button>
+          </Link>
         </div>
       </div>
     </motion.div>

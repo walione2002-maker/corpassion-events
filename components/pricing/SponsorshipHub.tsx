@@ -9,6 +9,7 @@ import {
   sponsorshipPackages,
 } from '@/data/events';
 import SponsorshipTier from './SponsorshipTier';
+import Link from 'next/link';
 
 const tabs = [
   { id: 'booths', label: 'Book Booth Space', icon: LayoutGrid },
@@ -136,17 +137,13 @@ export default function SponsorshipHub() {
                     </p>
 
                     {/* CTA */}
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        window.dispatchEvent(new Event('open-checkout'));
-                      }}
+                    <Link
+                      href={`/checkout/booth/${booth.id}`}
                       className="group/btn inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-white/[0.06] hover:bg-slate-200 dark:hover:bg-white/[0.12] text-slate-900 dark:text-white border border-slate-200 dark:border-white/[0.08] hover:border-slate-300 dark:hover:border-white/[0.15] transition-all duration-300"
                     >
                       Book This Booth
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform duration-200" />
-                    </button>
+                    </Link>
                   </motion.div>
                 ))}
               </div>

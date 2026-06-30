@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import GlobalCheckoutModal from "@/components/checkout/GlobalCheckoutModal";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -93,7 +92,6 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           <Header />
           {children}
-          <GlobalCheckoutModal />
           <Footer />
         </ThemeProvider>
       </body>

@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { checkoutSchema } from '@/lib/validations';
+import { ticketTiers, boothOptions, sponsorshipPackages } from '@/data/events';
 
 // PayPal Configuration
 const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID || 'sb';
@@ -34,10 +35,35 @@ export async function POST(req: Request) {
     // 1. Server-side Zod validation
     const validatedData = checkoutSchema.parse(body);
 
-    // 2. Determine price based on pass type
-    const amountGBP = validatedData.passType === 'early-bird' ? 499 : 599;
-    const passName = validatedData.passType === 'early-bird' ? 'Early Bird Pass' : 'Standard Pass';
-    
+    // 2. Determine price and name based on package type
+    let amountGBP = 0;
+    let packageName = '';
+    let summaryMessage = '';
+    let buyerName = '';
+
+    if (validatedData.type === 'ticket') {
+      const tier = ticketTiers.find((t) => t.id === validatedData.packageId);
+      if (!tier) throw new Error('Invalid ticket tier');
+      amountGBP = tier.price;
+      packageName = tier.name + ' Ticket';
+      buyerName = validatedData.name;
+      summaryMessage = `Name: ${validatedData.name}\nEmail: ${validatedData.email}\nCompany: ${validatedData.company}\nRole: ${validatedData.role}`;
+    } else if (validatedData.type === 'booth') {
+      const booth = boothOptions.find((b) => b.id === validatedData.packageId);
+      if (!booth) throw new Error('Invalid booth option');
+      amountGBP = booth.price;
+      packageName = booth.name;
+      buyerName = validatedData.company;
+      summaryMessage = `Company: ${validatedData.company}\nContact: ${validatedData.contactName}\nEmail: ${validatedData.email}\nPhone: ${validatedData.phone}\nIndustry: ${validatedData.industry || 'N/A'}`;
+    } else if (validatedData.type === 'sponsorship') {
+      const sponsor = sponsorshipPackages.find((s) => s.id === validatedData.packageId);
+      if (!sponsor) throw new Error('Invalid sponsorship package');
+      amountGBP = sponsor.price;
+      packageName = sponsor.tier;
+      buyerName = validatedData.company;
+      summaryMessage = `Company: ${validatedData.company}\nContact: ${validatedData.contactName}\nEmail: ${validatedData.email}\nPhone: ${validatedData.phone}\nWebsite: ${validatedData.website || 'N/A'}\nObjective: ${validatedData.objective || 'N/A'}`;
+    }
+
     const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
 
     // 3. Route to selected payment method
@@ -58,7 +84,7 @@ export async function POST(req: Request) {
               purchase_units: [
                 {
                   reference_id: `corpassion_${Date.now()}`,
-                  description: `Corpassion Events - ${passName} for ${validatedData.name}`,
+                  description: `Corpassion Events - ${packageName} for ${buyerName}`,
                   amount: {
                     currency_code: 'GBP',
                     value: amountGBP.toString(),
@@ -102,7 +128,7 @@ export async function POST(req: Request) {
       case 'whatsapp':
         // Create a pre-filled WhatsApp URL
         const whatsappNumber = '923332230665';
-        const message = `Hello Corpassion Events! I would like to book a ticket.\n\n*Name:* ${validatedData.name}\n*Email:* ${validatedData.email}\n*Company:* ${validatedData.company}\n*Role:* ${validatedData.role}\n*Pass Type:* ${passName}\n\nPlease guide me on the next steps for payment.`;
+        const message = `Hello Corpassion Events! I would like to book a ${packageName}.\n\n*Package:* ${packageName}\n\n*Details:*\n${summaryMessage}\n\nPlease guide me on the next steps for payment.`;
         const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
         
         return NextResponse.json({ url: waUrl }, { status: 200 });

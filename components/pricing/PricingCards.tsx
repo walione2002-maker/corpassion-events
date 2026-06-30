@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Users, ArrowRight, Sparkles } from 'lucide-react';
 import { ticketTiers } from '@/data/events';
+import Link from 'next/link';
 
 export default function PricingCards() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -127,12 +128,8 @@ export default function PricingCards() {
                     <div className="flex-1" />
 
                     {/* CTA Button */}
-                    <button
-                      type="button"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        window.dispatchEvent(new Event('open-checkout'));
-                      }}
+                    <Link
+                      href={`/checkout/ticket/${tier.id}`}
                       className={`group/btn inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
                         isEmphasized
                           ? 'bg-brand-500 hover:bg-brand-600 text-white shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40'
@@ -141,7 +138,7 @@ export default function PricingCards() {
                     >
                       Register Now
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform duration-200" />
-                    </button>
+                    </Link>
                   </div>
                 </motion.div>
               </motion.div>
