@@ -73,7 +73,6 @@ export const navLinks = [
   { label: 'Explore Events', href: ROUTES.EVENTS },
   { label: 'Conferences', href: '/#conferences', isNew: true },
   { label: 'Training Calendar', href: ROUTES.TRAINING_CALENDAR, isNew: true },
-  { label: 'Speakers', href: '/events/dubai-ai-summit-2026#speakers' },
   { label: 'Register', href: ROUTES.REGISTER },
   { label: 'FAQ', href: ROUTES.FAQ },
   { label: 'Sponsors', href: '/events/dubai-ai-summit-2026#sponsorship' },

@@ -5,6 +5,8 @@ import TrainingHero from '@/components/training/TrainingHero';
 import FilterBar, { FilterState } from '@/components/training/FilterBar';
 import EventList from '@/components/training/EventList';
 import { mockTrainingEvents } from '@/data/training';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export default function TrainingCalendarPage() {
   const [filters, setFilters] = useState<FilterState>({
@@ -81,21 +83,25 @@ export default function TrainingCalendarPage() {
   }, [filters]);
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a] flex flex-col">
-      <TrainingHero />
-      <FilterBar 
-        filters={filters} 
-        setFilters={setFilters} 
-        availableMonths={availableMonths}
-        availableVenues={availableVenues}
-        availableFormats={availableFormats}
-      />
-      <div className="flex-grow">
-        <EventList 
-          events={filteredEvents}
-          setFilters={setFilters}
+    <>
+      <Header />
+      <main className="min-h-screen bg-[#0a0a0a] flex flex-col">
+        <TrainingHero />
+        <FilterBar 
+          filters={filters} 
+          setFilters={setFilters} 
+          availableMonths={availableMonths}
+          availableVenues={availableVenues}
+          availableFormats={availableFormats}
         />
-      </div>
-    </main>
+        <div className="flex-grow">
+          <EventList 
+            events={filteredEvents}
+            setFilters={setFilters}
+          />
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }
