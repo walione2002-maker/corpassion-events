@@ -122,9 +122,9 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="fixed inset-0 z-40 bg-white/95 dark:bg-black/95 backdrop-blur-xl lg:hidden"
+            className="fixed inset-0 z-40 bg-white/95 dark:bg-black/95 backdrop-blur-xl lg:hidden overflow-y-auto"
           >
-            <div className="flex flex-col items-center justify-center min-h-screen gap-6">
+            <div className="flex flex-col items-center justify-center min-h-screen gap-6 py-20">
               {navLinks.map((link, i) => (
                 link.label === 'Register' ? (
                 <Link

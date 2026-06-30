@@ -37,10 +37,10 @@ export default function ContactActions() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="absolute left-0 right-0 top-full mt-2 bg-white dark:bg-[#111] border border-slate-200 dark:border-white/10 rounded-xl overflow-hidden shadow-2xl z-50"
+            exit={{ opacity: 0, y: 10 }}
+            className="absolute left-0 right-0 bottom-full mb-2 bg-white dark:bg-[#111] border border-slate-200 dark:border-white/10 rounded-xl overflow-hidden shadow-2xl z-50"
           >
             <div className="p-2 space-y-2">
               {numbers.map((num) => (

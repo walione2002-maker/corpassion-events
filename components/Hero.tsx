@@ -19,13 +19,13 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      className="relative min-h-screen flex lg:items-center justify-center overflow-hidden pt-32 pb-24 lg:pt-20 lg:pb-0"
     >
       <HeroBackground image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&h=900&fit=crop" opacity="opacity-30" />
 
       {/* Content Grid */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 lg:items-center">
           
           {/* Left Column: Typography & CTAs */}
           <div className="text-left">
@@ -51,7 +51,7 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
-              className="text-5xl sm:text-6xl md:text-7xl font-display font-extrabold tracking-tight mb-6 leading-[1.05] text-slate-900 dark:text-white"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold tracking-tight mb-6 leading-[1.05] text-slate-900 dark:text-white"
             >
               Where leaders learn, connect & <span className="text-brand-500 dark:text-brand-400">innovate.</span>
             </motion.h1>

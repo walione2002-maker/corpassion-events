@@ -37,7 +37,7 @@ const ctaButtons = [
 export default function EventHero({ event }: { event: IEvent }) {
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
+      className="relative min-h-screen flex lg:items-center justify-center overflow-hidden pt-32 pb-24 lg:pt-16 lg:pb-0"
     >
       <HeroBackground image={event.image} opacity="opacity-50" />
 
