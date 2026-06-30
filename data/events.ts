@@ -66,15 +66,18 @@ export interface IWhyAttendPillar {
 
 // ─── Navigation ───────────────────────────────────────────────
 
+import { ROUTES } from '@/config/routes';
+
 export const navLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'Explore Events', href: '/#events' },
+  { label: 'Home', href: ROUTES.HOME },
+  { label: 'Explore Events', href: ROUTES.EVENTS },
   { label: 'Conferences', href: '/#conferences', isNew: true },
+  { label: 'Training Calendar', href: ROUTES.TRAINING_CALENDAR, isNew: true },
   { label: 'Speakers', href: '/events/dubai-ai-summit-2026#speakers' },
-  { label: 'Register', href: '#register' },
-  { label: 'FAQ', href: '/#faq' },
-  { label: 'Sponsors', href: '/events/dubai-ai-summit-2026#sponsors' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Register', href: ROUTES.REGISTER },
+  { label: 'FAQ', href: ROUTES.FAQ },
+  { label: 'Sponsors', href: '/events/dubai-ai-summit-2026#sponsorship' },
+  { label: 'Contact', href: ROUTES.CONTACT },
 ];
 
 // ─── Stats ────────────────────────────────────────────────────

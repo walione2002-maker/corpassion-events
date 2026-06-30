@@ -4,6 +4,7 @@ import { Linkedin, Twitter, Youtube, MapPin, Phone, Mail } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
+import { ROUTES } from '@/config/routes';
 
 const containerVariants = {
   hidden: {},
@@ -24,9 +25,9 @@ const itemVariants = {
 };
 
 const quickLinks = [
-  { label: 'Home', href: '/' },
-  { label: 'About Us', href: '/#about' },
-  { label: 'Global Summits', href: '/#events' },
+  { label: 'Home', href: ROUTES.HOME },
+  { label: 'About Us', href: ROUTES.ABOUT },
+  { label: 'Global Summits', href: ROUTES.EVENTS },
   { label: 'Meet the Speakers', href: '/events/dubai-ai-summit-2026#agenda' },
   { label: 'Become a Sponsor', href: '/events/dubai-ai-summit-2026#sponsorship' },
 ];

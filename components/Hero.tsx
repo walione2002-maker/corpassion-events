@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Calendar, MapPin, Users, Presentation } from 'lucide-react';
+import { ROUTES } from '@/config/routes';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -78,7 +79,7 @@ export default function Hero() {
               {/* Primary Attend */}
               <motion.div whileHover={{ scale: 1.05, y: -4, x: -2 }} transition={{ type: "spring", stiffness: 400, damping: 10 }} className="w-full sm:w-auto z-20">
                 <Link
-                  href="/events"
+                  href={ROUTES.REGISTER}
                   className="group relative flex items-center justify-center gap-2 rounded-2xl px-8 py-4 font-semibold transition-all duration-300 bg-brand-400 text-slate-950 shadow-[0_0_20px_rgba(167,139,250,0.4)] hover:shadow-[0_0_40px_rgba(167,139,250,0.6)] active:scale-[0.98] w-full"
                 >
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-brand-300 to-brand-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

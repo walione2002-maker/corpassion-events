@@ -7,6 +7,7 @@ import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { navLinks } from '@/data/events';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import { ROUTES } from '@/config/routes';
 
 export default function Header() {
   const pathname = usePathname();
@@ -90,7 +91,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-4">
             <ThemeToggle />
             <Link
-              href="/events"
+              href={ROUTES.REGISTER}
               className="rounded-full bg-brand-400 text-slate-950 px-6 py-2.5 text-sm font-semibold transition-all duration-300 hover:bg-brand-300 hover:shadow-[0_0_20px_rgba(167,139,250,0.3)] active:scale-[0.98]"
             >
               Register Now
@@ -168,7 +169,7 @@ export default function Header() {
                 )
               ))}
               <Link
-                href="/events"
+                href={ROUTES.REGISTER}
                 onClick={() => setMobileMenuOpen(false)}
                 className="mt-6 rounded-full bg-brand-400 text-slate-950 px-8 py-3 text-lg font-semibold transition-all duration-300 hover:bg-brand-300"
               >
