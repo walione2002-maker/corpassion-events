@@ -126,8 +126,8 @@ export default function Footer() {
 
           {/* Column 4 — Contact Us Glass Card (4 cols) */}
           <motion.div variants={itemVariants} className="lg:col-span-4">
-            <div className="bg-white dark:bg-white/5 backdrop-blur-2xl border border-slate-200 dark:border-white/5 rounded-3xl p-6 relative overflow-hidden group shadow-[0_10px_30px_rgba(0,0,0,0.08)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_40px_rgba(167,139,250,0.1)] transition-all duration-500 hover:-translate-y-1">
-              <div className="absolute inset-0 bg-gradient-to-br from-brand-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="bg-white dark:bg-white/5 backdrop-blur-2xl border border-slate-200 dark:border-white/5 rounded-3xl p-6 relative group shadow-[0_10px_30px_rgba(0,0,0,0.08)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_15px_40px_rgba(167,139,250,0.1)] transition-all duration-500 hover:-translate-y-1">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-brand-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               
               <h3 className="mb-5 text-sm font-bold uppercase tracking-wider text-brand-700 dark:text-brand-400 relative z-10 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-brand-400 animate-pulse" />
