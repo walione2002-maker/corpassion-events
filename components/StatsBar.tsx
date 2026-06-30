@@ -28,7 +28,7 @@ export default function StatsBar() {
               <motion.div
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: i * 0.2 }}
-                className="bg-slate-100 dark:bg-white/10 backdrop-blur-xl border border-slate-200 dark:border-white/20 rounded-full py-4 px-8 flex flex-col items-center justify-center shadow-[0_20px_50px_rgba(0,0,0,0.1)] glass-card h-full"
+                className="bg-white/80 dark:bg-white/10 backdrop-blur-2xl border border-slate-200 dark:border-white/20 rounded-full py-4 px-8 flex flex-col items-center justify-center shadow-[0_20px_50px_rgba(0,0,0,0.05)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] h-full"
               >
                 <span className="text-3xl sm:text-4xl font-display font-bold text-brand-700 dark:text-brand-400 flex items-center overflow-hidden">
                   <motion.span
@@ -51,7 +51,7 @@ export default function StatsBar() {
                     {stat.suffix}
                   </motion.span>
                 </span>
-                <span className="text-sm text-slate-800 dark:text-gray-300 font-medium uppercase tracking-wider mt-1">{stat.label}</span>
+                <span className="text-[11px] sm:text-sm text-slate-600 dark:text-gray-300 font-bold uppercase tracking-widest mt-1.5">{stat.label}</span>
               </motion.div>
             </motion.div>
           ))}

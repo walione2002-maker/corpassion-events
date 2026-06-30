@@ -93,10 +93,10 @@ export default function Hero() {
               <motion.div whileHover={{ scale: 1.05, y: -4 }} transition={{ type: "spring", stiffness: 400, damping: 10 }} className="w-full sm:w-auto z-10">
                 <Link
                   href="/events/dubai-ai-summit-2026#sponsorship"
-                  className="flex flex-col items-center justify-center gap-0.5 rounded-full px-7 py-3.5 font-semibold transition-all duration-300 bg-white/5 backdrop-blur-md border border-white/10 text-white hover:bg-white/10 hover:border-brand-400/50 hover:shadow-[0_0_20px_rgba(167,139,250,0.1)] active:scale-[0.98] w-full"
+                  className="flex flex-col items-center justify-center gap-0.5 rounded-full px-7 py-3.5 font-semibold transition-all duration-300 bg-white dark:bg-white/5 backdrop-blur-md border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-white/10 hover:border-brand-500/50 dark:hover:border-brand-400/50 hover:shadow-[0_0_20px_rgba(167,139,250,0.15)] shadow-sm dark:shadow-none active:scale-[0.98] w-full"
                 >
                   <span className="text-base leading-tight">Exhibit</span>
-                  <span className="text-[10px] uppercase tracking-wider text-gray-400">Book Your Booth</span>
+                  <span className="text-[10px] uppercase tracking-wider text-slate-500 dark:text-gray-400">Book Your Booth</span>
                 </Link>
               </motion.div>
 
@@ -104,10 +104,10 @@ export default function Hero() {
               <motion.div whileHover={{ scale: 1.05, y: -4, x: 2 }} transition={{ type: "spring", stiffness: 400, damping: 10 }} className="w-full sm:w-auto z-10">
                 <Link
                   href="/events/dubai-ai-summit-2026#sponsorship"
-                  className="flex flex-col items-center justify-center gap-0.5 rounded-full px-7 py-3.5 font-semibold transition-all duration-300 bg-white/5 backdrop-blur-md border border-white/10 text-white hover:bg-white/10 hover:border-brand-400/50 hover:shadow-[0_0_20px_rgba(167,139,250,0.1)] active:scale-[0.98] w-full"
+                  className="flex flex-col items-center justify-center gap-0.5 rounded-full px-7 py-3.5 font-semibold transition-all duration-300 bg-white dark:bg-white/5 backdrop-blur-md border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-white/10 hover:border-brand-500/50 dark:hover:border-brand-400/50 hover:shadow-[0_0_20px_rgba(167,139,250,0.15)] shadow-sm dark:shadow-none active:scale-[0.98] w-full"
                 >
                   <span className="text-base leading-tight">Sponsor</span>
-                  <span className="text-[10px] uppercase tracking-wider text-gray-400">Promote Your Brand</span>
+                  <span className="text-[10px] uppercase tracking-wider text-slate-500 dark:text-gray-400">Promote Your Brand</span>
                 </Link>
               </motion.div>
             </motion.div>
