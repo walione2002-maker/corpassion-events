@@ -25,7 +25,7 @@ export default function SponsorshipHub() {
   return (
     <section
       id="sponsorship"
-      className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0a0a0a]"
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a]"
     >
       <div ref={sectionRef} className="max-w-7xl mx-auto">
         {/* Section Header */}
@@ -38,7 +38,7 @@ export default function SponsorshipHub() {
           <span className="text-sm tracking-widest text-brand-400 uppercase font-medium">
             Partners
           </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-white mt-3">
+          <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-slate-900 dark:text-white mt-3">
             Sponsorship &amp; Exhibition
           </h2>
         </motion.div>
@@ -50,7 +50,7 @@ export default function SponsorshipHub() {
           transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
           className="flex justify-center mb-12"
         >
-          <div className="inline-flex bg-white/[0.04] border border-white/[0.08] rounded-xl p-1.5 gap-1">
+          <div className="inline-flex bg-slate-100 dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08] rounded-xl p-1.5 gap-1">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.id;
@@ -74,12 +74,12 @@ export default function SponsorshipHub() {
                   )}
                   <Icon
                     className={`relative z-10 w-4 h-4 ${
-                      isActive ? 'text-brand-400' : 'text-gray-500'
+                      isActive ? 'text-brand-400' : 'text-slate-400 dark:text-gray-500'
                     }`}
                   />
                   <span
                     className={`relative z-10 hidden sm:inline ${
-                      isActive ? 'text-white' : 'text-gray-400'
+                      isActive ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-gray-400'
                     }`}
                   >
                     {tab.label}
@@ -113,25 +113,25 @@ export default function SponsorshipHub() {
                       ease: 'easeOut',
                       delay: 0.1 * index,
                     }}
-                    className="group bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] rounded-2xl p-6 sm:p-7 hover:bg-white/[0.06] hover:border-white/[0.12] transition-all duration-300"
+                    className="group bg-white/80 dark:bg-white/[0.03] backdrop-blur-sm border border-slate-200 dark:border-white/[0.06] rounded-2xl p-6 sm:p-7 hover:bg-slate-50 dark:hover:bg-white/[0.06] hover:border-slate-300 dark:hover:border-white/[0.12] transition-all duration-300"
                   >
                     {/* Booth Name */}
-                    <h3 className="text-lg font-display font-semibold text-white">
+                    <h3 className="text-lg font-display font-semibold text-slate-900 dark:text-white">
                       {booth.name}
                     </h3>
 
                     {/* Price */}
                     <div className="mt-4 mb-3">
-                      <span className="text-gray-400 text-lg align-top">
+                      <span className="text-slate-500 dark:text-gray-400 text-lg align-top">
                         $
                       </span>
-                      <span className="text-3xl font-bold tracking-tight text-white">
+                      <span className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
                         {booth.price.toLocaleString()}
                       </span>
                     </div>
 
                     {/* Description */}
-                    <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                    <p className="text-slate-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
                       {booth.description}
                     </p>
 
@@ -142,7 +142,7 @@ export default function SponsorshipHub() {
                         e.preventDefault();
                         window.dispatchEvent(new Event('open-checkout'));
                       }}
-                      className="group/btn inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl text-sm font-semibold bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.08] hover:border-white/[0.15] transition-all duration-300"
+                      className="group/btn inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl text-sm font-semibold bg-slate-100 dark:bg-white/[0.06] hover:bg-slate-200 dark:hover:bg-white/[0.12] text-slate-900 dark:text-white border border-slate-200 dark:border-white/[0.08] hover:border-slate-300 dark:hover:border-white/[0.15] transition-all duration-300"
                     >
                       Book This Booth
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform duration-200" />
@@ -157,7 +157,7 @@ export default function SponsorshipHub() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.5, ease: 'easeOut', delay: 0.2 }}
-                className="bg-white/[0.02] border border-white/[0.06] rounded-2xl p-6 sm:p-8"
+                className="bg-slate-50 dark:bg-white/[0.02] border border-slate-200 dark:border-white/[0.06] rounded-2xl p-6 sm:p-8"
               >
                 <h4 className="text-sm tracking-widest text-brand-400 uppercase font-medium mb-5">
                   All Booths Include
@@ -171,7 +171,7 @@ export default function SponsorshipHub() {
                           strokeWidth={3}
                         />
                       </span>
-                      <span className="text-gray-300 text-sm">{feature}</span>
+                      <span className="text-slate-600 dark:text-gray-300 text-sm">{feature}</span>
                     </div>
                   ))}
                 </div>

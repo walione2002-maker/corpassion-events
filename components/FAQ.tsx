@@ -51,7 +51,7 @@ export default function FAQ() {
         strategy="afterInteractive"
       />
 
-      <section id="faq" className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#0a0a0a]">
+      <section id="faq" className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-slate-50 dark:bg-[#0a0a0a]">
         {/* Background decoration */}
         <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-brand-600/5 blur-[150px]" />
 
@@ -67,11 +67,11 @@ export default function FAQ() {
             <span className="inline-block rounded-full border border-brand-500/30 bg-brand-500/10 px-4 py-1.5 text-xs font-medium tracking-wider text-brand-400 uppercase mb-4">
               Support
             </span>
-            <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-white">
+            <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-slate-900 dark:text-white">
               Frequently Asked{' '}
               <span className="gradient-text">Questions</span>
             </h2>
-            <p className="mt-4 text-gray-400">
+            <p className="mt-4 text-slate-500 dark:text-gray-400">
               Everything you need to know about attending, sponsoring, or exhibiting at our summits.
             </p>
           </motion.div>
@@ -91,7 +91,7 @@ export default function FAQ() {
                 className={`relative rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-300 ${
                   activeCategory === index
                     ? 'text-white'
-                    : 'text-gray-400 hover:text-gray-200'
+                    : 'text-slate-500 dark:text-gray-400 hover:text-slate-700 dark:hover:text-gray-200'
                 }`}
               >
                 {activeCategory === index && (
@@ -129,14 +129,14 @@ export default function FAQ() {
                   return (
                     <div
                       key={`${activeCategory}-${index}`}
-                      className="rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm overflow-hidden transition-colors hover:border-white/15"
+                      className="rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 backdrop-blur-sm overflow-hidden transition-colors hover:border-slate-300 dark:hover:border-white/15"
                     >
                       <button
                         onClick={() => handleToggle(index)}
                         className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
                         aria-expanded={isOpen}
                       >
-                        <span className="text-sm md:text-base font-medium text-white pr-4">
+                        <span className="text-sm md:text-base font-medium text-slate-900 dark:text-white pr-4">
                           {item.question}
                         </span>
                         <motion.div
@@ -161,8 +161,8 @@ export default function FAQ() {
                             className="overflow-hidden"
                           >
                             <div className="px-6 pb-5 pt-0">
-                              <div className="h-px bg-gradient-to-r from-brand-500/30 via-white/10 to-transparent mb-4" />
-                              <p className="text-sm leading-relaxed text-gray-400">
+                              <div className="h-px bg-gradient-to-r from-brand-500/30 via-slate-200 dark:via-white/10 to-transparent mb-4" />
+                              <p className="text-sm leading-relaxed text-slate-500 dark:text-gray-400">
                                 {item.answer}
                               </p>
                             </div>

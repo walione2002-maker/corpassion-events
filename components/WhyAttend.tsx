@@ -19,7 +19,7 @@ export default function WhyAttend() {
   return (
     <section
       ref={sectionRef}
-      className="relative py-24 sm:py-32 bg-gradient-to-b from-[#0a0a0a] via-[#0d0d14] to-[#0a0a0a] overflow-hidden"
+      className="relative py-24 sm:py-32 bg-gradient-to-b from-white via-slate-50 to-white dark:from-[#0a0a0a] dark:via-[#0d0d14] dark:to-[#0a0a0a] overflow-hidden"
     >
       {/* Ambient glow */}
       <div className="pointer-events-none absolute inset-0">
@@ -37,10 +37,10 @@ export default function WhyAttend() {
           <p className="text-sm font-semibold uppercase tracking-widest text-brand-400">
             The Value
           </p>
-          <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
+          <h2 className="mt-3 font-display text-3xl font-bold text-slate-900 dark:text-white sm:text-4xl lg:text-5xl">
             Why Attend
           </h2>
-          <p className="mt-4 text-lg leading-relaxed text-gray-400">
+          <p className="mt-4 text-lg leading-relaxed text-slate-500 dark:text-gray-400">
             Four reasons this summit will transform your approach to AI
             leadership.
           </p>
@@ -61,7 +61,7 @@ export default function WhyAttend() {
                   delay: 0.15 * index,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="group relative rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-400/30"
+                className="group relative rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-400/30"
               >
                 {/* Subtle hover glow */}
                 <div className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
@@ -75,12 +75,12 @@ export default function WhyAttend() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-display text-xl font-bold text-white">
+                  <h3 className="font-display text-xl font-bold text-slate-900 dark:text-white">
                     {pillar.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="mt-3 leading-relaxed text-gray-400">
+                  <p className="mt-3 leading-relaxed text-slate-500 dark:text-gray-400">
                     {pillar.description}
                   </p>
                 </div>

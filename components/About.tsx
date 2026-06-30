@@ -18,7 +18,7 @@ export default function About() {
   const floatingOrbsY = useTransform(scrollYProgress, [0, 1], ["-10%", "30%"]);
 
   return (
-    <section ref={containerRef} id="about" className="relative min-h-screen py-24 px-4 sm:px-6 lg:px-8 bg-[#05050a] overflow-hidden flex items-center justify-center">
+    <section ref={containerRef} id="about" className="relative min-h-screen py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#05050a] overflow-hidden flex items-center justify-center">
       {/* Parallax Background */}
       <motion.div 
         style={{ y: backgroundY }}
@@ -40,7 +40,7 @@ export default function About() {
       <div className="max-w-6xl mx-auto relative z-20 w-full">
         <motion.div 
           style={{ y: glassContainerY }}
-          className="glass-card bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden relative"
+          className="glass-card bg-white/80 dark:bg-white/[0.03] backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-3xl p-8 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden relative"
         >
           {/* Subtle noise texture overlay if desired */}
           <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")' }} />
@@ -53,12 +53,12 @@ export default function About() {
                   <Sparkles className="w-4 h-4" />
                   About Corpassion
                 </span>
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-white leading-tight">
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white leading-tight">
                   Redefining the <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-indigo-400">Future</span> of Corporate Events
                 </h2>
               </div>
               
-              <div className="space-y-6 text-gray-300 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-600 dark:text-gray-300 text-lg leading-relaxed">
                 <p>
                   Corpassion Events brings an anti-gravity approach to the traditional corporate summit. We remove the friction, the weight, and the predictable formats that hold ideas down.
                 </p>
@@ -69,20 +69,20 @@ export default function About() {
             </div>
 
             <div className="flex-1 w-full max-w-md space-y-6">
-              <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-colors duration-300 group">
+              <div className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 p-6 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/10 transition-colors duration-300 group">
                 <div className="w-12 h-12 rounded-full bg-brand-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                   <Target className="w-6 h-6 text-brand-400" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">Our Mission</h3>
-                <p className="text-gray-400">To shatter the mundane and deliver transformational knowledge in zero-gravity environments that foster genuine connection.</p>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Our Mission</h3>
+                <p className="text-slate-500 dark:text-gray-400">To shatter the mundane and deliver transformational knowledge in zero-gravity environments that foster genuine connection.</p>
               </div>
 
-              <div className="bg-white/5 border border-white/10 p-6 rounded-2xl hover:bg-white/10 transition-colors duration-300 group">
+              <div className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 p-6 rounded-2xl hover:bg-slate-100 dark:hover:bg-white/10 transition-colors duration-300 group">
                 <div className="w-12 h-12 rounded-full bg-indigo-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                   <Compass className="w-6 h-6 text-indigo-400" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">Our Vision</h3>
-                <p className="text-gray-400">Becoming the global epicenter for leaders and visionaries to converge, align, and propel industries into the future.</p>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Our Vision</h3>
+                <p className="text-slate-500 dark:text-gray-400">Becoming the global epicenter for leaders and visionaries to converge, align, and propel industries into the future.</p>
               </div>
             </div>
 

@@ -10,7 +10,7 @@ export default function PricingCards() {
   const isInView = useInView(sectionRef, { once: true, margin: '-80px' });
 
   return (
-    <section id="pricing" className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0a0a0a]">
+    <section id="pricing" className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a]">
       <div ref={sectionRef} className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -22,7 +22,7 @@ export default function PricingCards() {
           <span className="text-sm tracking-widest text-brand-400 uppercase font-medium">
             Pricing
           </span>
-          <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-white mt-3">
+          <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-slate-900 dark:text-white mt-3">
             Registration &amp; Pricing
           </h2>
         </motion.div>
@@ -77,15 +77,15 @@ export default function PricingCards() {
                   className={`relative h-full flex flex-col rounded-2xl p-[1px] transition-all duration-300 shadow-[0_20px_50px_rgba(0,0,0,0.05)] glass-card ${
                     isEmphasized
                       ? 'bg-gradient-to-b from-brand-400 via-brand-600 to-brand-900 shadow-lg shadow-brand-500/20'
-                      : 'bg-white/[0.08]'
+                      : 'bg-slate-200 dark:bg-white/[0.08]'
                   }`}
                 >
                   {/* Inner card */}
                   <div
                     className={`relative flex flex-col flex-1 rounded-[15px] p-6 sm:p-7 ${
                       isEmphasized
-                        ? 'bg-[#0e0e1a]'
-                        : 'bg-white/[0.03] backdrop-blur-sm'
+                        ? 'bg-white dark:bg-[#0e0e1a]'
+                        : 'bg-white/80 dark:bg-white/[0.03] backdrop-blur-sm'
                     }`}
                   >
                     {/* Most Popular Badge */}
@@ -101,7 +101,7 @@ export default function PricingCards() {
                     {/* Tier Name */}
                     <h3
                       className={`text-lg font-display font-semibold mt-1 ${
-                        isEmphasized ? 'text-brand-300' : 'text-white'
+                        isEmphasized ? 'text-brand-300' : 'text-slate-900 dark:text-white'
                       }`}
                     >
                       {tier.name}
@@ -109,19 +109,19 @@ export default function PricingCards() {
 
                     {/* Price */}
                     <div className="mt-5 mb-4">
-                      <span className="text-gray-400 text-lg align-top">$</span>
+                      <span className="text-slate-500 dark:text-gray-400 text-lg align-top">$</span>
                       <span
                         className={`text-4xl font-bold tracking-tight ${
-                          isEmphasized ? 'text-white' : 'text-white'
+                          isEmphasized ? 'text-slate-900 dark:text-white' : 'text-slate-900 dark:text-white'
                         }`}
                       >
                         {tier.price}
                       </span>
-                      <span className="text-gray-500 text-sm ml-1">/person</span>
+                      <span className="text-slate-400 dark:text-gray-500 text-sm ml-1">/person</span>
                     </div>
 
                     {/* Deadline */}
-                    <p className="text-gray-400 text-sm mb-6">{tier.deadline}</p>
+                    <p className="text-slate-500 dark:text-gray-400 text-sm mb-6">{tier.deadline}</p>
 
                     {/* Spacer */}
                     <div className="flex-1" />
@@ -136,7 +136,7 @@ export default function PricingCards() {
                       className={`group/btn inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
                         isEmphasized
                           ? 'bg-brand-500 hover:bg-brand-600 text-white shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40'
-                          : 'bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.08] hover:border-white/[0.15]'
+                          : 'bg-slate-100 dark:bg-white/[0.06] hover:bg-slate-200 dark:hover:bg-white/[0.12] text-slate-900 dark:text-white border border-slate-200 dark:border-white/[0.08] hover:border-slate-300 dark:hover:border-white/[0.15]'
                       }`}
                     >
                       Register Now

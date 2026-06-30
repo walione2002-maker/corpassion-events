@@ -28,7 +28,7 @@ export default function Gallery() {
   return (
     <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Dark gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#0d0d1a] to-[#0a0a0a]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50 to-white dark:from-[#0a0a0a] dark:via-[#0d0d1a] dark:to-[#0a0a0a]" />
       <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-[600px] w-[800px] rounded-full bg-brand-600/5 blur-[120px]" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -43,11 +43,11 @@ export default function Gallery() {
           <span className="inline-block rounded-full border border-brand-500/30 bg-brand-500/10 px-4 py-1.5 text-xs font-medium tracking-wider text-brand-400 uppercase mb-4">
             Gallery
           </span>
-          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-white">
+          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-slate-900 dark:text-white">
             Past Event{' '}
             <span className="gradient-text">Highlights</span>
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-gray-400">
+          <p className="mt-4 max-w-2xl mx-auto text-slate-500 dark:text-gray-400">
             Relive the energy, insights, and connections from our previous summits.
             Every event is a catalyst for transformation.
           </p>

@@ -24,15 +24,15 @@ export default function SponsorshipTier({ pkg, index = 0 }: SponsorshipTierProps
         className={`relative h-full flex flex-col rounded-2xl p-[1px] transition-all duration-300 ${
           isExclusive
             ? 'bg-gradient-to-b from-brand-400 via-brand-600 to-brand-900 shadow-lg shadow-brand-500/15'
-            : 'bg-white/[0.08]'
+            : 'bg-slate-200 dark:bg-white/[0.08]'
         }`}
       >
         {/* Inner card */}
         <div
           className={`relative flex flex-col flex-1 rounded-[15px] p-6 sm:p-7 ${
             isExclusive
-              ? 'bg-[#0e0d10]'
-              : 'bg-white/[0.03] backdrop-blur-sm'
+              ? 'bg-white dark:bg-[#0e0d10]'
+              : 'bg-white/80 dark:bg-white/[0.03] backdrop-blur-sm'
           }`}
         >
           {/* Exclusive Badge */}
@@ -48,7 +48,7 @@ export default function SponsorshipTier({ pkg, index = 0 }: SponsorshipTierProps
           {/* Tier Name */}
           <h3
             className={`text-xl font-display font-bold mt-1 ${
-              isExclusive ? 'text-brand-300' : 'text-white'
+              isExclusive ? 'text-brand-300' : 'text-slate-900 dark:text-white'
             }`}
           >
             {pkg.tier}
@@ -56,19 +56,19 @@ export default function SponsorshipTier({ pkg, index = 0 }: SponsorshipTierProps
 
           {/* Price */}
           <div className="mt-4 mb-3">
-            <span className="text-gray-400 text-lg align-top">$</span>
-            <span className="text-4xl font-bold tracking-tight text-white">
+            <span className="text-slate-500 dark:text-gray-400 text-lg align-top">$</span>
+            <span className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
               {pkg.price.toLocaleString()}
             </span>
           </div>
 
           {/* Pitch */}
-          <p className="text-gray-400 text-sm leading-relaxed mb-6">
+          <p className="text-slate-500 dark:text-gray-400 text-sm leading-relaxed mb-6">
             {pkg.pitch}
           </p>
 
           {/* Divider */}
-          <div className="border-t border-white/[0.06] mb-5" />
+          <div className="border-t border-slate-200 dark:border-white/[0.06] mb-5" />
 
           {/* Benefits */}
           <ul className="space-y-3 mb-8 flex-1">
@@ -83,7 +83,7 @@ export default function SponsorshipTier({ pkg, index = 0 }: SponsorshipTierProps
                 >
                   <Check className="w-3 h-3" strokeWidth={3} />
                 </span>
-                <span className="text-gray-300 text-sm leading-snug">
+                <span className="text-slate-600 dark:text-gray-300 text-sm leading-snug">
                   {benefit}
                 </span>
               </li>
@@ -100,7 +100,7 @@ export default function SponsorshipTier({ pkg, index = 0 }: SponsorshipTierProps
             className={`group/btn inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
               isExclusive
                 ? 'bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-white shadow-lg shadow-brand-500/20 hover:shadow-brand-500/35'
-                : 'bg-white/[0.06] hover:bg-white/[0.12] text-white border border-white/[0.08] hover:border-white/[0.15]'
+                : 'bg-slate-100 dark:bg-white/[0.06] hover:bg-slate-200 dark:hover:bg-white/[0.12] text-slate-900 dark:text-white border border-slate-200 dark:border-white/[0.08] hover:border-slate-300 dark:hover:border-white/[0.15]'
             }`}
           >
             Become a Sponsor

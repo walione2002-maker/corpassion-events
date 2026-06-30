@@ -13,7 +13,7 @@ export default function EventCatalog() {
     <section
       id="events"
       ref={sectionRef}
-      className="relative py-24 sm:py-32 bg-slate-900 overflow-hidden"
+      className="relative py-24 sm:py-32 bg-slate-50 dark:bg-slate-900 overflow-hidden"
     >
       {/* Ambient background glow */}
       <div className="pointer-events-none absolute inset-0">
@@ -29,10 +29,10 @@ export default function EventCatalog() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="mx-auto max-w-3xl text-center mb-16"
         >
-          <h2 className="font-display text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl tracking-tight mb-6">
+          <h2 className="font-display text-4xl font-extrabold text-slate-900 dark:text-white sm:text-5xl lg:text-6xl tracking-tight mb-6">
             Find the right <span className="text-brand-400">room to be in.</span>
           </h2>
-          <p className="text-lg leading-relaxed text-gray-400">
+          <p className="text-lg leading-relaxed text-slate-500 dark:text-gray-400">
             From flagship summits to specialized forums, discover the events
             shaping the future of AI leadership across the globe.
           </p>
