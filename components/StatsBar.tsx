@@ -23,7 +23,7 @@ export default function StatsBar() {
                 damping: 15,
                 delay: i * 0.1,
               }}
-              className="flex-1 min-w-[200px]"
+              className="flex-1 min-w-[140px] sm:min-w-[200px]"
             >
               <motion.div
                 animate={{ y: [0, -10, 0] }}

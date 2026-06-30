@@ -52,7 +52,7 @@ export default function EventCatalog() {
               }}
               className="h-full"
             >
-              <EventCard event={event} />
+              <EventCard event={event} priority={index === 0} />
             </motion.div>
           ))}
         </div>
