@@ -58,7 +58,7 @@ export default function EventsSelectionPage() {
           {events.map((event) => (
             <motion.div key={event.id} variants={itemVariants}>
               <Link href={`/events/${event.id}`} className="block h-full outline-none">
-                <div className="bg-white dark:bg-white/5 backdrop-blur-xl border border-slate-200 dark:border-white/10 hover:border-brand-500/50 rounded-3xl overflow-hidden group h-full flex flex-col shadow-[0_10px_30px_rgba(0,0,0,0.08)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_50px_rgba(34,211,238,0.2)] transition-all duration-500 hover:-translate-y-2">
+                <div className="bg-white dark:bg-white/5 backdrop-blur-xl border border-slate-200 dark:border-white/10 hover:border-brand-500/50 rounded-3xl overflow-hidden group h-full flex flex-col shadow-[0_10px_30px_rgba(0,0,0,0.08)] dark:shadow-[0_10px_30px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_50px_rgba(167,139,250,0.2)] transition-all duration-500 hover:-translate-y-2">
                   <div className="relative h-48 w-full overflow-hidden">
                     <div className="absolute inset-0 bg-brand-500/20 group-hover:bg-transparent transition-colors z-10 mix-blend-overlay" />
                     <Image

@@ -40,7 +40,7 @@ function MagneticCard({ children, config }: { children: React.ReactNode, config:
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-      className={`relative group bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl border border-slate-200/50 dark:border-white/10 rounded-2xl p-5 sm:p-6 transition-all duration-300 hover:shadow-[0_20px_40px_-15px_rgba(34,211,238,0.2)] hover:bg-white/60 dark:hover:bg-slate-900/60 z-10 hover:border-brand-400/30`}
+      className={`relative group bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl border border-slate-200/50 dark:border-white/10 rounded-2xl p-5 sm:p-6 transition-all duration-300 hover:shadow-[0_20px_40px_-15px_rgba(167,139,250,0.2)] hover:bg-white/60 dark:hover:bg-slate-900/60 z-10 hover:border-brand-400/30`}
     >
       <div style={{ transform: "translateZ(20px)" }}>
         {children}
@@ -92,7 +92,7 @@ export default function AgendaTabs() {
   return (
     <section id="agenda" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden z-10">
       {/* Background Orbs */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[radial-gradient(ellipse_at_top,rgba(34,211,238,0.1)_0%,transparent_70%)] pointer-events-none -z-10" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[radial-gradient(ellipse_at_top,rgba(167,139,250,0.1)_0%,transparent_70%)] pointer-events-none -z-10" />
       
       <div className="max-w-5xl mx-auto relative z-10">
         
@@ -123,7 +123,7 @@ export default function AgendaTabs() {
               {activeTab === index ? (
                 <motion.div
                   layoutId="orbit-indicator"
-                  className="absolute inset-0 bg-white/80 dark:bg-white/10 backdrop-blur-md border border-brand-400/50 rounded-2xl shadow-[0_10px_30px_rgba(34,211,238,0.15)] dark:shadow-[0_10px_30px_rgba(34,211,238,0.25)]"
+                  className="absolute inset-0 bg-white/80 dark:bg-white/10 backdrop-blur-md border border-brand-400/50 rounded-2xl shadow-[0_10px_30px_rgba(167,139,250,0.15)] dark:shadow-[0_10px_30px_rgba(167,139,250,0.25)]"
                   initial={false}
                   animate={{ y: -8 }}
                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
@@ -163,7 +163,7 @@ export default function AgendaTabs() {
         {/* Schedule Grid with Levitating Timeline */}
         <div className="relative">
           {/* Levitating Timeline Conduit */}
-          <div className="absolute left-[27px] sm:left-1/2 top-0 bottom-0 w-1 sm:-ml-[2px] bg-gradient-to-b from-brand-400/0 via-brand-400/80 to-brand-400/0 opacity-60 shadow-[0_0_20px_rgba(34,211,238,0.7)] blur-[1px] rounded-full" />
+          <div className="absolute left-[27px] sm:left-1/2 top-0 bottom-0 w-1 sm:-ml-[2px] bg-gradient-to-b from-brand-400/0 via-brand-400/80 to-brand-400/0 opacity-60 shadow-[0_0_20px_rgba(167,139,250,0.7)] blur-[1px] rounded-full" />
           
           <AnimatePresence mode="wait">
             <motion.div
@@ -188,7 +188,7 @@ export default function AgendaTabs() {
                     className={`relative flex flex-col sm:flex-row gap-8 sm:gap-16 items-start sm:items-center ${isEven ? 'sm:flex-row' : 'sm:flex-row-reverse'}`}
                   >
                     {/* Glowing Node */}
-                    <div className="absolute left-[19px] sm:left-1/2 sm:-translate-x-1/2 w-5 h-5 rounded-full bg-white dark:bg-slate-900 border-[4px] border-brand-400 shadow-[0_0_20px_rgba(34,211,238,0.9)] z-20" />
+                    <div className="absolute left-[19px] sm:left-1/2 sm:-translate-x-1/2 w-5 h-5 rounded-full bg-white dark:bg-slate-900 border-[4px] border-brand-400 shadow-[0_0_20px_rgba(167,139,250,0.9)] z-20" />
                     
                     {/* Empty Space for Staggered Layout (Desktop) */}
                     <div className="hidden sm:block flex-1" />
@@ -234,7 +234,7 @@ export default function AgendaTabs() {
         >
           {/* Subtle animated background mesh */}
           <div className="absolute inset-0 bg-gradient-to-br from-brand-400/5 to-purple-500/5 opacity-50 pointer-events-none" />
-          <div className="absolute -inset-[100%] animate-[spin_20s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,rgba(34,211,238,0.05)_0%,transparent_50%,rgba(34,211,238,0.05)_100%)] pointer-events-none blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+          <div className="absolute -inset-[100%] animate-[spin_20s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,rgba(167,139,250,0.05)_0%,transparent_50%,rgba(167,139,250,0.05)_100%)] pointer-events-none blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
           
           <div className="relative z-10 flex flex-col items-center">
             <div className="inline-flex items-center justify-center p-3 bg-brand-500/10 rounded-2xl mb-6">

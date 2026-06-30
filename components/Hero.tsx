@@ -20,8 +20,8 @@ export default function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
       {/* Radial gradient overlays (dark mode only for strict OLED, light mode is pure white) */}
-      <div className="absolute inset-0 hidden dark:block bg-[radial-gradient(ellipse_at_center,rgba(34,211,238,0.08)_0%,transparent_60%)]" />
-      <div className="absolute inset-0 hidden dark:block bg-[radial-gradient(ellipse_at_top_right,rgba(34,211,238,0.05)_0%,transparent_50%)]" />
+      <div className="absolute inset-0 hidden dark:block bg-[radial-gradient(ellipse_at_center,rgba(167,139,250,0.08)_0%,transparent_60%)]" />
+      <div className="absolute inset-0 hidden dark:block bg-[radial-gradient(ellipse_at_top_right,rgba(167,139,250,0.05)_0%,transparent_50%)]" />
 
       {/* Content Grid */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
@@ -79,7 +79,7 @@ export default function Hero() {
               <motion.div whileHover={{ scale: 1.05, y: -4, x: -2 }} transition={{ type: "spring", stiffness: 400, damping: 10 }} className="w-full sm:w-auto z-20">
                 <Link
                   href="/events"
-                  className="group relative flex items-center justify-center gap-2 rounded-2xl px-8 py-4 font-semibold transition-all duration-300 bg-brand-400 text-slate-950 shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] active:scale-[0.98] w-full"
+                  className="group relative flex items-center justify-center gap-2 rounded-2xl px-8 py-4 font-semibold transition-all duration-300 bg-brand-400 text-slate-950 shadow-[0_0_20px_rgba(167,139,250,0.4)] hover:shadow-[0_0_40px_rgba(167,139,250,0.6)] active:scale-[0.98] w-full"
                 >
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-brand-300 to-brand-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <span className="relative z-10 text-lg flex flex-col items-center leading-tight">
@@ -93,7 +93,7 @@ export default function Hero() {
               <motion.div whileHover={{ scale: 1.05, y: -4 }} transition={{ type: "spring", stiffness: 400, damping: 10 }} className="w-full sm:w-auto z-10">
                 <Link
                   href="/events/dubai-ai-summit-2026#sponsorship"
-                  className="flex flex-col items-center justify-center gap-0.5 rounded-full px-7 py-3.5 font-semibold transition-all duration-300 bg-white/5 backdrop-blur-md border border-white/10 text-white hover:bg-white/10 hover:border-brand-400/50 hover:shadow-[0_0_20px_rgba(34,211,238,0.1)] active:scale-[0.98] w-full"
+                  className="flex flex-col items-center justify-center gap-0.5 rounded-full px-7 py-3.5 font-semibold transition-all duration-300 bg-white/5 backdrop-blur-md border border-white/10 text-white hover:bg-white/10 hover:border-brand-400/50 hover:shadow-[0_0_20px_rgba(167,139,250,0.1)] active:scale-[0.98] w-full"
                 >
                   <span className="text-base leading-tight">Exhibit</span>
                   <span className="text-[10px] uppercase tracking-wider text-gray-400">Book Your Booth</span>
@@ -104,7 +104,7 @@ export default function Hero() {
               <motion.div whileHover={{ scale: 1.05, y: -4, x: 2 }} transition={{ type: "spring", stiffness: 400, damping: 10 }} className="w-full sm:w-auto z-10">
                 <Link
                   href="/events/dubai-ai-summit-2026#sponsorship"
-                  className="flex flex-col items-center justify-center gap-0.5 rounded-full px-7 py-3.5 font-semibold transition-all duration-300 bg-white/5 backdrop-blur-md border border-white/10 text-white hover:bg-white/10 hover:border-brand-400/50 hover:shadow-[0_0_20px_rgba(34,211,238,0.1)] active:scale-[0.98] w-full"
+                  className="flex flex-col items-center justify-center gap-0.5 rounded-full px-7 py-3.5 font-semibold transition-all duration-300 bg-white/5 backdrop-blur-md border border-white/10 text-white hover:bg-white/10 hover:border-brand-400/50 hover:shadow-[0_0_20px_rgba(167,139,250,0.1)] active:scale-[0.98] w-full"
                 >
                   <span className="text-base leading-tight">Sponsor</span>
                   <span className="text-[10px] uppercase tracking-wider text-gray-400">Promote Your Brand</span>
