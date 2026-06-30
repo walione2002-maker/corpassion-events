@@ -35,10 +35,13 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
-              className="mb-6 inline-flex"
+              className="mb-6 flex flex-col items-start gap-2"
             >
-              <span className="border border-brand-400/30 bg-brand-400/10 text-brand-700 dark:text-brand-400 text-xs font-bold tracking-widest rounded-full px-4 py-1.5 uppercase">
+              <span className="inline-flex border border-brand-400/30 bg-brand-400/10 text-brand-700 dark:text-brand-400 text-xs font-bold tracking-widest rounded-full px-4 py-1.5 uppercase">
                 Corpassion Events
+              </span>
+              <span className="text-xs font-medium text-slate-600 dark:text-gray-400 pl-2 border-l-2 border-brand-400/50">
+                Operated by The Excellent Group LLC, Dubai, UAE
               </span>
             </motion.div>
 

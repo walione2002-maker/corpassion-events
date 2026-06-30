@@ -148,6 +148,24 @@ export default function PricingCards() {
             );
           })}
         </div>
+
+        {/* Payments Trust Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.6 }}
+          className="mt-12 max-w-2xl mx-auto text-center"
+        >
+          <div className="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-slate-100 dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 shadow-sm">
+            <div className="w-10 h-10 rounded-full bg-brand-500/20 flex items-center justify-center border border-brand-500/30 shrink-0">
+              <span className="text-brand-700 dark:text-brand-400 font-bold text-sm tracking-tighter">EG</span>
+            </div>
+            <p className="text-xs text-slate-800 dark:text-gray-400 font-medium text-left leading-relaxed">
+              Payments securely processed by <strong className="text-slate-900 dark:text-white font-bold">The Excellent Group LLC</strong><br/>
+              <span className="text-[11px] text-slate-600 dark:text-gray-500 uppercase tracking-wider">Dubai, UAE — Safe & Registered</span>
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
