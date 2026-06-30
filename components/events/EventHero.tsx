@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { IEvent } from '@/data/events';
+import HeroBackground from '@/components/HeroBackground';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -38,39 +39,7 @@ export default function EventHero({ event }: { event: IEvent }) {
     <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
     >
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={event.image}
-          alt={event.title}
-          className="w-full h-full object-cover opacity-30"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/80 via-[#0a0a0a]/90 to-[#0a0a0a]" />
-      </div>
-
-      {/* Radial gradient overlays */}
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.15)_0%,transparent_70%)] pointer-events-none" />
-
-      {/* Animated grid pattern overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none z-0"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(129,140,248,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(129,140,248,0.5) 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
-          animation: 'gridDrift 20s linear infinite',
-        }}
-      />
-      <style jsx>{`
-        @keyframes gridDrift {
-          0% {
-            background-position: 0px 0px;
-          }
-          100% {
-            background-position: 60px 60px;
-          }
-        }
-      `}</style>
+      <HeroBackground image={event.image} opacity="opacity-50" />
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-20">

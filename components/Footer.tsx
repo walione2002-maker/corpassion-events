@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { ROUTES } from '@/config/routes';
+import ContactActions from '@/components/ContactActions';
 
 const containerVariants = {
   hidden: {},
@@ -180,6 +181,8 @@ export default function Footer() {
                   </div>
                 </li>
               </ul>
+              
+              <ContactActions />
             </div>
           </motion.div>
         </motion.div>

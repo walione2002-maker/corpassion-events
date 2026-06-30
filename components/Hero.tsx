@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Calendar, MapPin, Users, Presentation } from 'lucide-react';
 import { ROUTES } from '@/config/routes';
+import HeroBackground from '@/components/HeroBackground';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -20,9 +21,7 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
     >
-      {/* Radial gradient overlays (dark mode only for strict OLED, light mode is pure white) */}
-      <div className="absolute inset-0 hidden dark:block bg-[radial-gradient(ellipse_at_center,rgba(167,139,250,0.08)_0%,transparent_60%)]" />
-      <div className="absolute inset-0 hidden dark:block bg-[radial-gradient(ellipse_at_top_right,rgba(167,139,250,0.05)_0%,transparent_50%)]" />
+      <HeroBackground image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&h=900&fit=crop" opacity="opacity-30" />
 
       {/* Content Grid */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { events } from '@/data/events';
+import HeroBackground from '@/components/HeroBackground';
 import { CalendarDays, MapPin, ArrowRight } from 'lucide-react';
 
 const containerVariants = {
@@ -27,6 +28,8 @@ const itemVariants = {
 export default function EventsSelectionPage() {
   return (
     <main className="min-h-screen bg-white dark:bg-[#050505] pt-32 pb-24 relative overflow-hidden">
+      <HeroBackground image="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600&h=900&fit=crop" opacity="opacity-20" />
+
       {/* Background Orbs */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand-500/20 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-brand-700/20 rounded-full blur-[100px] pointer-events-none" />
