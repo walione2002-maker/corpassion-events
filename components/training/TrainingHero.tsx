@@ -6,9 +6,7 @@ export default function TrainingHero() {
   return (
     <section className="relative w-full h-[400px] flex items-center justify-center overflow-hidden">
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-[#0a0a0a] z-0" />
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-purple-900/40 to-black z-0" />
-      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-10" />
+      <div className="absolute inset-0 bg-transparent z-0" />
       
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center mt-12">

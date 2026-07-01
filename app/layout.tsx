@@ -79,6 +79,8 @@ export const metadata: Metadata = {
   },
 };
 
+import GlobalBackground from "@/components/GlobalBackground";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -87,9 +89,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-white dark:bg-black text-slate-900 dark:text-white antialiased overflow-x-hidden transition-colors`}
+        className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-transparent text-slate-900 dark:text-white antialiased overflow-x-hidden transition-colors`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <GlobalBackground />
           <Header />
           {children}
           <Footer />

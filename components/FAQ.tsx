@@ -51,7 +51,7 @@ export default function FAQ() {
         strategy="afterInteractive"
       />
 
-      <section id="faq" className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-slate-50 dark:bg-[#0a0a0a]">
+      <section id="faq" className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-transparent">
         {/* Background decoration */}
         <div className="hidden md:block pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-brand-600/5 blur-[150px]" />
 

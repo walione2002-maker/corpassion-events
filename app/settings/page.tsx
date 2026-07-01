@@ -16,7 +16,7 @@ export default function SettingsPage() {
   if (!mounted) return null;
 
   return (
-    <main className="min-h-screen pt-32 pb-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-black">
+    <main className="min-h-screen pt-32 pb-24 px-4 sm:px-6 lg:px-8 bg-transparent">
       <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

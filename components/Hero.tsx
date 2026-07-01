@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Calendar, MapPin, Users, Presentation } from 'lucide-react';
 import { ROUTES } from '@/config/routes';
-import HeroBackground from '@/components/HeroBackground';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -21,8 +20,6 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex lg:items-center justify-center overflow-hidden pt-32 pb-24 lg:pt-20 lg:pb-0"
     >
-      <HeroBackground image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&h=900&fit=crop" opacity="opacity-30" />
-
       {/* Content Grid */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 lg:items-center">

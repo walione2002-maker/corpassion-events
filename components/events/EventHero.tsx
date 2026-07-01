@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { IEvent } from '@/data/events';
-import HeroBackground from '@/components/HeroBackground';
+
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -39,8 +39,6 @@ export default function EventHero({ event }: { event: IEvent }) {
     <section
       className="relative min-h-screen flex lg:items-center justify-center overflow-hidden pt-32 pb-24 lg:pt-16 lg:pb-0"
     >
-      <HeroBackground image={event.image} opacity="opacity-50" />
-
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-20">
         {/* Badge */}

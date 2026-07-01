@@ -26,7 +26,7 @@ export default function SponsorshipHub() {
   return (
     <section
       id="sponsorship"
-      className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a]"
+      className="py-24 px-4 sm:px-6 lg:px-8 bg-transparent"
     >
       <div ref={sectionRef} className="max-w-7xl mx-auto">
         {/* Section Header */}

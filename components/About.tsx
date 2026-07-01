@@ -7,7 +7,7 @@ export default function About() {
   const containerRef = useRef<HTMLDivElement>(null);
   
   return (
-    <section ref={containerRef} id="about" className="relative min-h-screen py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#05050a] overflow-hidden flex items-center justify-center">
+    <section ref={containerRef} id="about" className="relative min-h-screen py-24 px-4 sm:px-6 lg:px-8 bg-transparent overflow-hidden flex items-center justify-center">
       {/* Background Orbs */}
       <div 
         className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center opacity-30"

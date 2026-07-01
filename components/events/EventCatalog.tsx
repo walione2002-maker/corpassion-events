@@ -13,7 +13,7 @@ export default function EventCatalog() {
     <section
       id="events"
       ref={sectionRef}
-      className="relative py-24 sm:py-32 bg-slate-50 dark:bg-slate-900 overflow-hidden"
+      className="relative py-24 sm:py-32 bg-transparent overflow-hidden"
     >
       {/* Ambient background glow */}
       <div className="pointer-events-none absolute inset-0">

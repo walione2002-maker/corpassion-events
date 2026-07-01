@@ -10,7 +10,7 @@ export default function Services() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a] relative overflow-hidden" id="services">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-transparent relative overflow-hidden" id="services">
       <div className="max-w-7xl mx-auto text-center mb-16 relative z-10">
         <span className="text-sm tracking-widest text-brand-700 dark:text-brand-400 uppercase font-medium">What We Do</span>
         <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-slate-900 dark:text-white mt-3">
