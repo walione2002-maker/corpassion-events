@@ -125,7 +125,7 @@ export default function Header() {
             className="fixed inset-0 z-[90] bg-white dark:bg-[#050505] lg:hidden overflow-y-auto"
           >
             <div className="flex flex-col items-center justify-center min-h-screen gap-6 py-20">
-              {navLinks.map((link, i) => (
+              {navLinks.map((link) => (
                 link.label === 'Register' ? (
                 <Link
                   key={link.label}
@@ -133,13 +133,7 @@ export default function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center gap-3 text-2xl font-display font-medium text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white transition-colors"
                 >
-                  <motion.span
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.05 * i, duration: 0.3 }}
-                  >
-                    {link.label}
-                  </motion.span>
+                  <span>{link.label}</span>
                 </Link>
                 ) : (
                 <Link
@@ -148,22 +142,13 @@ export default function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center gap-3 text-2xl font-display font-medium text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white transition-colors"
                 >
-                  <motion.span
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.05 * i, duration: 0.3 }}
-                  >
-                    {link.label}
-                  </motion.span>
+                  <span>{link.label}</span>
                   {(link as any).isNew && (
-                    <motion.span
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.05 * i + 0.1 }}
+                    <span
                       className="px-2 py-1 rounded-full bg-brand-400/10 text-brand-400 text-xs font-bold tracking-wider uppercase"
                     >
                       New
-                    </motion.span>
+                    </span>
                   )}
                 </Link>
                 )
@@ -173,13 +158,7 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="mt-6 rounded-full bg-brand-400 text-slate-950 px-8 py-3 text-lg font-semibold transition-all duration-300 hover:bg-brand-300"
               >
-                <motion.span
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.05 * navLinks.length, duration: 0.3 }}
-                >
-                  Register Now
-                </motion.span>
+                <span>Register Now</span>
               </Link>
             </div>
           </motion.div>
