@@ -51,7 +51,7 @@ export default function EventHero({ event }: { event: IEvent }) {
           variants={fadeInUp}
           className="mb-8 inline-flex"
         >
-          <span className="border border-brand-400/30 bg-brand-400/10 text-brand-300 text-sm rounded-full px-5 py-1.5 tracking-wide">
+          <span className="border border-brand-400/30 bg-brand-400/10 text-brand-700 dark:text-brand-300 font-medium text-sm rounded-full px-5 py-1.5 tracking-wide">
             {event.location} &bull; {event.dates}
           </span>
         </motion.div>
@@ -64,7 +64,7 @@ export default function EventHero({ event }: { event: IEvent }) {
           variants={fadeInUp}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight mb-6 leading-[1.08]"
         >
-          <span className="bg-gradient-to-r from-white via-white to-brand-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-slate-900 via-slate-800 to-brand-600 dark:from-white dark:via-white dark:to-brand-400 bg-clip-text text-transparent">
             {event.title}
           </span>
         </motion.h1>
@@ -75,7 +75,7 @@ export default function EventHero({ event }: { event: IEvent }) {
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
-          className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12"
+          className="text-lg md:text-xl text-slate-700 dark:text-gray-400 max-w-3xl mx-auto mb-12"
         >
           {event.taglines[0]}
         </motion.p>
@@ -99,7 +99,7 @@ export default function EventHero({ event }: { event: IEvent }) {
               className={`group flex-1 flex flex-col items-center justify-center gap-1 rounded-xl px-6 py-4 font-medium transition-all duration-300 ${
                 cta.style === 'filled'
                   ? 'bg-gradient-to-r from-brand-500 to-brand-600 text-white hover:shadow-[0_0_30px_rgba(99,102,241,0.5)] hover:brightness-110 active:scale-[0.97]'
-                  : 'border border-white/20 text-white hover:border-brand-400/50 hover:bg-white/5 active:scale-[0.97]'
+                  : 'border border-slate-300 dark:border-white/20 bg-white/50 dark:bg-white/5 text-slate-900 dark:text-white hover:border-brand-500/50 dark:hover:border-brand-400/50 hover:bg-slate-100 dark:hover:bg-white/10 active:scale-[0.97]'
               }`}
             >
               <span className="text-lg font-semibold">{cta.label}</span>
@@ -107,7 +107,7 @@ export default function EventHero({ event }: { event: IEvent }) {
                 className={`text-xs ${
                   cta.style === 'filled'
                     ? 'text-white/70'
-                    : 'text-gray-500 group-hover:text-gray-400'
+                    : 'text-slate-600 dark:text-gray-500 group-hover:text-slate-800 dark:group-hover:text-gray-400'
                 } transition-colors`}
               >
                 {cta.sub}
