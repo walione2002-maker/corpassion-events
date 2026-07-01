@@ -29,7 +29,7 @@ export default function Gallery() {
     <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Dark gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50 to-white dark:from-[#0a0a0a] dark:via-[#0d0d1a] dark:to-[#0a0a0a]" />
-      <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-[600px] w-[800px] rounded-full bg-brand-600/5 blur-[120px]" />
+      <div className="hidden md:block pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-[600px] w-[800px] rounded-full bg-brand-600/5 blur-[120px]" />
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Section Header */}

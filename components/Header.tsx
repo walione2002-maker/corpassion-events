@@ -36,7 +36,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 dark:bg-black/80 backdrop-blur-xl border-b border-slate-200 dark:border-white/5 ${
+      className={`fixed top-0 left-0 right-0 z-[100] transform-gpu transition-all duration-300 bg-white/95 dark:bg-[#050505]/95 md:bg-white/80 md:dark:bg-black/80 md:backdrop-blur-xl border-b border-slate-200 dark:border-white/5 ${
         scrolled ? 'shadow-lg shadow-black/10 dark:shadow-black/40' : ''
       }`}
     >
@@ -122,7 +122,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="fixed inset-0 z-40 bg-white/95 dark:bg-black/95 backdrop-blur-xl lg:hidden overflow-y-auto"
+            className="fixed inset-0 z-[90] bg-white dark:bg-[#050505] lg:hidden overflow-y-auto"
           >
             <div className="flex flex-col items-center justify-center min-h-screen gap-6 py-20">
               {navLinks.map((link, i) => (

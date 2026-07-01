@@ -163,7 +163,7 @@ export default function AgendaTabs() {
         {/* Schedule Grid with Levitating Timeline */}
         <div className="relative">
           {/* Levitating Timeline Conduit */}
-          <div className="absolute left-[27px] sm:left-1/2 top-0 bottom-0 w-1 sm:-ml-[2px] bg-gradient-to-b from-brand-400/0 via-brand-400/80 to-brand-400/0 opacity-60 shadow-[0_0_20px_rgba(167,139,250,0.7)] blur-[1px] rounded-full" />
+          <div className="hidden md:block absolute left-[27px] sm:left-1/2 top-0 bottom-0 w-1 sm:-ml-[2px] bg-gradient-to-b from-brand-400/0 via-brand-400/80 to-brand-400/0 opacity-60 shadow-[0_0_20px_rgba(167,139,250,0.7)] blur-[1px] rounded-full" />
           
           <AnimatePresence mode="wait">
             <motion.div

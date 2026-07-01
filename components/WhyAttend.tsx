@@ -23,7 +23,7 @@ export default function WhyAttend() {
     >
       {/* Ambient glow */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 h-[480px] w-[720px] rounded-full bg-brand-600/10 blur-[128px]" />
+        <div className="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 h-[480px] w-[720px] rounded-full bg-brand-600/10 blur-[128px]" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">

@@ -10,15 +10,15 @@ interface HeroBackgroundProps {
 export default function HeroBackground({ image, opacity }: HeroBackgroundProps) {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 bg-slate-50 dark:bg-[#050505] transition-colors duration-500">
-      {/* Animated Glowing Orbs */}
+      {/* High-Performance Glowing Orbs (using radial gradients instead of heavy CSS blur/mix-blend) */}
       <div 
-        className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-brand-400/30 dark:bg-brand-500/20 blur-[100px] sm:blur-[120px] mix-blend-multiply dark:mix-blend-screen animate-blob" 
+        className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-[radial-gradient(circle_at_center,rgba(167,139,250,0.15)_0%,transparent_70%)] dark:bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.15)_0%,transparent_70%)] md:animate-blob" 
       />
       <div 
-        className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] rounded-full bg-indigo-300/30 dark:bg-indigo-500/20 blur-[100px] sm:blur-[120px] mix-blend-multiply dark:mix-blend-screen animate-blob animation-delay-2000" 
+        className="absolute bottom-[-20%] right-[-10%] w-[70%] h-[70%] rounded-full bg-[radial-gradient(circle_at_center,rgba(165,180,252,0.15)_0%,transparent_70%)] dark:bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.15)_0%,transparent_70%)] md:animate-blob animation-delay-2000" 
       />
       <div 
-        className="absolute top-[20%] right-[10%] w-[30%] h-[30%] rounded-full bg-fuchsia-300/30 dark:bg-fuchsia-500/20 blur-[100px] sm:blur-[120px] mix-blend-multiply dark:mix-blend-screen animate-blob animation-delay-4000" 
+        className="absolute top-[10%] right-[-5%] w-[50%] h-[50%] rounded-full bg-[radial-gradient(circle_at_center,rgba(240,171,252,0.15)_0%,transparent_70%)] dark:bg-[radial-gradient(circle_at_center,rgba(217,70,239,0.15)_0%,transparent_70%)] md:animate-blob animation-delay-4000" 
       />
       
       {/* Clean Subtle Grid */}

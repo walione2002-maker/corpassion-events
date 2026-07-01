@@ -17,8 +17,8 @@ export default function EventCatalog() {
     >
       {/* Ambient background glow */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full bg-brand-600/10 blur-[120px]" />
-        <div className="absolute -left-32 bottom-0 h-[400px] w-[400px] rounded-full bg-brand-500/10 blur-[100px]" />
+        <div className="hidden md:block absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full bg-brand-600/10 blur-[120px]" />
+        <div className="hidden md:block absolute -left-32 bottom-0 h-[400px] w-[400px] rounded-full bg-brand-500/10 blur-[100px]" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
