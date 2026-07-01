@@ -6,6 +6,7 @@ import { Sparkles, Target, Compass } from 'lucide-react';
 export default function About() {
   const containerRef = useRef<HTMLDivElement>(null);
   
+  return (
     <section ref={containerRef} id="about" className="relative min-h-screen py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#05050a] overflow-hidden flex items-center justify-center">
       {/* Background Orbs */}
       <div 
@@ -74,8 +75,8 @@ export default function About() {
               </div>
             </div>
 
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );
