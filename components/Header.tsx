@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { navLinks } from '@/data/events';
@@ -115,55 +115,47 @@ export default function Header() {
       </nav>
 
       {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="fixed inset-0 z-[90] bg-white dark:bg-[#050505] lg:hidden overflow-y-auto"
+      <div
+        className={`fixed inset-0 z-[90] bg-white dark:bg-[#050505] lg:hidden overflow-y-auto transition-all duration-300 ${
+          mobileMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-4'
+        }`}
+      >
+        <div className="flex flex-col items-center justify-center min-h-screen gap-6 py-20">
+          {navLinks.map((link) => (
+            link.label === 'Register' ? (
+            <Link
+              key={link.label}
+              href="/events"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-3 text-2xl font-display font-medium text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white transition-colors"
+            >
+              <span>{link.label}</span>
+            </Link>
+            ) : (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex items-center gap-3 text-2xl font-display font-medium text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white transition-colors"
+            >
+              <span>{link.label}</span>
+              {(link as any).isNew && (
+                <span className="px-2 py-1 rounded-full bg-brand-400/10 text-brand-400 text-xs font-bold tracking-wider uppercase">
+                  New
+                </span>
+              )}
+            </Link>
+            )
+          ))}
+          <Link
+            href={ROUTES.REGISTER}
+            onClick={() => setMobileMenuOpen(false)}
+            className="mt-6 rounded-full bg-brand-400 text-slate-950 px-8 py-3 text-lg font-semibold transition-all duration-300 hover:bg-brand-300"
           >
-            <div className="flex flex-col items-center justify-center min-h-screen gap-6 py-20">
-              {navLinks.map((link) => (
-                link.label === 'Register' ? (
-                <Link
-                  key={link.label}
-                  href="/events"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-3 text-2xl font-display font-medium text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white transition-colors"
-                >
-                  <span>{link.label}</span>
-                </Link>
-                ) : (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center gap-3 text-2xl font-display font-medium text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white transition-colors"
-                >
-                  <span>{link.label}</span>
-                  {(link as any).isNew && (
-                    <span
-                      className="px-2 py-1 rounded-full bg-brand-400/10 text-brand-400 text-xs font-bold tracking-wider uppercase"
-                    >
-                      New
-                    </span>
-                  )}
-                </Link>
-                )
-              ))}
-              <Link
-                href={ROUTES.REGISTER}
-                onClick={() => setMobileMenuOpen(false)}
-                className="mt-6 rounded-full bg-brand-400 text-slate-950 px-8 py-3 text-lg font-semibold transition-all duration-300 hover:bg-brand-300"
-              >
-                <span>Register Now</span>
-              </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            <span>Register Now</span>
+          </Link>
+        </div>
+      </div>
     </header>
   );
 }

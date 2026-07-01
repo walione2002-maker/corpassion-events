@@ -25,10 +25,8 @@ export default function StatsBar() {
               }}
               className="flex-1 min-w-[140px] sm:min-w-[200px]"
             >
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: i * 0.2 }}
-                className="bg-white/80 dark:bg-white/10 backdrop-blur-2xl border border-slate-200 dark:border-white/20 rounded-full py-4 px-8 flex flex-col items-center justify-center shadow-[0_20px_50px_rgba(0,0,0,0.05)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] h-full"
+              <div
+                className="bg-white/95 dark:bg-[#0a0a0a]/95 md:bg-white/80 md:dark:bg-white/10 md:backdrop-blur-xl border border-slate-200 dark:border-white/20 rounded-full py-4 px-8 flex flex-col items-center justify-center shadow-[0_20px_50px_rgba(0,0,0,0.05)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] h-full transition-transform hover:-translate-y-2 duration-300"
               >
                 <span className="text-3xl sm:text-4xl font-display font-bold text-brand-700 dark:text-brand-400 flex items-center overflow-hidden">
                   <motion.span
@@ -52,7 +50,7 @@ export default function StatsBar() {
                   </motion.span>
                 </span>
                 <span className="text-[11px] sm:text-sm text-slate-600 dark:text-gray-300 font-bold uppercase tracking-widest mt-1.5">{stat.label}</span>
-              </motion.div>
+              </div>
             </motion.div>
           ))}
         </div>
