@@ -36,7 +36,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-[100] transform-gpu transition-all duration-300 bg-white/95 dark:bg-[#050505]/95 md:bg-white/80 md:dark:bg-black/80 md:backdrop-blur-xl border-b border-slate-200 dark:border-white/5 ${
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 bg-white/95 dark:bg-[#050505]/95 md:bg-white/80 md:dark:bg-black/80 md:backdrop-blur-xl border-b border-slate-200 dark:border-white/5 ${
         scrolled ? 'shadow-lg shadow-black/10 dark:shadow-black/40' : ''
       }`}
     >
