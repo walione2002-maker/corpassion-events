@@ -40,7 +40,7 @@ export default function Header() {
         scrolled ? 'shadow-lg shadow-black/10 dark:shadow-black/40' : ''
       }`}
     >
-      <nav className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
+      <nav className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-[100]">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-0 shrink-0">
@@ -102,7 +102,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden relative z-50 p-2 text-slate-500 hover:text-slate-900 dark:text-gray-400 dark:hover:text-white transition-colors"
+            className="lg:hidden relative z-[110] p-2 text-slate-500 hover:text-slate-900 dark:text-gray-400 dark:hover:text-white transition-colors"
             aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
           >
             {mobileMenuOpen ? (
