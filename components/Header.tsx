@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Settings as SettingsIcon } from 'lucide-react';
 import Link from 'next/link';
 import { navLinks } from '@/data/events';
 import { ThemeToggle } from '@/components/ThemeToggle';
@@ -89,6 +89,13 @@ export default function Header() {
 
           {/* Desktop CTA & Theme Toggle */}
           <div className="hidden lg:flex items-center gap-4">
+            <Link
+              href="/settings"
+              className="p-2 text-slate-500 hover:text-slate-900 dark:text-gray-400 dark:hover:text-white transition-colors"
+              aria-label="Settings"
+            >
+              <SettingsIcon className="w-5 h-5" />
+            </Link>
             <ThemeToggle />
             <Link
               href={ROUTES.REGISTER}
@@ -116,7 +123,7 @@ export default function Header() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-[90] bg-white dark:bg-[#050505] lg:hidden overflow-y-auto transition-all duration-300 ${
+        className={`fixed inset-0 z-[90] bg-white dark:bg-black lg:hidden overflow-y-auto transition-all duration-300 ${
           mobileMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-4'
         }`}
       >
@@ -147,6 +154,15 @@ export default function Header() {
             </Link>
             )
           ))}
+          <Link
+            href="/settings"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center gap-3 text-2xl font-display font-medium text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white transition-colors mt-2"
+          >
+            <SettingsIcon className="w-6 h-6" />
+            <span>Settings</span>
+          </Link>
+
           <Link
             href={ROUTES.REGISTER}
             onClick={() => setMobileMenuOpen(false)}
