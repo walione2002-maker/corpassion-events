@@ -133,9 +133,10 @@ export async function POST(req: Request) {
           url: `${baseUrl}/success?method=bank_transfer&ref=${bookingRef}&amount=${amountGBP}` 
         }, { status: 200 });
 
-      case 'whatsapp':
+      case 'whatsapp_uae':
+      case 'whatsapp_pk':
         // Create a pre-filled WhatsApp URL
-        const whatsappNumber = '923332230665';
+        const whatsappNumber = validatedData.paymentMethod === 'whatsapp_uae' ? '971543770146' : '923091020225';
         const message = `Hello Corpassion Events! I would like to book a ${packageName}.\n\n*Package:* ${packageName}\n\n*Details:*\n${summaryMessage}\n\nPlease guide me on the next steps for payment.`;
         const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
         

@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const paymentMethodEnum = z.enum(['paypal', 'bank_transfer', 'whatsapp']);
+export const paymentMethodEnum = z.enum(['paypal', 'bank_transfer', 'whatsapp_uae', 'whatsapp_pk']);
 
 const nameRegex = /^[a-zA-Z\s\'-]+$/;
 const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;

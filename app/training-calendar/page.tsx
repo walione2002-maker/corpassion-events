@@ -7,6 +7,21 @@ import EventList from '@/components/training/EventList';
 import { mockTrainingEvents } from '@/data/training';
 import Image from 'next/image';
 
+const MONTH_NAMES = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'
+];
+
+function formatMonthYear(dateString: string) {
+  if (!dateString) return null;
+  const parts = dateString.split('-');
+  if (parts.length < 2) return null;
+  const year = parts[0];
+  const monthIndex = parseInt(parts[1], 10) - 1;
+  if (isNaN(monthIndex) || monthIndex < 0 || monthIndex > 11) return null;
+  return `${MONTH_NAMES[monthIndex]} ${year}`;
+}
+
 export default function TrainingCalendarPage() {
   const [filters, setFilters] = useState<FilterState>({
     month: '',
@@ -20,9 +35,8 @@ export default function TrainingCalendarPage() {
     const months = new Set<string>();
     mockTrainingEvents.forEach(event => {
       try {
-        const date = new Date(event.startDate);
-        if (!isNaN(date.getTime())) {
-          const monthYear = date.toLocaleString('default', { month: 'long', year: 'numeric' });
+        const monthYear = formatMonthYear(event.startDate);
+        if (monthYear) {
           months.add(monthYear);
         }
       } catch (e) {
@@ -51,8 +65,7 @@ export default function TrainingCalendarPage() {
       // Month Filter
       if (filters.month) {
         try {
-          const eventDate = new Date(event.startDate);
-          const eventMonthYear = eventDate.toLocaleString('default', { month: 'long', year: 'numeric' });
+          const eventMonthYear = formatMonthYear(event.startDate);
           if (eventMonthYear !== filters.month) return false;
         } catch (e) {
           return false;

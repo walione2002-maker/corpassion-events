@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { Menu, X, Settings as SettingsIcon } from 'lucide-react';
 import Link from 'next/link';
-import { navLinks } from '@/data/events';
+import { navLinks, INavLink } from '@/data/events';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { ROUTES } from '@/config/routes';
 
@@ -76,7 +76,7 @@ export default function Header() {
                 className="text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white transition-colors duration-200 relative group flex items-center gap-2"
               >
                 {link.label}
-                {(link as any).isNew && (
+                {link.isNew && (
                   <span className="px-1.5 py-0.5 rounded-full bg-brand-400/10 text-brand-400 text-[10px] font-bold tracking-wider uppercase">
                     New
                   </span>
@@ -145,7 +145,7 @@ export default function Header() {
               className="flex items-center gap-3 text-2xl font-display font-medium text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white transition-colors"
             >
               <span>{link.label}</span>
-              {(link as any).isNew && (
+              {link.isNew && (
                 <span className="px-2 py-1 rounded-full bg-brand-400/10 text-brand-400 text-xs font-bold tracking-wider uppercase">
                   New
                 </span>

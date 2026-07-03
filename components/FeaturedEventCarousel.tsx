@@ -59,7 +59,7 @@ export default function FeaturedEventCarousel() {
         <button
           onClick={handleNextClick}
           aria-label="Next event"
-          className="absolute right-[-20px] top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-white/10 shadow-[0_4px_12px_rgba(0,0,0,0.1)] text-brand-600 dark:text-brand-400 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
+          className="absolute right-2 md:right-[-20px] top-1/2 -translate-y-1/2 z-20 flex items-center justify-center w-10 h-10 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-white/10 shadow-[0_4px_12px_rgba(0,0,0,0.1)] text-brand-600 dark:text-brand-400 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
         >
           <ChevronRight className="w-5 h-5" />
         </button>

@@ -94,7 +94,7 @@ export default function Hero() {
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-brand-300 to-brand-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <span className="relative z-10 text-lg flex flex-col items-center leading-tight">
                     <span>Attend</span>
-                    <span className="text-[10px] uppercase tracking-wider opacity-80 mt-0.5">Register as a Delegate</span>
+                    <span className="text-xs whitespace-nowrap uppercase tracking-wider opacity-80 mt-0.5">Register as a Delegate</span>
                   </span>
                 </Link>
               </motion.div>
@@ -106,7 +106,7 @@ export default function Hero() {
                   className="flex flex-col items-center justify-center gap-0.5 rounded-full px-7 py-3.5 font-semibold transition-all duration-300 bg-white dark:bg-white/5 backdrop-blur-md border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-white/10 hover:border-brand-500/50 dark:hover:border-brand-400/50 hover:shadow-[0_0_20px_rgba(167,139,250,0.15)] shadow-sm dark:shadow-none active:scale-[0.98] w-full"
                 >
                   <span className="text-base leading-tight">Exhibit</span>
-                  <span className="text-[10px] uppercase tracking-wider text-slate-500 dark:text-gray-400">Book Your Booth</span>
+                  <span className="text-xs whitespace-nowrap uppercase tracking-wider text-slate-500 dark:text-gray-400 mt-0.5">Book Your Booth</span>
                 </Link>
               </motion.div>
 
@@ -117,7 +117,7 @@ export default function Hero() {
                   className="flex flex-col items-center justify-center gap-0.5 rounded-full px-7 py-3.5 font-semibold transition-all duration-300 bg-white dark:bg-white/5 backdrop-blur-md border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-white/10 hover:border-brand-500/50 dark:hover:border-brand-400/50 hover:shadow-[0_0_20px_rgba(167,139,250,0.15)] shadow-sm dark:shadow-none active:scale-[0.98] w-full"
                 >
                   <span className="text-base leading-tight">Sponsor</span>
-                  <span className="text-[10px] uppercase tracking-wider text-slate-500 dark:text-gray-400">Promote Your Brand</span>
+                  <span className="text-xs whitespace-nowrap uppercase tracking-wider text-slate-500 dark:text-gray-400 mt-0.5">Promote Your Brand</span>
                 </Link>
               </motion.div>
             </motion.div>

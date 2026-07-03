@@ -20,7 +20,8 @@ export default function Services() {
 
       <div ref={containerRef} className="max-w-6xl mx-auto relative z-10 flex flex-wrap justify-center gap-8">
         {services.map((service, index) => {
-          const IconComponent = (LucideIcons as any)[service.icon] || LucideIcons.Star;
+          const iconName = service.icon as keyof typeof LucideIcons;
+          const IconComponent = (LucideIcons[iconName] as React.ElementType) || LucideIcons.Star;
           const isHovered = hoveredIndex === index;
           const isAdjacent = hoveredIndex !== null && (hoveredIndex === index - 1 || hoveredIndex === index + 1);
 

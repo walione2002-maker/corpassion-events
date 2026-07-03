@@ -161,7 +161,8 @@ export default function BoothCheckoutPage({ params }: { params: { id: string } }
                   {[
                     { id: 'paypal', title: 'Credit Card / PayPal', desc: 'Pay securely via PayPal' },
                     { id: 'bank_transfer', title: 'Bank Transfer', desc: 'Offline wire transfer instructions' },
-                    { id: 'whatsapp', title: 'Talk to Representative', desc: 'Secure this booth via WhatsApp' }
+                    { id: 'whatsapp_uae', title: 'WhatsApp (UAE Office)', desc: 'Book via WhatsApp (+971 543770146)' },
+                    { id: 'whatsapp_pk', title: 'WhatsApp (PK Office)', desc: 'Book via WhatsApp (+92 309 1020225)' }
                   ].map(method => (
                     <label
                       key={method.id}
@@ -198,7 +199,7 @@ export default function BoothCheckoutPage({ params }: { params: { id: string } }
                   <><Loader2 className="w-5 h-5 animate-spin" /> Processing...</>
                 ) : (
                   paymentMethod === 'paypal' ? 'Proceed to Secure Checkout' :
-                  paymentMethod === 'whatsapp' ? 'Continue on WhatsApp' :
+                  paymentMethod.startsWith('whatsapp') ? 'Continue on WhatsApp' :
                   'Confirm Reservation'
                 )}
               </button>

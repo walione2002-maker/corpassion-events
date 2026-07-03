@@ -69,7 +69,13 @@ export interface IWhyAttendPillar {
 
 import { ROUTES } from '@/config/routes';
 
-export const navLinks = [
+export interface INavLink {
+  label: string;
+  href: string;
+  isNew?: boolean;
+}
+
+export const navLinks: INavLink[] = [
   { label: 'Home', href: ROUTES.HOME },
   { label: 'Explore Events', href: ROUTES.EVENTS },
   { label: 'Services', href: ROUTES.SERVICES },
