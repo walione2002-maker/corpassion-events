@@ -7,7 +7,7 @@ export default function GlobalBackground() {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-[-50] transition-colors duration-500 bg-white dark:bg-[#050505]">
       {/* Faded Event Picture Background */}
-      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.08] pointer-events-none mix-blend-luminosity dark:mix-blend-overlay">
+      <div className="absolute inset-0 opacity-[0.20] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity dark:mix-blend-overlay">
         <Image 
           src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop" 
           alt="Event Background"
@@ -30,7 +30,7 @@ export default function GlobalBackground() {
       
       {/* Clean Subtle Grid */}
       <div
-        className="absolute inset-0 opacity-[0.05] dark:opacity-[0.08] pointer-events-none"
+        className="absolute inset-0 opacity-[0.20] dark:opacity-[0.35] pointer-events-none"
         style={{
           backgroundImage:
             'linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)',

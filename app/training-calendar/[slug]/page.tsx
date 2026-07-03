@@ -41,7 +41,7 @@ export default function TrainingEventPage({ params }: TrainingEventPageProps) {
   return (
     <main className="min-h-screen bg-transparent pt-32 pb-24 relative overflow-hidden">
       {/* Faded Background Image specific to Training Detail Page */}
-      <div className="absolute inset-0 z-[-1] opacity-[0.02] dark:opacity-[0.04] pointer-events-none mix-blend-luminosity">
+      <div className="absolute inset-0 z-[-1] opacity-[0.20] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity">
         <Image 
           src="https://images.unsplash.com/photo-1560439513-74b037a25d84?w=2000&auto=format&fit=crop"
           alt="Training Background"

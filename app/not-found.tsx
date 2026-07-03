@@ -8,7 +8,7 @@ export default function NotFound() {
 
       {/* Animated grid pattern overlay */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 opacity-[0.20]"
         style={{
           backgroundImage:
             'linear-gradient(rgba(129,140,248,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(129,140,248,0.5) 1px, transparent 1px)',
