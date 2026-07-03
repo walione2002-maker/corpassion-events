@@ -1,11 +1,13 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { Calendar, MapPin, Users, Presentation } from 'lucide-react';
 import { ROUTES } from '@/config/routes';
 import Image from 'next/image';
 import FeaturedEventCarousel from './FeaturedEventCarousel';
+import { events } from '@/data/events';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -17,6 +19,39 @@ const fadeInUp = {
 };
 
 export default function Hero() {
+  const openEvents = events.filter(e => e.registrationOpen === true);
+  
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const nextEvent = () => {
+    setCurrentIndex((prev) => (prev + 1) % openEvents.length);
+  };
+
+  useEffect(() => {
+    if (openEvents.length <= 1) return;
+
+    if (!isPaused) {
+      timerRef.current = setInterval(() => {
+        nextEvent();
+      }, 5000);
+    }
+
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+      }
+    };
+  }, [currentIndex, isPaused, openEvents.length]);
+
+  const handleNextClick = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    nextEvent();
+  };
+
+  const currentEvent = openEvents.length > 0 ? openEvents[currentIndex] : null;
+
   return (
     <section
       id="home"
@@ -39,43 +74,37 @@ export default function Hero() {
           
           {/* Left Column: Typography & CTAs */}
           <div className="text-left">
-            {/* Badge */}
-            <motion.div
-              custom={0}
-              initial="hidden"
-              animate="visible"
-              variants={fadeInUp}
-              className="mb-6 flex flex-col items-start gap-2"
-            >
-              <span className="inline-flex border border-brand-400/30 bg-brand-400/10 text-brand-700 dark:text-brand-400 text-xs font-bold tracking-widest rounded-full px-4 py-1.5 uppercase">
-                Corpassion Events
-              </span>
-              <span className="text-xs font-medium text-slate-600 dark:text-gray-400 pl-2 border-l-2 border-brand-400/50">
-                Operated by The Excellent Group FZC, Dubai, UAE
-              </span>
-            </motion.div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentEvent?.id || 'default'}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
+              >
+                {/* Badge */}
+                <div className="mb-6 flex flex-col items-start gap-2">
+                  <span className="inline-flex border border-brand-400/30 bg-brand-400/10 text-brand-700 dark:text-brand-400 text-xs font-bold tracking-widest rounded-full px-4 py-1.5 uppercase">
+                    {currentEvent ? currentEvent.title : 'Corpassion Events'}
+                  </span>
+                  <span className="text-xs font-medium text-slate-600 dark:text-gray-400 pl-2 border-l-2 border-brand-400/50">
+                    Operated by The Excellent Group FZC, Dubai, UAE
+                  </span>
+                </div>
 
-            {/* Headline */}
-            <motion.h1
-              custom={0.15}
-              initial="hidden"
-              animate="visible"
-              variants={fadeInUp}
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold tracking-tight mb-6 leading-[1.05] text-slate-900 dark:text-white"
-            >
-              Where leaders learn, connect & <span className="text-brand-500 dark:text-brand-400">innovate.</span>
-            </motion.h1>
+                {/* Headline */}
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold tracking-tight mb-6 leading-[1.05] text-slate-900 dark:text-white">
+                  Where leaders learn, connect & <span className="text-brand-500 dark:text-brand-400">innovate.</span>
+                </h1>
 
-            {/* Subtitle */}
-            <motion.p
-              custom={0.3}
-              initial="hidden"
-              animate="visible"
-              variants={fadeInUp}
-              className="text-lg md:text-xl text-slate-800 dark:text-gray-400 max-w-xl mb-10 leading-relaxed"
-            >
-              Empowering professionals. Inspiring industries. Where knowledge meets opportunity.
-            </motion.p>
+                {/* Subtitle */}
+                <p className="text-lg md:text-xl text-slate-800 dark:text-gray-400 max-w-xl mb-10 leading-relaxed">
+                  {currentEvent && currentEvent.taglines.length > 0 
+                    ? currentEvent.taglines[0]
+                    : 'Empowering professionals. Inspiring industries. Where knowledge meets opportunity.'}
+                </p>
+              </motion.div>
+            </AnimatePresence>
 
             {/* CTAs */}
             <motion.div
@@ -88,7 +117,7 @@ export default function Hero() {
               {/* Primary Attend */}
               <motion.div whileHover={{ scale: 1.05, y: -4, x: -2 }} transition={{ type: "spring", stiffness: 400, damping: 10 }} className="w-full sm:w-auto z-20">
                 <Link
-                  href={ROUTES.REGISTER}
+                  href={currentEvent ? `/checkout/ticket/${currentEvent.id}` : ROUTES.REGISTER}
                   className="group relative flex items-center justify-center gap-2 rounded-2xl px-8 py-4 font-semibold transition-all duration-300 bg-brand-400 text-slate-950 shadow-[0_0_20px_rgba(167,139,250,0.4)] hover:shadow-[0_0_40px_rgba(167,139,250,0.6)] active:scale-[0.98] w-full"
                 >
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-brand-300 to-brand-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -102,7 +131,7 @@ export default function Hero() {
               {/* Secondary Exhibit */}
               <motion.div whileHover={{ scale: 1.05, y: -4 }} transition={{ type: "spring", stiffness: 400, damping: 10 }} className="w-full sm:w-auto z-10">
                 <Link
-                  href="/events/dubai-ai-summit-2026#sponsorship"
+                  href={currentEvent ? `/events/${currentEvent.id}#sponsorship` : '/events/dubai-ai-summit-2026#sponsorship'}
                   className="flex flex-col items-center justify-center gap-0.5 rounded-full px-7 py-3.5 font-semibold transition-all duration-300 bg-white dark:bg-white/5 backdrop-blur-md border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-white/10 hover:border-brand-500/50 dark:hover:border-brand-400/50 hover:shadow-[0_0_20px_rgba(167,139,250,0.15)] shadow-sm dark:shadow-none active:scale-[0.98] w-full"
                 >
                   <span className="text-base leading-tight">Exhibit</span>
@@ -113,7 +142,7 @@ export default function Hero() {
               {/* Secondary Sponsor */}
               <motion.div whileHover={{ scale: 1.05, y: -4, x: 2 }} transition={{ type: "spring", stiffness: 400, damping: 10 }} className="w-full sm:w-auto z-10">
                 <Link
-                  href="/events/dubai-ai-summit-2026#sponsorship"
+                  href={currentEvent ? `/events/${currentEvent.id}#sponsorship` : '/events/dubai-ai-summit-2026#sponsorship'}
                   className="flex flex-col items-center justify-center gap-0.5 rounded-full px-7 py-3.5 font-semibold transition-all duration-300 bg-white dark:bg-white/5 backdrop-blur-md border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-white/10 hover:border-brand-500/50 dark:hover:border-brand-400/50 hover:shadow-[0_0_20px_rgba(167,139,250,0.15)] shadow-sm dark:shadow-none active:scale-[0.98] w-full"
                 >
                   <span className="text-base leading-tight">Sponsor</span>
@@ -131,7 +160,15 @@ export default function Hero() {
             variants={fadeInUp}
             className="relative lg:ml-auto w-full max-w-lg"
           >
-            <FeaturedEventCarousel />
+            {currentEvent && (
+              <FeaturedEventCarousel 
+                currentEvent={currentEvent} 
+                openEventsCount={openEvents.length}
+                onNextClick={handleNextClick}
+                onMouseEnter={() => setIsPaused(true)}
+                onMouseLeave={() => setIsPaused(false)}
+              />
+            )}
           </motion.div>
 
         </div>
