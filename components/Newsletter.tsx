@@ -27,7 +27,7 @@ export default function Newsletter() {
     <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-transparent">
       <div className="absolute inset-0 z-[-1] opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity">
         <Image 
-          src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=3840&q=100&auto=format&fit=crop" 
+          src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=3840&h=2160&q=100&fit=crop&auto=format&fit=crop" 
           alt="Workshop Background"
           fill
           className="object-cover"

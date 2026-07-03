@@ -130,7 +130,7 @@ export const events: IEvent[] = [
       'Connecting Business Leaders with Global AI Solution Providers for Practical Business Transformation'
     ],
     image:
-      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=3840&q=100&fit=crop',
+      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=3840&h=2160&q=100&fit=crop',
     registrationOpen: true,
     currency: '$',
   },
@@ -143,7 +143,7 @@ export const events: IEvent[] = [
       'Bridging the AI Skills Gap. Improving Productivity. Building Future-Ready Organizations.',
     ],
     image:
-      'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=3840&q=100&fit=crop',
+      'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=3840&h=2160&q=100&fit=crop',
     registrationOpen: true,
     currency: '€',
   },
@@ -616,42 +616,42 @@ export const faqCategories: IFaqCategory[] = [
 
 export const galleryImages = [
   {
-    src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=3840&q=100&fit=crop',
+    src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=3840&h=2160&q=100&fit=crop',
     alt: 'Conference keynote stage',
     span: 'col-span-2 row-span-2',
   },
   {
-    src: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=3840&q=100&fit=crop',
+    src: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=3840&h=2160&q=100&fit=crop',
     alt: 'Speaker presenting',
     span: 'col-span-1 row-span-1',
   },
   {
-    src: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=3840&q=100&fit=crop',
+    src: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=3840&h=2160&q=100&fit=crop',
     alt: 'Networking session',
     span: 'col-span-1 row-span-1',
   },
   {
-    src: 'https://images.unsplash.com/photo-1591115765373-5f9cf1da3607?w=3840&q=100&fit=crop',
+    src: 'https://images.unsplash.com/photo-1591115765373-5f9cf1da3607?w=3840&h=2160&q=100&fit=crop',
     alt: 'Exhibition booth area',
     span: 'col-span-1 row-span-1',
   },
   {
-    src: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=3840&q=100&fit=crop',
+    src: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=3840&h=2160&q=100&fit=crop',
     alt: 'Panel discussion',
     span: 'col-span-1 row-span-2',
   },
   {
-    src: 'https://images.unsplash.com/photo-1560439513-74b037a25d84?w=3840&q=100&fit=crop',
+    src: 'https://images.unsplash.com/photo-1560439513-74b037a25d84?w=3840&h=2160&q=100&fit=crop',
     alt: 'Hands-on workshop',
     span: 'col-span-1 row-span-1',
   },
   {
-    src: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=3840&q=100&fit=crop',
+    src: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=3840&h=2160&q=100&fit=crop',
     alt: 'Conference audience',
     span: 'col-span-2 row-span-1',
   },
   {
-    src: 'https://images.unsplash.com/photo-1559223607-a43c990c692c?w=3840&q=100&fit=crop',
+    src: 'https://images.unsplash.com/photo-1559223607-a43c990c692c?w=3840&h=2160&q=100&fit=crop',
     alt: 'Executive networking dinner',
     span: 'col-span-1 row-span-1',
   },

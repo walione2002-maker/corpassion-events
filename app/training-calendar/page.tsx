@@ -86,7 +86,7 @@ export default function TrainingCalendarPage() {
       {/* Faded Background Image */}
       <div className="absolute inset-0 z-[-1] opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity">
         <Image 
-          src="https://images.unsplash.com/photo-1560439513-74b037a25d84?w=3840&q=100&auto=format&fit=crop" 
+          src="https://images.unsplash.com/photo-1560439513-74b037a25d84?w=3840&h=2160&q=100&fit=crop&auto=format&fit=crop" 
           alt="Training Background"
           fill
           priority
