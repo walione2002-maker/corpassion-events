@@ -20,10 +20,8 @@ export default function About() {
       </div>
 
       {/* Floating Orbs (Parallax removed) */}
-        <div className="hidden md:block absolute top-32 right-32 w-20 h-20 bg-gradient-to-tr from-brand-400 to-indigo-500 rounded-full blur-xl opacity-40 animate-pulse" />
-        <div className="hidden md:block absolute bottom-40 left-20 w-32 h-32 bg-gradient-to-tr from-brand-400 to-brand-600 rounded-full blur-2xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }} />
-      </div>
-
+      <div className="hidden md:block absolute top-32 right-32 w-20 h-20 bg-gradient-to-tr from-brand-400 to-indigo-500 rounded-full blur-xl opacity-40 animate-pulse" />
+      <div className="hidden md:block absolute bottom-40 left-20 w-32 h-32 bg-gradient-to-tr from-brand-400 to-brand-600 rounded-full blur-2xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }} />
       <div className="max-w-6xl mx-auto relative z-20 w-full">
         <div 
           className="glass-card bg-white/80 dark:bg-white/[0.03] border border-slate-200 dark:border-white/10 rounded-3xl p-8 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.08)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden relative"

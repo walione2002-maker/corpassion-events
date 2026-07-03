@@ -43,7 +43,7 @@ export default function TrainingEventPage({ params }: TrainingEventPageProps) {
       {/* Faded Background Image specific to Training Detail Page */}
       <div className="absolute inset-0 z-[-1] opacity-[0.02] dark:opacity-[0.04] pointer-events-none mix-blend-luminosity">
         <Image 
-          src={event.image || "https://images.unsplash.com/photo-1560439513-74b037a25d84?w=2000&auto=format&fit=crop"}
+          src="https://images.unsplash.com/photo-1560439513-74b037a25d84?w=2000&auto=format&fit=crop"
           alt="Training Background"
           fill
           className="object-cover"

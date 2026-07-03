@@ -184,20 +184,20 @@ export const eventTicketTiers: Record<string, ITicketTier[]> = {
       id: 'early-bird',
       name: 'Early Bird',
       price: 449,
-      deadline: 'Limited Time',
+      deadline: 'Register Early'
     },
     {
       id: 'standard',
-      name: 'Standard Registration',
+      name: 'Standard',
       price: 599,
-      deadline: 'Regular',
-      emphasized: true,
+      deadline: 'Standard Rate',
+      emphasized: true
     },
     {
       id: 'late',
-      name: 'Late Registration',
+      name: 'Late',
       price: 699,
-      deadline: 'Final Call',
+      deadline: 'Late Registration'
     },
   ],
   'china-healthtech-2027': [
@@ -205,20 +205,20 @@ export const eventTicketTiers: Record<string, ITicketTier[]> = {
       id: 'early-bird',
       name: 'Early Bird',
       price: 299,
-      deadline: 'Limited Time',
+      deadline: 'Register Early'
     },
     {
       id: 'standard',
-      name: 'Standard Registration',
+      name: 'Standard',
       price: 399,
-      deadline: 'Regular',
-      emphasized: true,
+      deadline: 'Standard Rate',
+      emphasized: true
     },
     {
       id: 'late',
-      name: 'Late Registration',
+      name: 'Late',
       price: 499,
-      deadline: 'Final Call',
+      deadline: 'Late Registration'
     },
   ],
 };
@@ -258,44 +258,42 @@ export const eventBoothOptions: Record<string, IBoothOption[]> = {
   ],
   'amsterdam-enterprise-ai-2026': [
     {
-      id: 'standard-booth',
-      name: 'Standard Booth (2m × 2m)',
+      id: 'standard',
+      name: 'Standard Booth',
       price: 1500,
-      description: 'Our most popular option for mid-size exhibitors.',
+      description: 'Standard exhibition space for promoting your brand.',
     },
     {
-      id: 'premium-booth',
-      name: 'Premium Booth (3m × 3m)',
+      id: 'premium',
+      name: 'Premium Booth',
       price: 2200,
-      description:
-        'Maximum visibility with corner placement and expanded floor space.',
+      description: 'Premium location with high foot traffic.',
     },
     {
-      id: 'custom-booth',
+      id: 'custom',
       name: 'Custom Booth',
       price: 0,
-      description: 'Price on Request. Tailored to your specific exhibition needs.',
+      description: 'Price on Request. Custom designed booth space tailored to your needs.',
     },
   ],
   'china-healthtech-2027': [
     {
-      id: 'standard-booth',
-      name: 'Standard Booth (2m × 2m)',
+      id: 'standard',
+      name: 'Standard Booth',
       price: 900,
-      description: 'Our most popular option for mid-size exhibitors.',
+      description: 'Standard exhibition space for promoting your brand.',
     },
     {
-      id: 'premium-booth',
-      name: 'Premium Booth (3m × 3m)',
+      id: 'premium',
+      name: 'Premium Booth',
       price: 1400,
-      description:
-        'Maximum visibility with corner placement and expanded floor space.',
+      description: 'Premium location with high foot traffic.',
     },
     {
-      id: 'custom-booth',
+      id: 'custom',
       name: 'Custom Booth',
       price: 0,
-      description: 'Price on Request. Tailored to your specific exhibition needs.',
+      description: 'Price on Request. Custom designed booth space tailored to your needs.',
     },
   ],
 };
@@ -355,83 +353,15 @@ export const eventSponsorshipPackages: Record<string, ISponsorshipPackage[]> = {
     },
   ],
   'amsterdam-enterprise-ai-2026': [
-    {
-      id: 'event-sponsor',
-      tier: 'Event Sponsor',
-      price: 12000,
-      exclusive: true,
-      pitch: 'Premium brand visibility across the Enterprise AI & Workforce Transformation Summit Europe.',
-      benefits: [
-        'Lead sponsor recognition',
-        'Keynote speaking slot',
-        'Premium exhibition space',
-        'Maximum delegate passes',
-        'VIP networking access'
-      ],
-    },
-    {
-      id: 'platinum-sponsor',
-      tier: 'Platinum Sponsor',
-      price: 7500,
-      pitch: 'Excellent positioning and thought leadership opportunities.',
-      benefits: [
-        'Panel speaking slot',
-        'Large exhibition booth',
-        'Multiple delegate passes',
-        'Branding on all materials'
-      ],
-    },
-    {
-      id: 'gold-sponsor',
-      tier: 'Gold Sponsor',
-      price: 4500,
-      pitch: 'High visibility and networking opportunities.',
-      benefits: [
-        'Exhibition booth',
-        'Delegate passes',
-        'Website and brochure branding'
-      ],
-    },
-  ],
+    { id: 'event', tier: 'Event Sponsor', price: 12000, exclusive: true, pitch: 'Top-tier branding.', benefits: ['Main stage keynote', '6m x 3m booth'] },
+    { id: 'platinum', tier: 'Platinum Sponsor', price: 7500, pitch: 'High visibility.', benefits: ['Panel slot', '3m x 3m booth'] },
+    { id: 'gold', tier: 'Gold Sponsor', price: 4500, pitch: 'Excellent branding.', benefits: ['2m x 2m booth', '3 passes'] },
+],
   'china-healthtech-2027': [
-    {
-      id: 'event-sponsor',
-      tier: 'Event Sponsor',
-      price: 8000,
-      exclusive: true,
-      pitch: 'Lead the conversation in healthcare innovation and global opportunities.',
-      benefits: [
-        'Lead sponsor recognition',
-        'Keynote speaking slot',
-        'Premium exhibition space',
-        'Maximum delegate passes',
-        'VIP networking access'
-      ],
-    },
-    {
-      id: 'platinum-sponsor',
-      tier: 'Platinum Sponsor',
-      price: 5000,
-      pitch: 'Connect with Chinese medical device manufacturers and global buyers.',
-      benefits: [
-        'Panel speaking slot',
-        'Large exhibition booth',
-        'Multiple delegate passes',
-        'Branding on all materials'
-      ],
-    },
-    {
-      id: 'gold-sponsor',
-      tier: 'Gold Sponsor',
-      price: 3000,
-      pitch: 'Promote your brand at the premier healthtech expo.',
-      benefits: [
-        'Exhibition booth',
-        'Delegate passes',
-        'Website and brochure branding'
-      ],
-    },
-  ],
+    { id: 'event', tier: 'Event Sponsor', price: 8000, exclusive: true, pitch: 'Top-tier branding.', benefits: ['Main stage keynote', '6m x 3m booth'] },
+    { id: 'platinum', tier: 'Platinum Sponsor', price: 5000, pitch: 'High visibility.', benefits: ['Panel slot', '3m x 3m booth'] },
+    { id: 'gold', tier: 'Gold Sponsor', price: 3000, pitch: 'Excellent branding.', benefits: ['2m x 2m booth', '3 passes'] },
+],
 };
 
 // ─── Agenda ───────────────────────────────────────────────────
@@ -494,7 +424,7 @@ export const eventAgendas: Record<string, IAgendaDay[]> = {
   'amsterdam-enterprise-ai-2026': [
     {
       day: 1,
-      date: '4 November 2026',
+      date: '4 Nov 2026',
       title: 'AI Strategy & Business Transformation',
       sessions: [
         { time: '08:30 – 09:30', title: 'Registration & Welcome Coffee', type: 'networking' },
@@ -503,9 +433,9 @@ export const eventAgendas: Record<string, IAgendaDay[]> = {
         { time: '10:30 – 11:15', title: 'AI for CEOs, CFOs & Business Leaders', type: 'panel' },
         { time: '11:15 – 11:45', title: 'Networking Coffee Break', type: 'break' },
         { time: '11:45 – 12:30', title: 'AI Governance, Ethics & Compliance', type: 'panel' },
-        { time: '12:30 – 13:15', title: 'Digital Transformation Success Stories', type: 'workshop' },
-        { time: '13:15 – 14:15', title: 'Networking Lunch', type: 'networking' },
-        { time: '14:15 – 15:00', title: 'AI-Powered Business Operations', type: 'workshop' },
+        { time: '12:30 – 13:15', title: 'Digital Transformation Success Stories', type: 'panel' },
+        { time: '13:15 – 14:15', title: 'Networking Lunch', type: 'break' },
+        { time: '14:15 – 15:00', title: 'AI-Powered Business Operations', type: 'panel' },
         { time: '15:00 – 15:45', title: 'Executive Panel Discussion', type: 'panel' },
         { time: '15:45 – 16:15', title: 'Coffee Break', type: 'break' },
         { time: '16:15 – 17:30', title: 'AI Solutions Showcase & Networking', type: 'networking' },
@@ -513,7 +443,7 @@ export const eventAgendas: Record<string, IAgendaDay[]> = {
     },
     {
       day: 2,
-      date: '5 November 2026',
+      date: '5 Nov 2026',
       title: 'AI Applications Across Industries',
       sessions: [
         { time: '09:00 – 09:45', title: 'AI in Finance & Banking', type: 'panel' },
@@ -521,34 +451,34 @@ export const eventAgendas: Record<string, IAgendaDay[]> = {
         { time: '10:30 – 11:00', title: 'Coffee Break', type: 'break' },
         { time: '11:00 – 11:45', title: 'AI in Manufacturing & Supply Chain', type: 'panel' },
         { time: '11:45 – 12:30', title: 'AI in Healthcare', type: 'panel' },
-        { time: '12:30 – 13:30', title: 'Networking Lunch', type: 'networking' },
-        { time: '13:30 – 14:15', title: 'Cybersecurity & AI', type: 'workshop' },
-        { time: '14:15 – 15:00', title: 'Enterprise Automation', type: 'workshop' },
+        { time: '12:30 – 13:30', title: 'Networking Lunch', type: 'break' },
+        { time: '13:30 – 14:15', title: 'Cybersecurity & AI', type: 'panel' },
+        { time: '14:15 – 15:00', title: 'Enterprise Automation', type: 'panel' },
         { time: '15:00 – 15:30', title: 'Coffee Break', type: 'break' },
-        { time: '15:30 – 17:00', title: 'Solution Provider Demonstrations', type: 'networking' },
+        { time: '15:30 – 17:00', title: 'Solution Provider Demonstrations', type: 'workshop' },
       ],
     },
     {
       day: 3,
-      date: '6 November 2026',
+      date: '6 Nov 2026',
       title: 'Innovation, Partnerships & Future Growth',
       sessions: [
-        { time: '09:00 – 09:45', title: 'Future of AI Technologies', type: 'keynote' },
-        { time: '09:45 – 10:30', title: 'Building AI-Ready Organizations', type: 'workshop' },
+        { time: '09:00 – 09:45', title: 'Future of AI Technologies', type: 'panel' },
+        { time: '09:45 – 10:30', title: 'Building AI-Ready Organizations', type: 'panel' },
         { time: '10:30 – 11:00', title: 'Coffee Break', type: 'break' },
-        { time: '11:00 – 12:00', title: 'Startup Innovation Showcase', type: 'networking' },
+        { time: '11:00 – 12:00', title: 'Startup Innovation Showcase', type: 'keynote' },
         { time: '12:00 – 13:00', title: 'Business Matchmaking Meetings', type: 'networking' },
-        { time: '13:00 – 14:00', title: 'Networking Lunch', type: 'networking' },
+        { time: '13:00 – 14:00', title: 'Networking Lunch', type: 'break' },
         { time: '14:00 – 15:30', title: 'Roundtable Discussions', type: 'workshop' },
         { time: '15:30 – 16:00', title: 'Closing Keynote', type: 'keynote' },
-        { time: '16:00 – 16:30', title: 'Certificate Distribution & Closing Ceremony', type: 'networking' },
+        { time: '16:00 – 16:30', title: 'Certificate Distribution & Closing Ceremony', type: 'keynote' },
       ],
-    },
-  ],
+    }
+],
   'china-healthtech-2027': [
     {
       day: 1,
-      date: '14 January 2027',
+      date: '14 Jan 2027',
       title: 'Opening & China HealthTech Innovation',
       sessions: [
         { time: '08:30 – 09:30', title: 'Registration & Welcome Coffee', type: 'networking' },
@@ -556,8 +486,8 @@ export const eventAgendas: Record<string, IAgendaDay[]> = {
         { time: '09:45 – 10:30', title: 'Opening Keynote: China\'s Healthcare Innovation & Global Opportunities', type: 'keynote' },
         { time: '10:30 – 11:15', title: 'Medical Technology Trends', type: 'panel' },
         { time: '11:15 – 11:45', title: 'Coffee Break', type: 'break' },
-        { time: '11:45 – 12:30', title: 'Chinese Medical Device Manufacturers Presentation', type: 'workshop' },
-        { time: '12:30 – 13:30', title: 'Networking Lunch', type: 'networking' },
+        { time: '11:45 – 12:30', title: 'Chinese Medical Device Manufacturers Presentation', type: 'panel' },
+        { time: '12:30 – 13:30', title: 'Networking Lunch', type: 'break' },
         { time: '13:30 – 15:00', title: 'Exhibition Tour', type: 'networking' },
         { time: '15:00 – 15:30', title: 'Coffee Break', type: 'break' },
         { time: '15:30 – 17:30', title: 'B2B Networking Meetings', type: 'networking' },
@@ -565,14 +495,14 @@ export const eventAgendas: Record<string, IAgendaDay[]> = {
     },
     {
       day: 2,
-      date: '15 January 2027',
+      date: '15 Jan 2027',
       title: 'Business Development & Product Showcase',
       sessions: [
         { time: '09:00 – 10:00', title: 'Medical Equipment Demonstrations', type: 'workshop' },
         { time: '10:00 – 10:45', title: 'Hospital Procurement Opportunities', type: 'panel' },
         { time: '10:45 – 11:15', title: 'Coffee Break', type: 'break' },
         { time: '11:15 – 12:15', title: 'Healthcare Investment Opportunities', type: 'panel' },
-        { time: '12:15 – 13:15', title: 'Networking Lunch', type: 'networking' },
+        { time: '12:15 – 13:15', title: 'Networking Lunch', type: 'break' },
         { time: '13:15 – 15:30', title: 'Pre-Scheduled B2B Meetings', type: 'networking' },
         { time: '15:30 – 16:00', title: 'Coffee Break', type: 'break' },
         { time: '16:00 – 17:30', title: 'Distributor & Buyer Meetings', type: 'networking' },
@@ -580,21 +510,21 @@ export const eventAgendas: Record<string, IAgendaDay[]> = {
     },
     {
       day: 3,
-      date: '16 January 2027',
+      date: '16 Jan 2027',
       title: 'International Partnerships & Market Expansion',
       sessions: [
         { time: '09:00 – 10:00', title: 'Entering European & CIS Healthcare Markets', type: 'panel' },
-        { time: '10:00 – 10:45', title: 'Regulatory Requirements & Market Access', type: 'workshop' },
+        { time: '10:00 – 10:45', title: 'Regulatory Requirements & Market Access', type: 'panel' },
         { time: '10:45 – 11:15', title: 'Coffee Break', type: 'break' },
         { time: '11:15 – 12:30', title: 'International Buyer–Supplier Matchmaking', type: 'networking' },
-        { time: '12:30 – 13:30', title: 'Networking Lunch', type: 'networking' },
+        { time: '12:30 – 13:30', title: 'Networking Lunch', type: 'break' },
         { time: '13:30 – 15:00', title: 'Strategic Partnership Meetings', type: 'networking' },
-        { time: '15:00 – 15:30', title: 'Signing Ceremony (Optional)', type: 'keynote' },
+        { time: '15:00 – 15:30', title: 'Signing Ceremony (Optional)', type: 'networking' },
         { time: '15:30 – 16:00', title: 'Closing Remarks', type: 'keynote' },
         { time: '16:00 – 17:00', title: 'Farewell Networking Session', type: 'networking' },
       ],
-    },
-  ],
+    }
+],
 };
 
 
