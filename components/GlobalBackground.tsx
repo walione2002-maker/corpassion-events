@@ -6,16 +6,7 @@ import Image from 'next/image';
 export default function GlobalBackground() {
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none z-[-50] transition-colors duration-500 bg-white dark:bg-[#050505]">
-      {/* Faded Event Picture Background */}
-      <div className="absolute inset-0 opacity-[0.20] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity dark:mix-blend-overlay">
-        <Image 
-          src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop" 
-          alt="Event Background"
-          fill
-          className="object-cover"
-          priority
-        />
-      </div>
+      {/* Faded Event Picture Background removed to prevent overlap with section backgrounds */}
 
       {/* High-Performance Glowing Orbs (using radial gradients instead of heavy CSS blur/mix-blend) */}
       <div 
