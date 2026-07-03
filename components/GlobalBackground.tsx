@@ -30,8 +30,7 @@ export default function GlobalBackground() {
         }}
       />
       
-      {/* Fade at bottom edges to keep it from feeling bounded */}
-      <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white via-transparent to-transparent dark:from-black opacity-100" />
+      {/* Fade at bottom edges removed per user request */}
       
       <style jsx>{`
         @keyframes blob {
