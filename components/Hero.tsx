@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Calendar, MapPin, Users, Presentation } from 'lucide-react';
 import { ROUTES } from '@/config/routes';
 import Image from 'next/image';
+import FeaturedEventCarousel from './FeaturedEventCarousel';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -130,54 +131,7 @@ export default function Hero() {
             variants={fadeInUp}
             className="relative lg:ml-auto w-full max-w-lg"
           >
-            {/* Card Glow */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-brand-400 to-brand-600 rounded-2xl blur-xl opacity-20 animate-pulse"></div>
-            
-            {/* The Card */}
-            <div className="relative bg-white/60 dark:bg-slate-900/60 backdrop-blur-3xl border border-slate-200/50 dark:border-white/10 rounded-3xl p-8 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden transition-transform duration-500 hover:-translate-y-2">
-              <div className="absolute top-0 right-0 p-4">
-                <span className="bg-brand-400 text-slate-950 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                  Registration Open
-                </span>
-              </div>
-              
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 mt-4">Dubai AI Summit 2026</h3>
-              <p className="text-slate-800 dark:text-gray-400 mb-8">AI FOR NON-TECHNICAL LEADERS SUMMIT & SOLUTIONS SHOWCASE</p>
-              
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center text-slate-800 dark:text-gray-300">
-                  <Calendar className="w-5 h-5 mr-3 text-brand-500 dark:text-brand-400" />
-                  <span>14–16 October 2026</span>
-                </div>
-                <div className="flex items-center text-slate-800 dark:text-gray-300">
-                  <MapPin className="w-5 h-5 mr-3 text-brand-500 dark:text-brand-400" />
-                  <span>Dubai, UAE</span>
-                </div>
-              </div>
-
-              {/* Stats Grid inside Card */}
-              <div className="grid grid-cols-3 gap-4 py-6 border-t border-slate-200 dark:border-white/10">
-                <div className="text-center">
-                  <div className="text-xl font-bold text-slate-900 dark:text-white">3</div>
-                  <div className="text-[10px] text-gray-500 font-semibold tracking-wider uppercase mt-1">Days</div>
-                </div>
-                <div className="text-center border-x border-slate-200 dark:border-white/10">
-                  <div className="text-xl font-bold text-slate-900 dark:text-white">40+</div>
-                  <div className="text-[10px] text-gray-500 font-semibold tracking-wider uppercase mt-1">Talks</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-xl font-bold text-slate-900 dark:text-white">2K</div>
-                  <div className="text-[10px] text-gray-500 font-semibold tracking-wider uppercase mt-1">Attendees</div>
-                </div>
-              </div>
-
-              <Link
-                href="/events/dubai-ai-summit-2026"
-                className="block w-full text-center py-3 rounded-lg bg-slate-100 dark:bg-white/5 hover:bg-slate-200 dark:hover:bg-white/10 border border-slate-200 dark:border-white/10 transition-colors text-slate-900 dark:text-white font-medium text-sm mt-2"
-              >
-                View Full Agenda &rarr;
-              </Link>
-            </div>
+            <FeaturedEventCarousel />
           </motion.div>
 
         </div>
