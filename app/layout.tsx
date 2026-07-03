@@ -91,7 +91,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-transparent text-slate-900 dark:text-white antialiased overflow-x-hidden transition-colors`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark">
           <GlobalBackground />
           <Header />
           {children}
