@@ -58,8 +58,8 @@ export default function SponsorshipCheckoutPage({ params }: { params: { id: stri
       } else {
         throw new Error('No checkout URL returned');
       }
-    } catch (err: any) {
-      setError(err.message || 'An unexpected error occurred');
+    } catch (err: unknown) {
+      setError((err instanceof Error ? err.message : "An unknown error occurred") || 'An unexpected error occurred');
       setIsSubmitting(false);
     }
   };

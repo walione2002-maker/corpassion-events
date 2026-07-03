@@ -89,6 +89,8 @@ export default function TrainingCalendarPage() {
           src="https://images.unsplash.com/photo-1560439513-74b037a25d84?w=2000&auto=format&fit=crop" 
           alt="Training Background"
           fill
+          priority
+          sizes="100vw"
           className="object-cover"
         />
       </div>

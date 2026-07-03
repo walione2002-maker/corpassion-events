@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { checkoutSchema } from '@/lib/validations';
+import DOMPurify from 'isomorphic-dompurify';
 import { eventTicketTiers, eventBoothOptions, eventSponsorshipPackages } from '@/data/events';
 
 // PayPal Configuration
@@ -34,6 +35,13 @@ export async function POST(req: Request) {
 
     // 1. Server-side Zod validation
     const validatedData = checkoutSchema.parse(body);
+    // Sanitize all string fields
+    Object.keys(validatedData).forEach(key => {
+      if (typeof (validatedData as Record<string, unknown>)[key] === 'string') {
+        (validatedData as Record<string, unknown>)[key] = DOMPurify.sanitize((validatedData as Record<string, unknown>)[key] as string);
+      }
+    });
+
 
     // 2. Determine price and name based on package type
     let amountGBP = 0;
@@ -103,7 +111,7 @@ export async function POST(req: Request) {
 
           if (orderResponse.ok) {
             const orderData = await orderResponse.json();
-            const approveLink = orderData.links.find((link: any) => link.rel === 'approve');
+            const approveLink = orderData.links.find((link: { rel: string, href: string }) => link.rel === 'approve');
             if (approveLink) {
               return NextResponse.json({ url: approveLink.href }, { status: 200 });
             }
@@ -137,12 +145,12 @@ export async function POST(req: Request) {
         throw new Error('Invalid payment method selected');
     }
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Checkout Error:', error);
     
     // Zod Validation Error
-    if (error.name === 'ZodError') {
-      return NextResponse.json({ error: 'Validation failed', details: error.errors }, { status: 400 });
+    if (error instanceof Error && error.name === 'ZodError') {
+      return NextResponse.json({ error: 'Validation failed', details: (error as { errors?: unknown }).errors }, { status: 400 });
     }
 
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });

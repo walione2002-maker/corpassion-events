@@ -39,6 +39,8 @@ export default function EventPage({ params }: EventPageProps) {
           src={event.image || "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2000&auto=format&fit=crop"}
           alt="Event Background"
           fill
+          priority
+          sizes="100vw"
           className="object-cover"
         />
       </div>

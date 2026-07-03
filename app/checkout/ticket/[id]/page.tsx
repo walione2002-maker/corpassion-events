@@ -56,8 +56,8 @@ export default function TicketCheckoutPage({ params }: { params: { id: string } 
       } else {
         throw new Error('No checkout URL returned');
       }
-    } catch (err: any) {
-      setError(err.message || 'An unexpected error occurred');
+    } catch (err: unknown) {
+      setError((err instanceof Error ? err.message : "An unknown error occurred") || 'An unexpected error occurred');
       setIsSubmitting(false);
     }
   };

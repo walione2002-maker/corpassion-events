@@ -5,7 +5,7 @@ import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from
 import { eventAgendas, globalFeatures, type IAgendaSession } from '@/data/events';
 
 // Magnetic Card Component for Weightless Modules
-function MagneticCard({ children, config }: { children: React.ReactNode, config: any }) {
+function MagneticCard({ children, config }: { children: React.ReactNode, config: Record<string, unknown> }) {
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);

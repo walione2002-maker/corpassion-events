@@ -1,9 +1,11 @@
-import { z } from 'zod';
+const fs = require('fs');
+
+const content = `import { z } from 'zod';
 
 export const paymentMethodEnum = z.enum(['paypal', 'bank_transfer', 'whatsapp']);
 
-const nameRegex = /^[a-zA-Z\s\'-]+$/;
-const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+const nameRegex = /^[a-zA-Z\\s\\'-]+$/;
+const phoneRegex = /^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$/im;
 
 // 1. Ticket (Delegate) Schema
 export const ticketSchema = z.object({
@@ -52,3 +54,7 @@ export type TicketPayload = z.infer<typeof ticketSchema>;
 export type BoothPayload = z.infer<typeof boothSchema>;
 export type SponsorshipPayload = z.infer<typeof sponsorshipSchema>;
 export type CheckoutPayload = z.infer<typeof checkoutSchema>;
+`;
+
+fs.writeFileSync('lib/validations.ts', content, 'utf8');
+console.log('Fixed validations.ts');
