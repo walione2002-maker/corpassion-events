@@ -30,7 +30,7 @@ export default function GlobalBackground() {
       
       {/* Clean Subtle Grid */}
       <div
-        className="absolute inset-0 opacity-[0.20] dark:opacity-[0.35] pointer-events-none"
+        className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03] pointer-events-none"
         style={{
           backgroundImage:
             'linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)',
