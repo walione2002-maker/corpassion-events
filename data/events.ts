@@ -143,7 +143,7 @@ export const events: IEvent[] = [
       'Bridging the AI Skills Gap. Improving Productivity. Building Future-Ready Organizations.',
     ],
     image:
-      'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=3840&h=2160&q=100&fit=crop',
+      '/amsterdam_summit_bg.png',
     registrationOpen: true,
     currency: '€',
   },
@@ -636,7 +636,7 @@ export const galleryImages = [
     span: 'col-span-1 row-span-1',
   },
   {
-    src: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=3840&h=2160&q=100&fit=crop',
+    src: '/amsterdam_summit_bg.png',
     alt: 'Panel discussion',
     span: 'col-span-1 row-span-2',
   },
