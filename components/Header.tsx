@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { Menu, X, Settings as SettingsIcon } from 'lucide-react';
 import Link from 'next/link';
 import { navLinks, INavLink } from '@/data/events';
-
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { ROUTES } from '@/config/routes';
 
 export default function Header() {
@@ -96,7 +96,7 @@ export default function Header() {
             >
               <SettingsIcon className="w-5 h-5" />
             </Link>
-
+            <ThemeToggle />
             <Link
               href={ROUTES.REGISTER}
               className="rounded-full bg-brand-400 text-slate-950 px-6 py-2.5 text-sm font-semibold transition-all duration-300 hover:bg-brand-300 hover:shadow-[0_0_20px_rgba(167,139,250,0.3)] active:scale-[0.98]"
@@ -170,7 +170,11 @@ export default function Header() {
             <span>Register Now</span>
           </Link>
 
-
+          {/* Theme Toggle for Mobile */}
+          <div className="mt-8 flex flex-col items-center gap-4 border-t border-slate-200 dark:border-white/10 pt-8 w-full max-w-[200px]">
+            <span className="text-sm font-medium text-slate-500">Appearance</span>
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </header>
