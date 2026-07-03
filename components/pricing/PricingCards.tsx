@@ -3,15 +3,16 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Users, ArrowRight, Sparkles } from 'lucide-react';
-import { ticketTiers } from '@/data/events';
+import { eventTicketTiers } from '@/data/events';
 import Link from 'next/link';
 
-export default function PricingCards() {
+export default function PricingCards({ eventId = 'dubai-ai-summit-2026', currency = '$' }: { eventId?: string, currency?: string }) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-80px' });
+  const currentTicketTiers = eventTicketTiers[eventId] || eventTicketTiers['dubai-ai-summit-2026'];
 
   return (
-    <section id="pricing" className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#0a0a0a]">
+    <section id="pricing" className="py-24 px-4 sm:px-6 lg:px-8 bg-transparent">
       <div ref={sectionRef} className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -51,8 +52,8 @@ export default function PricingCards() {
         </motion.div>
 
         {/* Pricing Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {ticketTiers.map((tier, index) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto justify-center">
+          {currentTicketTiers.map((tier, index) => {
             const isEmphasized = tier.emphasized === true;
 
             return (
@@ -110,7 +111,7 @@ export default function PricingCards() {
 
                     {/* Price */}
                     <div className="mt-5 mb-4">
-                      <span className="text-slate-800 dark:text-gray-400 text-lg align-top">$</span>
+                      <span className="text-slate-800 dark:text-gray-400 text-lg align-top">{currency}</span>
                       <span
                         className={`text-4xl font-bold tracking-tight ${
                           isEmphasized ? 'text-slate-900 dark:text-white' : 'text-slate-900 dark:text-white'

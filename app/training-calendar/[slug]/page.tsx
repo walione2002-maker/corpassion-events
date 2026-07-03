@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { mockTrainingEvents } from '@/data/training';
 import { MapPin, CalendarDays, Layout, CheckCircle2 } from 'lucide-react';
+import Image from 'next/image';
 
 interface TrainingEventPageProps {
   params: {
@@ -38,9 +39,18 @@ export default function TrainingEventPage({ params }: TrainingEventPageProps) {
   const dateStr = startDay === endDay ? `${startDay} ${monthStr} ${year}` : `${startDay} - ${endDay} ${monthStr} ${year}`;
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a] pt-32 pb-24 relative overflow-hidden">
-      {/* Background Orbs */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand-600/10 rounded-full blur-[120px] pointer-events-none" />
+    <main className="min-h-screen bg-transparent pt-32 pb-24 relative overflow-hidden">
+      {/* Faded Background Image specific to Training Detail Page */}
+      <div className="absolute inset-0 z-[-1] opacity-[0.02] dark:opacity-[0.04] pointer-events-none mix-blend-luminosity">
+        <Image 
+          src={event.image || "https://images.unsplash.com/photo-1560439513-74b037a25d84?w=2000&auto=format&fit=crop"}
+          alt="Training Background"
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      {/* Ambient backgrounds removed in favor of GlobalBackground */}
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="mb-8">

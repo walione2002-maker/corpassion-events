@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { events } from '@/data/events';
 import EventHero from '@/components/events/EventHero';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 
 const AgendaTabs = dynamic(() => import('@/components/summit/AgendaTabs'), { ssr: true });
 const PricingCards = dynamic(() => import('@/components/pricing/PricingCards'), { ssr: true });
@@ -27,23 +28,31 @@ export default function EventPage({ params }: EventPageProps) {
     notFound();
   }
 
-  // Right now, our deep-dive data (agenda, pricing, sponsorship) is specific
-  // to the flagship Dubai AI Summit. In a real app, we'd check if the event
-  // has this data before rendering these sections.
-  const isFlagship = event.flagship;
+  // Render these sections if the event is set to have registration open (all current events do)
+  const isRegistrationOpen = event.registrationOpen !== false;
 
   return (
-    <main>
+    <main className="relative bg-transparent">
+      {/* Faded Background Image specific to Event Detail Page */}
+      <div className="absolute inset-0 z-[-1] opacity-[0.02] dark:opacity-[0.04] pointer-events-none mix-blend-luminosity">
+        <Image 
+          src={event.image || "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2000&auto=format&fit=crop"}
+          alt="Event Background"
+          fill
+          className="object-cover"
+        />
+      </div>
+
       <EventHero event={event} />
       
-      {isFlagship ? (
+      {isRegistrationOpen ? (
         <>
-          <AgendaTabs />
-          <PricingCards />
-          <SponsorshipHub />
+          <AgendaTabs eventId={event.id} />
+          <PricingCards eventId={event.id} currency={event.currency} />
+          <SponsorshipHub eventId={event.id} currency={event.currency} />
         </>
       ) : (
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#0a0a0a] min-h-[50vh] flex items-center justify-center">
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-transparent min-h-[50vh] flex items-center justify-center">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl font-display font-bold text-white mb-4">
               Registration Opens Soon

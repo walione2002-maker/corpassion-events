@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { notFound, useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { boothOptions, boothFeatures } from '@/data/events';
+import { eventBoothOptions, boothFeatures } from '@/data/events';
 import { boothSchema, BoothPayload } from '@/lib/validations';
 import { Check, Loader2, ArrowLeft, LayoutGrid } from 'lucide-react';
 import Link from 'next/link';
@@ -14,7 +14,7 @@ export default function BoothCheckoutPage({ params }: { params: { id: string } }
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const booth = boothOptions.find(b => b.id === params.id);
+  const booth = Object.values(eventBoothOptions).flat().find(b => b.id === params.id);
   if (!booth) {
     notFound();
   }
@@ -64,9 +64,8 @@ export default function BoothCheckoutPage({ params }: { params: { id: string } }
   };
 
   return (
-    <div className="min-h-screen pt-32 pb-24 bg-slate-50 dark:bg-[#0a0a0a] relative">
+    <div className="min-h-screen pt-32 pb-24 bg-transparent relative">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] pointer-events-none" />
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-brand-500/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Link href="/events/dubai-ai-summit-2026#sponsorship" className="inline-flex items-center text-sm font-medium text-slate-500 hover:text-brand-500 mb-8 transition-colors">

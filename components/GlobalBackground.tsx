@@ -1,19 +1,31 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 export default function GlobalBackground() {
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none z-[-50] transition-colors duration-500">
+    <div className="fixed inset-0 overflow-hidden pointer-events-none z-[-50] transition-colors duration-500 bg-white dark:bg-[#050505]">
+      {/* Faded Event Picture Background */}
+      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.08] pointer-events-none mix-blend-luminosity dark:mix-blend-overlay">
+        <Image 
+          src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=2070&auto=format&fit=crop" 
+          alt="Event Background"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
+
       {/* High-Performance Glowing Orbs (using radial gradients instead of heavy CSS blur/mix-blend) */}
       <div 
-        className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-[radial-gradient(circle_at_center,rgba(167,139,250,0.15)_0%,transparent_70%)] dark:bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.12)_0%,transparent_70%)] md:animate-blob" 
+        className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-[radial-gradient(circle_at_center,rgba(167,139,250,0.35)_0%,transparent_70%)] dark:bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.25)_0%,transparent_70%)] md:animate-blob" 
       />
       <div 
-        className="absolute bottom-[-20%] right-[-10%] w-[70%] h-[70%] rounded-full bg-[radial-gradient(circle_at_center,rgba(165,180,252,0.15)_0%,transparent_70%)] dark:bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.12)_0%,transparent_70%)] md:animate-blob animation-delay-2000" 
+        className="absolute bottom-[-20%] right-[-10%] w-[70%] h-[70%] rounded-full bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.35)_0%,transparent_70%)] dark:bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.25)_0%,transparent_70%)] md:animate-blob animation-delay-2000" 
       />
       <div 
-        className="absolute top-[10%] right-[-5%] w-[50%] h-[50%] rounded-full bg-[radial-gradient(circle_at_center,rgba(240,171,252,0.15)_0%,transparent_70%)] dark:bg-[radial-gradient(circle_at_center,rgba(217,70,239,0.12)_0%,transparent_70%)] md:animate-blob animation-delay-4000" 
+        className="absolute top-[10%] right-[-5%] w-[50%] h-[50%] rounded-full bg-[radial-gradient(circle_at_center,rgba(217,70,239,0.35)_0%,transparent_70%)] dark:bg-[radial-gradient(circle_at_center,rgba(217,70,239,0.25)_0%,transparent_70%)] md:animate-blob animation-delay-4000" 
       />
       
       {/* Clean Subtle Grid */}

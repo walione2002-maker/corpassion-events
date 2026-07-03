@@ -7,7 +7,8 @@ export interface IEvent {
   dates: string;
   taglines: string[];
   image: string;
-  flagship?: boolean;
+  registrationOpen?: boolean;
+  currency?: string;
 }
 
 export interface ITicketTier {
@@ -130,22 +131,25 @@ export const events: IEvent[] = [
     ],
     image:
       'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=700&fit=crop',
-    flagship: true,
+    registrationOpen: true,
+    currency: '$',
   },
   {
     id: 'amsterdam-enterprise-ai-2026',
     title: 'Enterprise AI & Workforce Transformation Summit Europe 2026',
     location: 'Amsterdam, Netherlands',
-    dates: 'November 4-6, 2026',
+    dates: '4–6 November 2026',
     taglines: [
       'Bridging the AI Skills Gap. Improving Productivity. Building Future-Ready Organizations.',
     ],
     image:
       'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1200&h=700&fit=crop',
+    registrationOpen: true,
+    currency: '€',
   },
   {
     id: 'china-healthtech-2027',
-    title: 'China HealthTech 2027',
+    title: 'China HealthTech Expo 2027',
     location: 'Baku, Azerbaijan',
     dates: '14–16 January 2027',
     taglines: [
@@ -154,24 +158,70 @@ export const events: IEvent[] = [
     ],
     image:
       '/chinahealth.png',
+    registrationOpen: true,
+    currency: '$',
   },
 ];
 
-export const ticketTiers: ITicketTier[] = [
-  {
-    id: 'early-bird',
-    name: 'Early Bird',
-    price: 499,
-    deadline: '1 Aug – 15 Sep',
-  },
-  {
-    id: 'standard',
-    name: 'Standard Registration',
-    price: 599,
-    deadline: '16 Sep – 13 Oct',
-    emphasized: true,
-  },
-];
+export const eventTicketTiers: Record<string, ITicketTier[]> = {
+  'dubai-ai-summit-2026': [
+    {
+      id: 'early-bird',
+      name: 'Early Bird',
+      price: 499,
+      deadline: '1 Aug – 15 Sep',
+    },
+    {
+      id: 'standard',
+      name: 'Standard Registration',
+      price: 599,
+      deadline: '16 Sep – 13 Oct',
+      emphasized: true,
+    },
+  ],
+  'amsterdam-enterprise-ai-2026': [
+    {
+      id: 'early-bird',
+      name: 'Early Bird',
+      price: 449,
+      deadline: 'Limited Time',
+    },
+    {
+      id: 'standard',
+      name: 'Standard Registration',
+      price: 599,
+      deadline: 'Regular',
+      emphasized: true,
+    },
+    {
+      id: 'late',
+      name: 'Late Registration',
+      price: 699,
+      deadline: 'Final Call',
+    },
+  ],
+  'china-healthtech-2027': [
+    {
+      id: 'early-bird',
+      name: 'Early Bird',
+      price: 299,
+      deadline: 'Limited Time',
+    },
+    {
+      id: 'standard',
+      name: 'Standard Registration',
+      price: 399,
+      deadline: 'Regular',
+      emphasized: true,
+    },
+    {
+      id: 'late',
+      name: 'Late Registration',
+      price: 499,
+      deadline: 'Final Call',
+    },
+  ],
+};
 
 // ─── Booth Options ────────────────────────────────────────────
 
@@ -184,138 +234,369 @@ export const boothFeatures = [
   '2 Exhibitor badges',
 ];
 
-export const boothOptions: IBoothOption[] = [
-  {
-    id: 'tabletop',
-    name: 'Tabletop / Mini Booth',
-    price: 800,
-    description: 'Perfect for startups and small teams looking for visibility.',
-  },
-  {
-    id: 'standard-booth',
-    name: 'Standard Booth',
-    price: 1200,
-    description: 'Our most popular option for mid-size exhibitors.',
-  },
-  {
-    id: 'premium-booth',
-    name: 'Premium Booth (Corner/Larger)',
-    price: 2000,
-    description:
-      'Maximum visibility with corner placement and expanded floor space.',
-  },
-];
+export const eventBoothOptions: Record<string, IBoothOption[]> = {
+  'dubai-ai-summit-2026': [
+    {
+      id: 'tabletop',
+      name: 'Tabletop / Mini Booth',
+      price: 800,
+      description: 'Perfect for startups and small teams looking for visibility.',
+    },
+    {
+      id: 'standard-booth',
+      name: 'Standard Booth',
+      price: 1200,
+      description: 'Our most popular option for mid-size exhibitors.',
+    },
+    {
+      id: 'premium-booth',
+      name: 'Premium Booth (Corner/Larger)',
+      price: 2000,
+      description:
+        'Maximum visibility with corner placement and expanded floor space.',
+    },
+  ],
+  'amsterdam-enterprise-ai-2026': [
+    {
+      id: 'standard-booth',
+      name: 'Standard Booth (2m × 2m)',
+      price: 1500,
+      description: 'Our most popular option for mid-size exhibitors.',
+    },
+    {
+      id: 'premium-booth',
+      name: 'Premium Booth (3m × 3m)',
+      price: 2200,
+      description:
+        'Maximum visibility with corner placement and expanded floor space.',
+    },
+    {
+      id: 'custom-booth',
+      name: 'Custom Booth',
+      price: 0,
+      description: 'Price on Request. Tailored to your specific exhibition needs.',
+    },
+  ],
+  'china-healthtech-2027': [
+    {
+      id: 'standard-booth',
+      name: 'Standard Booth (2m × 2m)',
+      price: 900,
+      description: 'Our most popular option for mid-size exhibitors.',
+    },
+    {
+      id: 'premium-booth',
+      name: 'Premium Booth (3m × 3m)',
+      price: 1400,
+      description:
+        'Maximum visibility with corner placement and expanded floor space.',
+    },
+    {
+      id: 'custom-booth',
+      name: 'Custom Booth',
+      price: 0,
+      description: 'Price on Request. Tailored to your specific exhibition needs.',
+    },
+  ],
+};
 
 // ─── Sponsorship Packages ─────────────────────────────────────
 
-export const sponsorshipPackages: ISponsorshipPackage[] = [
-  {
-    id: 'title-sponsor',
-    tier: 'Title Sponsor',
-    price: 10000,
-    exclusive: true,
-    pitch:
-      'Be the exclusive lead sponsor of the most anticipated AI leadership summit in the Middle East.',
-    benefits: [
-      'Exclusive "Title Sponsor" recognition',
-      'Premium logo placement on all materials',
-      'Featured on website & all marketing collateral',
-      'Opening ceremony recognition',
-      '30-minute keynote presentation slot',
-      'Premium exhibition booth (prime location)',
-      '6 Delegate Passes included',
-      'Executive networking access',
-      'Company profile in official brochure',
-      'Social media promotion before & after event',
-    ],
-  },
-  {
-    id: 'event-partner',
-    tier: 'Event Partner',
-    price: 5000,
-    pitch:
-      'Showcase your brand alongside industry leaders and gain direct access to key decision-makers.',
-    benefits: [
-      'Logo on website & marketing materials',
-      'Standard exhibition booth',
-      '4 Delegate Passes included',
-      'Company profile in official brochure',
-      'Recognition during event proceedings',
-      'Networking opportunities with delegates',
-    ],
-  },
-  {
-    id: 'supporting-partner',
-    tier: 'Supporting Partner',
-    price: 2500,
-    pitch:
-      'A cost-effective opportunity to increase brand visibility and connect with a targeted audience.',
-    benefits: [
-      'Logo on event website',
-      'Exhibition booth',
-      '2 Delegate Passes included',
-      'Company listing in official brochure',
-      'Full networking access',
-    ],
-  },
-];
+export const eventSponsorshipPackages: Record<string, ISponsorshipPackage[]> = {
+  'dubai-ai-summit-2026': [
+    {
+      id: 'title-sponsor',
+      tier: 'Title Sponsor',
+      price: 10000,
+      exclusive: true,
+      pitch:
+        'Be the exclusive lead sponsor of the most anticipated AI leadership summit in the Middle East.',
+      benefits: [
+        'Exclusive "Title Sponsor" recognition',
+        'Premium logo placement on all materials',
+        'Featured on website & all marketing collateral',
+        'Opening ceremony recognition',
+        '30-minute keynote presentation slot',
+        'Premium exhibition booth (prime location)',
+        '6 Delegate Passes included',
+        'Executive networking access',
+        'Company profile in official brochure',
+        'Social media promotion before & after event',
+      ],
+    },
+    {
+      id: 'event-partner',
+      tier: 'Event Partner',
+      price: 5000,
+      pitch:
+        'Showcase your brand alongside industry leaders and gain direct access to key decision-makers.',
+      benefits: [
+        'Logo on website & marketing materials',
+        'Standard exhibition booth',
+        '4 Delegate Passes included',
+        'Company profile in official brochure',
+        'Recognition during event proceedings',
+        'Networking opportunities with delegates',
+      ],
+    },
+    {
+      id: 'supporting-partner',
+      tier: 'Supporting Partner',
+      price: 2500,
+      pitch:
+        'A cost-effective opportunity to increase brand visibility and connect with a targeted audience.',
+      benefits: [
+        'Logo on event website',
+        'Exhibition booth',
+        '2 Delegate Passes included',
+        'Company listing in official brochure',
+        'Full networking access',
+      ],
+    },
+  ],
+  'amsterdam-enterprise-ai-2026': [
+    {
+      id: 'event-sponsor',
+      tier: 'Event Sponsor',
+      price: 12000,
+      exclusive: true,
+      pitch: 'Premium brand visibility across the Enterprise AI & Workforce Transformation Summit Europe.',
+      benefits: [
+        'Lead sponsor recognition',
+        'Keynote speaking slot',
+        'Premium exhibition space',
+        'Maximum delegate passes',
+        'VIP networking access'
+      ],
+    },
+    {
+      id: 'platinum-sponsor',
+      tier: 'Platinum Sponsor',
+      price: 7500,
+      pitch: 'Excellent positioning and thought leadership opportunities.',
+      benefits: [
+        'Panel speaking slot',
+        'Large exhibition booth',
+        'Multiple delegate passes',
+        'Branding on all materials'
+      ],
+    },
+    {
+      id: 'gold-sponsor',
+      tier: 'Gold Sponsor',
+      price: 4500,
+      pitch: 'High visibility and networking opportunities.',
+      benefits: [
+        'Exhibition booth',
+        'Delegate passes',
+        'Website and brochure branding'
+      ],
+    },
+  ],
+  'china-healthtech-2027': [
+    {
+      id: 'event-sponsor',
+      tier: 'Event Sponsor',
+      price: 8000,
+      exclusive: true,
+      pitch: 'Lead the conversation in healthcare innovation and global opportunities.',
+      benefits: [
+        'Lead sponsor recognition',
+        'Keynote speaking slot',
+        'Premium exhibition space',
+        'Maximum delegate passes',
+        'VIP networking access'
+      ],
+    },
+    {
+      id: 'platinum-sponsor',
+      tier: 'Platinum Sponsor',
+      price: 5000,
+      pitch: 'Connect with Chinese medical device manufacturers and global buyers.',
+      benefits: [
+        'Panel speaking slot',
+        'Large exhibition booth',
+        'Multiple delegate passes',
+        'Branding on all materials'
+      ],
+    },
+    {
+      id: 'gold-sponsor',
+      tier: 'Gold Sponsor',
+      price: 3000,
+      pitch: 'Promote your brand at the premier healthtech expo.',
+      benefits: [
+        'Exhibition booth',
+        'Delegate passes',
+        'Website and brochure branding'
+      ],
+    },
+  ],
+};
 
 // ─── Agenda ───────────────────────────────────────────────────
 
-export const agenda: IAgendaDay[] = [
-  {
-    day: 1,
-    date: '14 October 2026',
-    title: 'Understanding AI & Business Transformation',
-    sessions: [
-      { time: '08:00 – 09:00', title: 'Registration & Networking Breakfast', type: 'networking' },
-      { time: '09:00 – 09:20', title: 'Welcome Address & Opening Ceremony', type: 'keynote' },
-      { time: '09:20 – 10:00', title: 'Opening Keynote - The Future of AI for Business Leaders', type: 'keynote' },
-      { time: '10:00 – 10:45', title: 'Session 1 - AI Without Technical Knowledge: What Every Executive Should Know', type: 'workshop' },
-      { time: '10:45 – 11:15', title: 'Networking Coffee Break', type: 'break' },
-      { time: '11:15 – 12:00', title: 'Session 2 - How Companies Are Using AI to Reduce Costs and Increase Productivity', type: 'workshop' },
-      { time: '12:00 – 12:45', title: 'Panel Discussion - Is Your Business Ready for AI?', type: 'panel' },
-      { time: '12:45 – 14:00', title: 'Networking Lunch & Solutions Showcase', type: 'networking' },
-      { time: '14:00 – 15:00', title: 'Industry Case Studies', speaker: 'Manufacturing, Retail, Healthcare, Logistics, Finance', type: 'panel' },
-      { time: '15:00 – 15:45', title: 'Live AI Solution Demonstrations', type: 'workshop' },
-      { time: '15:45 – 16:30', title: 'Networking & Exhibition Visit', type: 'networking' },
-    ],
-  },
-  {
-    day: 2,
-    date: '15 October 2026',
-    title: 'Practical AI Applications Across Business Functions',
-    sessions: [
-      { time: '09:00 – 09:30', title: 'Morning Keynote - Building an AI Strategy Without a Technical Team', type: 'keynote' },
-      { time: '09:30 – 10:15', title: 'AI for Finance & Decision Making', type: 'panel' },
-      { time: '10:15 – 11:00', title: 'AI for Human Resources & Talent Management', type: 'panel' },
-      { time: '11:00 – 11:30', title: 'Coffee Break', type: 'break' },
-      { time: '11:30 – 12:15', title: 'AI for Sales, Marketing & Customer Experience', type: 'panel' },
-      { time: '12:15 – 13:00', title: 'Featured Session - AI-Powered Multilingual Sales Systems', speaker: 'How AI sales agents communicate with customers 24/7 in multiple languages, qualify leads and improve sales performance', type: 'keynote' },
-      { time: '13:00 – 14:00', title: 'Networking Lunch', type: 'networking' },
-      { time: '14:00 – 15:00', title: 'Roundtable Discussions - Business Challenges & AI Solutions', type: 'workshop' },
-      { time: '15:00 – 16:00', title: 'One-to-One Meetings - Delegates meet AI Solution Providers', type: 'networking' },
-      { time: '16:00 – 17:00', title: 'Solutions Showcase & Networking', type: 'networking' },
-    ],
-  },
-  {
-    day: 3,
-    date: '16 October 2026',
-    title: 'Implementation, Partnerships & Future Growth',
-    sessions: [
-      { time: '09:00 – 09:30', title: 'Morning Keynote - Leading AI Transformation Successfully', type: 'keynote' },
-      { time: '09:30 – 10:15', title: 'How to Select the Right AI Partner', type: 'panel' },
-      { time: '10:15 – 11:00', title: 'ROI of AI: Measuring Business Success', type: 'panel' },
-      { time: '11:00 – 11:30', title: 'Coffee Break', type: 'break' },
-      { time: '11:30 – 12:30', title: 'Executive Panel - The Future of AI Across Industries', type: 'panel' },
-      { time: '12:30 – 13:30', title: 'Networking Lunch', type: 'networking' },
-      { time: '13:30 – 15:00', title: 'Business Matchmaking Sessions - Pre-arranged meetings between delegates and solution providers', type: 'networking' },
-      { time: '15:00 – 15:45', title: 'Closing Keynote - Turning AI Ideas into Business Results', type: 'keynote' },
-      { time: '15:45 – 16:15', title: 'Closing Ceremony', speaker: 'Summit Highlights, Certificate Distribution, Sponsor Recognition', type: 'keynote' },
-      { time: '16:15 onwards', title: 'Final Networking & Exhibition Visit', type: 'networking' },
-    ],
-  },
-];
+export const eventAgendas: Record<string, IAgendaDay[]> = {
+  'dubai-ai-summit-2026': [
+    {
+      day: 1,
+      date: '14 October 2026',
+      title: 'Understanding AI & Business Transformation',
+      sessions: [
+        { time: '08:00 – 09:00', title: 'Registration & Networking Breakfast', type: 'networking' },
+        { time: '09:00 – 09:20', title: 'Welcome Address & Opening Ceremony', type: 'keynote' },
+        { time: '09:20 – 10:00', title: 'Opening Keynote - The Future of AI for Business Leaders', type: 'keynote' },
+        { time: '10:00 – 10:45', title: 'Session 1 - AI Without Technical Knowledge: What Every Executive Should Know', type: 'workshop' },
+        { time: '10:45 – 11:15', title: 'Networking Coffee Break', type: 'break' },
+        { time: '11:15 – 12:00', title: 'Session 2 - How Companies Are Using AI to Reduce Costs and Increase Productivity', type: 'workshop' },
+        { time: '12:00 – 12:45', title: 'Panel Discussion - Is Your Business Ready for AI?', type: 'panel' },
+        { time: '12:45 – 14:00', title: 'Networking Lunch & Solutions Showcase', type: 'networking' },
+        { time: '14:00 – 15:00', title: 'Industry Case Studies', speaker: 'Manufacturing, Retail, Healthcare, Logistics, Finance', type: 'panel' },
+        { time: '15:00 – 15:45', title: 'Live AI Solution Demonstrations', type: 'workshop' },
+        { time: '15:45 – 16:30', title: 'Networking & Exhibition Visit', type: 'networking' },
+      ],
+    },
+    {
+      day: 2,
+      date: '15 October 2026',
+      title: 'Practical AI Applications Across Business Functions',
+      sessions: [
+        { time: '09:00 – 09:30', title: 'Morning Keynote - Building an AI Strategy Without a Technical Team', type: 'keynote' },
+        { time: '09:30 – 10:15', title: 'AI for Finance & Decision Making', type: 'panel' },
+        { time: '10:15 – 11:00', title: 'AI for Human Resources & Talent Management', type: 'panel' },
+        { time: '11:00 – 11:30', title: 'Coffee Break', type: 'break' },
+        { time: '11:30 – 12:15', title: 'AI for Sales, Marketing & Customer Experience', type: 'panel' },
+        { time: '12:15 – 13:00', title: 'Featured Session - AI-Powered Multilingual Sales Systems', speaker: 'How AI sales agents communicate with customers 24/7 in multiple languages, qualify leads and improve sales performance', type: 'keynote' },
+        { time: '13:00 – 14:00', title: 'Networking Lunch', type: 'networking' },
+        { time: '14:00 – 15:00', title: 'Roundtable Discussions - Business Challenges & AI Solutions', type: 'workshop' },
+        { time: '15:00 – 16:00', title: 'One-to-One Meetings - Delegates meet AI Solution Providers', type: 'networking' },
+        { time: '16:00 – 17:00', title: 'Solutions Showcase & Networking', type: 'networking' },
+      ],
+    },
+    {
+      day: 3,
+      date: '16 October 2026',
+      title: 'Implementation, Partnerships & Future Growth',
+      sessions: [
+        { time: '09:00 – 09:30', title: 'Morning Keynote - Leading AI Transformation Successfully', type: 'keynote' },
+        { time: '09:30 – 10:15', title: 'How to Select the Right AI Partner', type: 'panel' },
+        { time: '10:15 – 11:00', title: 'ROI of AI: Measuring Business Success', type: 'panel' },
+        { time: '11:00 – 11:30', title: 'Coffee Break', type: 'break' },
+        { time: '11:30 – 12:30', title: 'Executive Panel - The Future of AI Across Industries', type: 'panel' },
+        { time: '12:30 – 13:30', title: 'Networking Lunch', type: 'networking' },
+        { time: '13:30 – 15:00', title: 'Business Matchmaking Sessions - Pre-arranged meetings between delegates and solution providers', type: 'networking' },
+        { time: '15:00 – 15:45', title: 'Closing Keynote - Turning AI Ideas into Business Results', type: 'keynote' },
+        { time: '15:45 – 16:15', title: 'Closing Ceremony', speaker: 'Summit Highlights, Certificate Distribution, Sponsor Recognition', type: 'keynote' },
+        { time: '16:15 onwards', title: 'Final Networking & Exhibition Visit', type: 'networking' },
+      ],
+    },
+  ],
+  'amsterdam-enterprise-ai-2026': [
+    {
+      day: 1,
+      date: '4 November 2026',
+      title: 'AI Strategy & Business Transformation',
+      sessions: [
+        { time: '08:30 – 09:30', title: 'Registration & Welcome Coffee', type: 'networking' },
+        { time: '09:30 – 09:45', title: 'Opening Ceremony & Welcome Address', type: 'keynote' },
+        { time: '09:45 – 10:30', title: 'Opening Keynote: The Future of Enterprise AI in Europe', type: 'keynote' },
+        { time: '10:30 – 11:15', title: 'AI for CEOs, CFOs & Business Leaders', type: 'panel' },
+        { time: '11:15 – 11:45', title: 'Networking Coffee Break', type: 'break' },
+        { time: '11:45 – 12:30', title: 'AI Governance, Ethics & Compliance', type: 'panel' },
+        { time: '12:30 – 13:15', title: 'Digital Transformation Success Stories', type: 'workshop' },
+        { time: '13:15 – 14:15', title: 'Networking Lunch', type: 'networking' },
+        { time: '14:15 – 15:00', title: 'AI-Powered Business Operations', type: 'workshop' },
+        { time: '15:00 – 15:45', title: 'Executive Panel Discussion', type: 'panel' },
+        { time: '15:45 – 16:15', title: 'Coffee Break', type: 'break' },
+        { time: '16:15 – 17:30', title: 'AI Solutions Showcase & Networking', type: 'networking' },
+      ],
+    },
+    {
+      day: 2,
+      date: '5 November 2026',
+      title: 'AI Applications Across Industries',
+      sessions: [
+        { time: '09:00 – 09:45', title: 'AI in Finance & Banking', type: 'panel' },
+        { time: '09:45 – 10:30', title: 'AI in Human Resources', type: 'panel' },
+        { time: '10:30 – 11:00', title: 'Coffee Break', type: 'break' },
+        { time: '11:00 – 11:45', title: 'AI in Manufacturing & Supply Chain', type: 'panel' },
+        { time: '11:45 – 12:30', title: 'AI in Healthcare', type: 'panel' },
+        { time: '12:30 – 13:30', title: 'Networking Lunch', type: 'networking' },
+        { time: '13:30 – 14:15', title: 'Cybersecurity & AI', type: 'workshop' },
+        { time: '14:15 – 15:00', title: 'Enterprise Automation', type: 'workshop' },
+        { time: '15:00 – 15:30', title: 'Coffee Break', type: 'break' },
+        { time: '15:30 – 17:00', title: 'Solution Provider Demonstrations', type: 'networking' },
+      ],
+    },
+    {
+      day: 3,
+      date: '6 November 2026',
+      title: 'Innovation, Partnerships & Future Growth',
+      sessions: [
+        { time: '09:00 – 09:45', title: 'Future of AI Technologies', type: 'keynote' },
+        { time: '09:45 – 10:30', title: 'Building AI-Ready Organizations', type: 'workshop' },
+        { time: '10:30 – 11:00', title: 'Coffee Break', type: 'break' },
+        { time: '11:00 – 12:00', title: 'Startup Innovation Showcase', type: 'networking' },
+        { time: '12:00 – 13:00', title: 'Business Matchmaking Meetings', type: 'networking' },
+        { time: '13:00 – 14:00', title: 'Networking Lunch', type: 'networking' },
+        { time: '14:00 – 15:30', title: 'Roundtable Discussions', type: 'workshop' },
+        { time: '15:30 – 16:00', title: 'Closing Keynote', type: 'keynote' },
+        { time: '16:00 – 16:30', title: 'Certificate Distribution & Closing Ceremony', type: 'networking' },
+      ],
+    },
+  ],
+  'china-healthtech-2027': [
+    {
+      day: 1,
+      date: '14 January 2027',
+      title: 'Opening & China HealthTech Innovation',
+      sessions: [
+        { time: '08:30 – 09:30', title: 'Registration & Welcome Coffee', type: 'networking' },
+        { time: '09:30 – 09:45', title: 'Opening Ceremony', type: 'keynote' },
+        { time: '09:45 – 10:30', title: 'Opening Keynote: China\'s Healthcare Innovation & Global Opportunities', type: 'keynote' },
+        { time: '10:30 – 11:15', title: 'Medical Technology Trends', type: 'panel' },
+        { time: '11:15 – 11:45', title: 'Coffee Break', type: 'break' },
+        { time: '11:45 – 12:30', title: 'Chinese Medical Device Manufacturers Presentation', type: 'workshop' },
+        { time: '12:30 – 13:30', title: 'Networking Lunch', type: 'networking' },
+        { time: '13:30 – 15:00', title: 'Exhibition Tour', type: 'networking' },
+        { time: '15:00 – 15:30', title: 'Coffee Break', type: 'break' },
+        { time: '15:30 – 17:30', title: 'B2B Networking Meetings', type: 'networking' },
+      ],
+    },
+    {
+      day: 2,
+      date: '15 January 2027',
+      title: 'Business Development & Product Showcase',
+      sessions: [
+        { time: '09:00 – 10:00', title: 'Medical Equipment Demonstrations', type: 'workshop' },
+        { time: '10:00 – 10:45', title: 'Hospital Procurement Opportunities', type: 'panel' },
+        { time: '10:45 – 11:15', title: 'Coffee Break', type: 'break' },
+        { time: '11:15 – 12:15', title: 'Healthcare Investment Opportunities', type: 'panel' },
+        { time: '12:15 – 13:15', title: 'Networking Lunch', type: 'networking' },
+        { time: '13:15 – 15:30', title: 'Pre-Scheduled B2B Meetings', type: 'networking' },
+        { time: '15:30 – 16:00', title: 'Coffee Break', type: 'break' },
+        { time: '16:00 – 17:30', title: 'Distributor & Buyer Meetings', type: 'networking' },
+      ],
+    },
+    {
+      day: 3,
+      date: '16 January 2027',
+      title: 'International Partnerships & Market Expansion',
+      sessions: [
+        { time: '09:00 – 10:00', title: 'Entering European & CIS Healthcare Markets', type: 'panel' },
+        { time: '10:00 – 10:45', title: 'Regulatory Requirements & Market Access', type: 'workshop' },
+        { time: '10:45 – 11:15', title: 'Coffee Break', type: 'break' },
+        { time: '11:15 – 12:30', title: 'International Buyer–Supplier Matchmaking', type: 'networking' },
+        { time: '12:30 – 13:30', title: 'Networking Lunch', type: 'networking' },
+        { time: '13:30 – 15:00', title: 'Strategic Partnership Meetings', type: 'networking' },
+        { time: '15:00 – 15:30', title: 'Signing Ceremony (Optional)', type: 'keynote' },
+        { time: '15:30 – 16:00', title: 'Closing Remarks', type: 'keynote' },
+        { time: '16:00 – 17:00', title: 'Farewell Networking Session', type: 'networking' },
+      ],
+    },
+  ],
+};
+
 
 export const globalFeatures = [
   'AI Solutions Showcase',

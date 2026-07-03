@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
 import { events } from '@/data/events';
 import EventCard from './EventCard';
@@ -15,11 +16,17 @@ export default function EventCatalog() {
       ref={sectionRef}
       className="relative py-24 sm:py-32 bg-transparent overflow-hidden"
     >
-      {/* Ambient background glow */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="hidden md:block absolute right-0 top-1/4 h-[500px] w-[500px] rounded-full bg-brand-600/10 blur-[120px]" />
-        <div className="hidden md:block absolute -left-32 bottom-0 h-[400px] w-[400px] rounded-full bg-brand-500/10 blur-[100px]" />
+      {/* Faded Background Image specific to Event Catalog */}
+      <div className="absolute inset-0 z-0 opacity-[0.02] dark:opacity-[0.04] pointer-events-none mix-blend-luminosity">
+        <Image 
+          src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=2000&auto=format&fit=crop" 
+          alt="Audience Background"
+          fill
+          className="object-cover"
+        />
       </div>
+
+      {/* Ambient background glow removed in favor of GlobalBackground */}
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* ── Section Header ─────────────────────────────────── */}
@@ -33,7 +40,7 @@ export default function EventCatalog() {
             Find the right <span className="text-brand-700 dark:text-brand-400">room to be in.</span>
           </h2>
           <p className="text-lg leading-relaxed text-slate-800 dark:text-gray-400">
-            From flagship summits to specialized forums, discover the events
+            From Registration Open summits to specialized forums, discover the events
             shaping the future of AI leadership across the globe.
           </p>
         </motion.div>

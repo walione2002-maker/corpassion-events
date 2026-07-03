@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { checkoutSchema } from '@/lib/validations';
-import { ticketTiers, boothOptions, sponsorshipPackages } from '@/data/events';
+import { eventTicketTiers, eventBoothOptions, eventSponsorshipPackages } from '@/data/events';
 
 // PayPal Configuration
 const PAYPAL_CLIENT_ID = process.env.PAYPAL_CLIENT_ID || 'sb';
@@ -42,21 +42,21 @@ export async function POST(req: Request) {
     let buyerName = '';
 
     if (validatedData.type === 'ticket') {
-      const tier = ticketTiers.find((t) => t.id === validatedData.packageId);
+      const tier = Object.values(eventTicketTiers).flat().find((t) => t.id === validatedData.packageId);
       if (!tier) throw new Error('Invalid ticket tier');
       amountGBP = tier.price;
       packageName = tier.name + ' Ticket';
       buyerName = validatedData.name;
       summaryMessage = `Name: ${validatedData.name}\nEmail: ${validatedData.email}\nCompany: ${validatedData.company}\nRole: ${validatedData.role}`;
     } else if (validatedData.type === 'booth') {
-      const booth = boothOptions.find((b) => b.id === validatedData.packageId);
+      const booth = Object.values(eventBoothOptions).flat().find((b) => b.id === validatedData.packageId);
       if (!booth) throw new Error('Invalid booth option');
       amountGBP = booth.price;
       packageName = booth.name;
       buyerName = validatedData.company;
       summaryMessage = `Company: ${validatedData.company}\nContact: ${validatedData.contactName}\nEmail: ${validatedData.email}\nPhone: ${validatedData.phone}\nIndustry: ${validatedData.industry || 'N/A'}`;
     } else if (validatedData.type === 'sponsorship') {
-      const sponsor = sponsorshipPackages.find((s) => s.id === validatedData.packageId);
+      const sponsor = Object.values(eventSponsorshipPackages).flat().find((s) => s.id === validatedData.packageId);
       if (!sponsor) throw new Error('Invalid sponsorship package');
       amountGBP = sponsor.price;
       packageName = sponsor.tier;

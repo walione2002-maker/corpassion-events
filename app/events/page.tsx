@@ -28,9 +28,7 @@ export default function EventsSelectionPage() {
   return (
     <main className="min-h-screen bg-transparent pt-32 pb-24 relative overflow-hidden">
 
-      {/* Background Orbs */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand-500/20 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-brand-700/20 rounded-full blur-[100px] pointer-events-none" />
+      {/* Background Orbs removed in favor of GlobalBackground */}
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -46,7 +44,7 @@ export default function EventsSelectionPage() {
             Global Summits
           </h1>
           <p className="text-lg text-slate-800 dark:text-gray-400 max-w-2xl mx-auto">
-            Choose from our upcoming flagship events and regional showcases. Secure your pass to the future of AI leadership.
+            Choose from our upcoming Registration Open events and regional showcases. Secure your pass to the future of AI leadership.
           </p>
         </motion.div>
 

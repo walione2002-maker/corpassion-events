@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Calendar, MapPin, Users, Presentation } from 'lucide-react';
 import { ROUTES } from '@/config/routes';
+import Image from 'next/image';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -18,8 +19,19 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex lg:items-center justify-center overflow-hidden pt-32 pb-24 lg:pt-20 lg:pb-0"
+      className="relative min-h-screen flex lg:items-center justify-center overflow-hidden pt-32 pb-24 lg:pt-20 lg:pb-0 bg-transparent"
     >
+      {/* Faded Background Image specific to Hero */}
+      <div className="absolute inset-0 z-0 opacity-[0.02] dark:opacity-[0.05] pointer-events-none mix-blend-luminosity">
+        <Image 
+          src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2000&auto=format&fit=crop" 
+          alt="Hero Background"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
+
       {/* Content Grid */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 lg:items-center">
@@ -125,7 +137,7 @@ export default function Hero() {
             <div className="relative bg-white/60 dark:bg-slate-900/60 backdrop-blur-3xl border border-slate-200/50 dark:border-white/10 rounded-3xl p-8 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] overflow-hidden transition-transform duration-500 hover:-translate-y-2">
               <div className="absolute top-0 right-0 p-4">
                 <span className="bg-brand-400 text-slate-950 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                  Flagship Event
+                  Registration Open
                 </span>
               </div>
               

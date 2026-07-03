@@ -18,7 +18,7 @@ export default function EventCard({ event, priority = false }: EventCardProps) {
     dates,
     taglines,
     image,
-    flagship,
+    registrationOpen,
     id,
   } = event;
 
@@ -69,9 +69,9 @@ export default function EventCard({ event, priority = false }: EventCardProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-80" />
 
         {/* Badge */}
-        {flagship ? (
+        {registrationOpen ? (
            <span className="absolute left-4 top-4 rounded-full bg-brand-400 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-950 shadow-lg">
-             Flagship Event
+             Registration Open
            </span>
         ) : (
            <span className="absolute left-4 top-4 rounded-full bg-white/10 backdrop-blur-md px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white border border-white/10">

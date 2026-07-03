@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { agenda, globalFeatures, type IAgendaSession } from '@/data/events';
+import { eventAgendas, globalFeatures, type IAgendaSession } from '@/data/events';
 
 // Magnetic Card Component for Weightless Modules
 function MagneticCard({ children, config }: { children: React.ReactNode, config: any }) {
@@ -85,9 +85,10 @@ const typeConfig: Record<
   },
 };
 
-export default function AgendaTabs() {
+export default function AgendaTabs({ eventId = 'dubai-ai-summit-2026' }: { eventId?: string }) {
   const [activeTab, setActiveTab] = useState(0);
-  const activeDay = agenda[activeTab];
+  const currentAgenda = eventAgendas[eventId] || eventAgendas['dubai-ai-summit-2026'];
+  const activeDay = currentAgenda[activeTab];
 
   return (
     <section id="agenda" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden z-10">
@@ -113,7 +114,7 @@ export default function AgendaTabs() {
 
         {/* Orbit Selector (Floating Pills) */}
         <div className="flex flex-wrap justify-center gap-4 mb-16 relative z-20" style={{ perspective: '1000px' }}>
-          {agenda.map((day, index) => (
+          {currentAgenda.map((day, index) => (
             <button
               key={day.day}
               onClick={() => setActiveTab(index)}

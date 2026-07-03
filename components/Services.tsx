@@ -59,6 +59,38 @@ export default function Services() {
           );
         })}
       </div>
+
+      <div className="max-w-4xl mx-auto relative z-10 mt-32 mb-12 text-left bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.1)]">
+        <h3 className="text-3xl font-display font-bold text-slate-900 dark:text-white mb-4">Need Visa Assistance?</h3>
+        <p className="text-lg text-slate-800 dark:text-gray-300 mb-8">
+          We provide official event registration, invitation letters and visa support documentation for eligible registered delegates.
+        </p>
+
+        <h4 className="text-xl font-bold text-brand-700 dark:text-brand-400 mb-4">Visa Support &amp; Business Invitation Services</h4>
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 text-slate-800 dark:text-gray-300">
+          <li className="flex items-center gap-2"><LucideIcons.Check className="w-5 h-5 text-brand-500" /> Official Event Registration</li>
+          <li className="flex items-center gap-2"><LucideIcons.Check className="w-5 h-5 text-brand-500" /> Official Business Invitation Letter</li>
+          <li className="flex items-center gap-2"><LucideIcons.Check className="w-5 h-5 text-brand-500" /> Registration Confirmation</li>
+          <li className="flex items-center gap-2"><LucideIcons.Check className="w-5 h-5 text-brand-500" /> Hotel Booking Guidance (Optional)</li>
+          <li className="flex items-center gap-2"><LucideIcons.Check className="w-5 h-5 text-brand-500" /> Travel Guidance</li>
+          <li className="flex items-center gap-2"><LucideIcons.Check className="w-5 h-5 text-brand-500" /> Visa Documentation Checklist</li>
+          <li className="flex items-center gap-2"><LucideIcons.Check className="w-5 h-5 text-brand-500" /> Travel Insurance</li>
+          <li className="flex items-center gap-2"><LucideIcons.Check className="w-5 h-5 text-brand-500" /> Event Support</li>
+        </ul>
+
+        <div className="bg-white dark:bg-black/20 p-6 rounded-2xl border border-slate-200 dark:border-white/10 mb-8">
+          <p className="text-slate-800 dark:text-gray-300 mb-4 font-medium">Visa guidance and travel support are provided by our official service partner, M/S The Excellent Group FZC, Dubai, UAE</p>
+          <div className="space-y-2 text-slate-800 dark:text-gray-400">
+            <p><strong>Contact for details:</strong></p>
+            <p className="flex items-center gap-2"><LucideIcons.Mail className="w-4 h-4" /> Email: imran@thexcellentgroup.com</p>
+            <p className="flex items-center gap-2"><LucideIcons.Globe className="w-4 h-4" /> Website: <a href="https://www.thexcellentgroup.com" target="_blank" rel="noopener noreferrer" className="text-brand-600 dark:text-brand-400 hover:underline">www.thexcellentgroup.com</a></p>
+          </div>
+        </div>
+
+        <p className="text-sm text-slate-500 dark:text-gray-500 italic">
+          Disclaimer: The invitation letter supports your visa application but does not guarantee visa approval. Visa decisions are made solely by the relevant embassy or consulate.
+        </p>
+      </div>
     </section>
   );
 }

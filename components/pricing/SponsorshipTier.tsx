@@ -8,9 +8,10 @@ import Link from 'next/link';
 interface SponsorshipTierProps {
   pkg: ISponsorshipPackage;
   index?: number;
+  currency?: string;
 }
 
-export default function SponsorshipTier({ pkg, index = 0 }: SponsorshipTierProps) {
+export default function SponsorshipTier({ pkg, index = 0, currency = '$' }: SponsorshipTierProps) {
   const isExclusive = pkg.exclusive === true;
 
   return (
@@ -57,7 +58,7 @@ export default function SponsorshipTier({ pkg, index = 0 }: SponsorshipTierProps
 
           {/* Price */}
           <div className="mt-4 mb-3">
-            <span className="text-slate-800 dark:text-gray-400 text-lg align-top">$</span>
+            <span className="text-slate-800 dark:text-gray-400 text-lg align-top">{currency}</span>
             <span className="text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
               {pkg.price.toLocaleString()}
             </span>

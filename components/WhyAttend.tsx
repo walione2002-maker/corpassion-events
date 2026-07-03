@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Lightbulb, Network, Wrench, ShieldCheck, type LucideIcon } from 'lucide-react';
 import { whyAttendPillars } from '@/data/events';
+import Image from 'next/image';
 
 const iconMap: Record<string, LucideIcon> = {
   Lightbulb,
@@ -18,15 +19,21 @@ export default function WhyAttend() {
 
   return (
     <section
+      id="why-attend"
       ref={sectionRef}
-      className="relative py-24 sm:py-32 bg-gradient-to-b from-white via-slate-50 to-white dark:from-[#0a0a0a] dark:via-[#0d0d14] dark:to-[#0a0a0a] overflow-hidden"
+      className="relative py-24 sm:py-32 bg-transparent overflow-hidden"
     >
-      {/* Ambient glow */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 h-[480px] w-[720px] rounded-full bg-brand-600/10 blur-[128px]" />
+      {/* Faded Background Image specific to Why Attend */}
+      <div className="absolute inset-0 z-0 opacity-[0.02] dark:opacity-[0.04] pointer-events-none mix-blend-luminosity">
+        <Image 
+          src="https://images.unsplash.com/photo-1591115765373-5f9cf1da3607?w=2000&auto=format&fit=crop" 
+          alt="Exhibition Background"
+          fill
+          className="object-cover"
+        />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 z-10">
         {/* ── Header ─────────────────────────────────────────── */}
         <motion.div
           initial={{ opacity: 0, y: 32 }}

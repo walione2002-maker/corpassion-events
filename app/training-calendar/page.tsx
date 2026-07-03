@@ -5,6 +5,7 @@ import TrainingHero from '@/components/training/TrainingHero';
 import FilterBar, { FilterState } from '@/components/training/FilterBar';
 import EventList from '@/components/training/EventList';
 import { mockTrainingEvents } from '@/data/training';
+import Image from 'next/image';
 
 export default function TrainingCalendarPage() {
   const [filters, setFilters] = useState<FilterState>({
@@ -81,7 +82,17 @@ export default function TrainingCalendarPage() {
   }, [filters]);
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a] flex flex-col">
+    <main className="min-h-screen bg-transparent flex flex-col relative">
+      {/* Faded Background Image */}
+      <div className="absolute inset-0 z-[-1] opacity-[0.02] dark:opacity-[0.04] pointer-events-none mix-blend-luminosity">
+        <Image 
+          src="https://images.unsplash.com/photo-1560439513-74b037a25d84?w=2000&auto=format&fit=crop" 
+          alt="Training Background"
+          fill
+          className="object-cover"
+        />
+      </div>
+
       <TrainingHero />
       <FilterBar 
         filters={filters} 

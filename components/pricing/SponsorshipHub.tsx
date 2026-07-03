@@ -4,9 +4,9 @@ import { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Check, LayoutGrid, Award, ArrowRight } from 'lucide-react';
 import {
-  boothOptions,
+  eventBoothOptions,
   boothFeatures,
-  sponsorshipPackages,
+  eventSponsorshipPackages,
 } from '@/data/events';
 import SponsorshipTier from './SponsorshipTier';
 import Link from 'next/link';
@@ -18,10 +18,12 @@ const tabs = [
 
 type TabId = (typeof tabs)[number]['id'];
 
-export default function SponsorshipHub() {
+export default function SponsorshipHub({ eventId = 'dubai-ai-summit-2026', currency = '$' }: { eventId?: string, currency?: string }) {
   const [activeTab, setActiveTab] = useState<TabId>('booths');
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-80px' });
+  const currentBoothOptions = eventBoothOptions[eventId] || eventBoothOptions['dubai-ai-summit-2026'];
+  const currentSponsorshipPackages = eventSponsorshipPackages[eventId] || eventSponsorshipPackages['dubai-ai-summit-2026'];
 
   return (
     <section
@@ -103,7 +105,7 @@ export default function SponsorshipHub() {
             >
               {/* Booth Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-                {boothOptions.map((booth, index) => (
+                {currentBoothOptions.map((booth, index) => (
                   <motion.div
                     key={booth.id}
                     initial={{ opacity: 0, y: 30 }}
@@ -124,7 +126,7 @@ export default function SponsorshipHub() {
                     {/* Price */}
                     <div className="mt-4 mb-3">
                       <span className="text-slate-800 dark:text-gray-400 text-lg align-top">
-                        $
+                        {currency}
                       </span>
                       <span className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
                         {booth.price.toLocaleString()}
@@ -185,8 +187,8 @@ export default function SponsorshipHub() {
               transition={{ duration: 0.3, ease: 'easeOut' }}
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {sponsorshipPackages.map((pkg, index) => (
-                  <SponsorshipTier key={pkg.id} pkg={pkg} index={index} />
+                {currentSponsorshipPackages.map((pkg, index) => (
+                  <SponsorshipTier key={pkg.id} pkg={pkg} index={index} currency={currency} />
                 ))}
               </div>
             </motion.div>

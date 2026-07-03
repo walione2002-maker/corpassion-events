@@ -2,24 +2,24 @@
 
 import { useRef } from 'react';
 import { Sparkles, Target, Compass } from 'lucide-react';
+import Image from 'next/image';
 
 export default function About() {
   const containerRef = useRef<HTMLDivElement>(null);
   
   return (
     <section ref={containerRef} id="about" className="relative min-h-screen py-24 px-4 sm:px-6 lg:px-8 bg-transparent overflow-hidden flex items-center justify-center">
-      {/* Background Orbs */}
-      <div 
-        className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center opacity-30"
-      >
-        <div className="hidden md:block absolute top-1/4 left-1/4 w-96 h-96 bg-brand-500/20 rounded-full blur-[100px]" />
-        <div className="hidden md:block absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-indigo-500/20 rounded-full blur-[120px]" />
+      {/* Faded Background Image specific to About */}
+      <div className="absolute inset-0 z-0 opacity-[0.02] dark:opacity-[0.04] pointer-events-none mix-blend-luminosity">
+        <Image 
+          src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=2000&auto=format&fit=crop" 
+          alt="Networking Background"
+          fill
+          className="object-cover"
+        />
       </div>
 
       {/* Floating Orbs (Parallax removed) */}
-      <div 
-        className="absolute inset-0 z-10 pointer-events-none"
-      >
         <div className="hidden md:block absolute top-32 right-32 w-20 h-20 bg-gradient-to-tr from-brand-400 to-indigo-500 rounded-full blur-xl opacity-40 animate-pulse" />
         <div className="hidden md:block absolute bottom-40 left-20 w-32 h-32 bg-gradient-to-tr from-brand-400 to-brand-600 rounded-full blur-2xl opacity-30 animate-pulse" style={{ animationDelay: '2s' }} />
       </div>

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { notFound, useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { ticketTiers } from '@/data/events';
+import { eventTicketTiers } from '@/data/events';
 import { ticketSchema, TicketPayload } from '@/lib/validations';
 import { Check, Loader2, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
@@ -14,7 +14,7 @@ export default function TicketCheckoutPage({ params }: { params: { id: string } 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const tier = ticketTiers.find(t => t.id === params.id);
+  const tier = Object.values(eventTicketTiers).flat().find(t => t.id === params.id);
   if (!tier) {
     notFound();
   }
@@ -63,9 +63,8 @@ export default function TicketCheckoutPage({ params }: { params: { id: string } 
   };
 
   return (
-    <div className="min-h-screen pt-32 pb-24 bg-slate-50 dark:bg-[#0a0a0a] relative">
+    <div className="min-h-screen pt-32 pb-24 bg-transparent relative">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] pointer-events-none" />
-      <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-brand-500/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <Link href="/events/dubai-ai-summit-2026" className="inline-flex items-center text-sm font-medium text-slate-500 hover:text-brand-500 mb-8 transition-colors">

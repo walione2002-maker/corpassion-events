@@ -121,13 +121,12 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
       <div
         className={`fixed inset-0 z-[90] bg-white dark:bg-black lg:hidden overflow-y-auto transition-all duration-300 ${
           mobileMenuOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-4'
         }`}
       >
-        <div className="flex flex-col items-center justify-center min-h-screen gap-6 py-20">
+        <div className="flex flex-col items-center justify-start min-h-screen gap-6 pt-24 pb-12 px-4">
           {navLinks.map((link) => (
             link.label === 'Register' ? (
             <Link
@@ -170,6 +169,12 @@ export default function Header() {
           >
             <span>Register Now</span>
           </Link>
+
+          {/* Theme Toggle for Mobile */}
+          <div className="mt-8 flex flex-col items-center gap-4 border-t border-slate-200 dark:border-white/10 pt-8 w-full max-w-[200px]">
+            <span className="text-sm font-medium text-slate-500">Appearance</span>
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </header>
