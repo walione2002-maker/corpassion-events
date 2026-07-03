@@ -13,7 +13,7 @@ export default function StatsBar() {
     <section className="relative z-10 -mt-16 pb-8 overflow-hidden bg-transparent">
       <div className="absolute inset-0 z-[-1] opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity">
         <Image 
-          src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=2070&auto=format&fit=crop" 
+          src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?w=3840&q=100&auto=format&fit=crop" 
           alt="Workshop Background"
           fill
           className="object-cover"

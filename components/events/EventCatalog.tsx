@@ -19,7 +19,7 @@ export default function EventCatalog() {
       {/* Faded Background Image specific to Event Catalog */}
       <div className="absolute inset-0 z-0 opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity">
         <Image 
-          src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=2000&auto=format&fit=crop" 
+          src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=3840&q=100&auto=format&fit=crop" 
           alt="Audience Background"
           fill
           className="object-cover"

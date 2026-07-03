@@ -54,7 +54,7 @@ export default function Footer() {
     <footer id="contact" className="relative overflow-hidden border-t border-slate-200 dark:border-white/10 bg-transparent">
       <div className="absolute inset-0 z-[-1] opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity">
         <Image 
-          src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1974&auto=format&fit=crop" 
+          src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=3840&q=100&auto=format&fit=crop" 
           alt="Workshop Background"
           fill
           className="object-cover"

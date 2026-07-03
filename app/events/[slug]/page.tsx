@@ -36,7 +36,7 @@ export default function EventPage({ params }: EventPageProps) {
       {/* Faded Background Image specific to Event Detail Page */}
       <div className="absolute inset-0 z-[-1] opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity">
         <Image 
-          src={event.image || "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=2000&auto=format&fit=crop"}
+          src={event.image || "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=3840&q=100&auto=format&fit=crop"}
           alt="Event Background"
           fill
           priority
