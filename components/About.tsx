@@ -10,7 +10,7 @@ export default function About() {
   return (
     <section ref={containerRef} id="about" className="relative min-h-screen py-24 px-4 sm:px-6 lg:px-8 bg-transparent overflow-hidden flex items-center justify-center">
       {/* Faded Background Image specific to About */}
-      <div className="absolute inset-0 z-0 opacity-[0.20] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity">
+      <div className="absolute inset-0 z-0 opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity">
         <Image 
           src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=2000&auto=format&fit=crop" 
           alt="Networking Background"

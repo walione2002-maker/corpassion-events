@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { ROUTES } from '@/config/routes';
 import ContactActions from '@/components/ContactActions';
+import Image from 'next/image';
 
 const containerVariants = {
   hidden: {},
@@ -50,8 +51,16 @@ export default function Footer() {
   const pathname = usePathname();
 
   return (
-    <footer id="contact" className="border-t border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#050505]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <footer id="contact" className="relative overflow-hidden border-t border-slate-200 dark:border-white/10 bg-transparent">
+      <div className="absolute inset-0 z-[-1] opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity">
+        <Image 
+          src="https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=1974&auto=format&fit=crop" 
+          alt="Workshop Background"
+          fill
+          className="object-cover"
+        />
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
         <motion.div
           variants={containerVariants}
           initial="hidden"

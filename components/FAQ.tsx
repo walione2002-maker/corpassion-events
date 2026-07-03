@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { faqCategories } from '@/data/events';
 import Script from 'next/script';
+import Image from 'next/image';
 
 // Build Schema.org FAQPage JSON-LD
 function buildFaqSchema() {
@@ -52,7 +53,14 @@ export default function FAQ() {
       />
 
       <section id="faq" className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-transparent">
-        {/* Ambient backgrounds removed in favor of GlobalBackground */}
+        <div className="absolute inset-0 z-[-1] opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity">
+          <Image 
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" 
+            alt="Workshop Background"
+            fill
+            className="object-cover"
+          />
+        </div>
 
         <div className="relative z-10 max-w-3xl mx-auto">
           {/* Section Header */}

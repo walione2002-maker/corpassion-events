@@ -3,14 +3,23 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { stats } from '@/data/events';
+import Image from 'next/image';
 
 export default function StatsBar() {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { once: true, margin: '-80px' });
 
   return (
-    <section className="relative z-10 -mt-16 pb-8">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative z-10 -mt-16 pb-8 overflow-hidden bg-transparent">
+      <div className="absolute inset-0 z-[-1] opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity">
+        <Image 
+          src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=2070&auto=format&fit=crop" 
+          alt="Workshop Background"
+          fill
+          className="object-cover"
+        />
+      </div>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div ref={containerRef} className="flex flex-wrap justify-center gap-4 md:gap-8">
           {stats.map((stat, i) => (
             <motion.div

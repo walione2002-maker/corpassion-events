@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, Check, Loader2 } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Newsletter() {
   const [email, setEmail] = useState('');
@@ -23,8 +24,16 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-transparent">
+      <div className="absolute inset-0 z-[-1] opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity">
+        <Image 
+          src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=2069&auto=format&fit=crop" 
+          alt="Workshop Background"
+          fill
+          className="object-cover"
+        />
+      </div>
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}

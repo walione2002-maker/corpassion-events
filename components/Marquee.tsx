@@ -2,6 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import Image from 'next/image';
 
 function MarqueeRow() {
   return (
@@ -24,8 +25,16 @@ export default function Marquee() {
   const isInView = useInView(sectionRef, { once: true, margin: '-60px' });
 
   return (
-    <section id="clients" className="py-24 px-4 sm:px-6 lg:px-8 bg-transparent overflow-hidden">
-      <div ref={sectionRef} className="max-w-7xl mx-auto">
+    <section id="clients" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-transparent overflow-hidden">
+      <div className="absolute inset-0 z-[-1] opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity">
+        <Image 
+          src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=2070&auto=format&fit=crop" 
+          alt="Workshop Background"
+          fill
+          className="object-cover"
+        />
+      </div>
+      <div ref={sectionRef} className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
