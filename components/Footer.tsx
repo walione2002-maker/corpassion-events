@@ -1,10 +1,11 @@
 'use client';
 
-import { Linkedin, Twitter, Youtube, MapPin, Phone, Mail } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { ROUTES } from '@/config/routes';
+import { Mail, Phone, MapPin, Linkedin, Twitter, Youtube, ArrowUpRight } from 'lucide-react';
+import { siteConfig } from '@/config/site';
 import ContactActions from '@/components/ContactActions';
 import Image from 'next/image';
 
@@ -42,9 +43,9 @@ const legalLinks = [
 ];
 
 const socialLinks = [
-  { icon: Linkedin, label: 'LinkedIn', href: '#' },
-  { icon: Twitter, label: 'Twitter', href: '#' },
-  { icon: Youtube, label: 'YouTube', href: '#' },
+  { icon: Linkedin, label: 'LinkedIn', href: siteConfig.social.linkedin },
+  { icon: Twitter, label: 'Twitter', href: siteConfig.social.twitter },
+  { icon: Youtube, label: 'YouTube', href: siteConfig.social.youtube },
 ];
 
 export default function Footer() {
@@ -54,9 +55,10 @@ export default function Footer() {
     <footer id="contact" className="relative overflow-hidden border-t border-slate-200 dark:border-white/10 bg-transparent">
       <div className="absolute inset-0 z-[-1] opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity">
         <Image 
-          src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=3840&h=2160&q=100&fit=crop&auto=format&fit=crop" 
+          src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1920&q=75&fit=crop&auto=format" 
           alt="Workshop Background"
           fill
+          sizes="100vw"
           className="object-cover"
         />
       </div>
@@ -121,15 +123,12 @@ export default function Footer() {
             <h3 className="mb-5 text-sm font-semibold uppercase tracking-wider text-slate-900 dark:text-white">
               Legal
             </h3>
-            <ul className="space-y-3">
+            <ul className="flex flex-col gap-3">
               {legalLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-slate-800 dark:text-gray-400 transition-colors duration-200 hover:text-brand-700 dark:hover:text-brand-400"
-                  >
+                  <Link href={link.href} className="text-sm text-slate-800 dark:text-gray-400 hover:text-brand-700 dark:hover:text-brand-400 transition-colors inline-block hover:translate-x-1">
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -171,8 +170,8 @@ export default function Footer() {
                   <div>
                     <span className="block text-xs font-semibold text-slate-800 dark:text-gray-400 uppercase mb-1">Phone & WhatsApp</span>
                     <div className="flex flex-col gap-1">
-                      <span className="text-sm text-slate-800 dark:text-gray-300 block">+971 543770146</span>
-                      <span className="text-sm text-slate-800 dark:text-gray-300 block">+92 309 1020225</span>
+                      <a href={`tel:${siteConfig.contact.phones.primary}`} className="text-sm text-slate-800 dark:text-gray-300 block hover:text-brand-500">{siteConfig.contact.phones.primary}</a>
+                      <a href={`tel:${siteConfig.contact.phones.secondary}`} className="text-sm text-slate-800 dark:text-gray-300 block hover:text-brand-500">{siteConfig.contact.phones.secondary}</a>
                     </div>
                   </div>
                 </li>
@@ -182,11 +181,11 @@ export default function Footer() {
                   <div>
                     <span className="block text-xs font-semibold text-slate-800 dark:text-gray-400 uppercase mb-1">Emails</span>
                     <div className="flex flex-col gap-1">
-                      <a href="mailto:training@corpassionevent.com" className="text-sm text-brand-700 dark:text-brand-400 hover:text-brand-300 transition-colors">
-                        training@corpassionevent.com
+                      <a href={`mailto:${siteConfig.contact.emails.training}`} className="text-sm text-brand-700 dark:text-brand-400 hover:text-brand-300 transition-colors">
+                        {siteConfig.contact.emails.training}
                       </a>
-                      <a href="mailto:info@corpassionevent.com" className="text-sm text-brand-700 dark:text-brand-400 hover:text-brand-300 transition-colors">
-                        info@corpassionevent.com
+                      <a href={`mailto:${siteConfig.contact.emails.support}`} className="text-sm text-brand-700 dark:text-brand-400 hover:text-brand-300 transition-colors">
+                        {siteConfig.contact.emails.support}
                       </a>
                     </div>
                   </div>

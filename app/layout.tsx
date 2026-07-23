@@ -6,6 +6,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AnnouncementBanner from "@/components/AnnouncementBanner";
 import PageTransition from "@/components/PageTransition";
+import GlobalBackground from "@/components/GlobalBackground";
+import { siteConfig } from "@/config/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -20,7 +22,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://corpassion-events.vercel.app'),
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: "Corpassion Events | Transformative Tech Summits for Global Leaders",
     template: "%s | Corpassion Events",
@@ -48,8 +50,8 @@ export const metadata: Metadata = {
     title: "Corpassion Events | Transformative Tech Summits",
     description:
       "Join global leaders and innovators at Corpassion Events. Discover our upcoming transformative tech summits worldwide.",
-    url: "https://corpassion-events.vercel.app",
-    siteName: "Corpassion Events",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
     images: [
       {
         url: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=630&fit=crop",
@@ -82,8 +84,6 @@ export const metadata: Metadata = {
   },
 };
 
-import GlobalBackground from "@/components/GlobalBackground";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -92,20 +92,23 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-transparent text-slate-900 dark:text-white antialiased overflow-x-hidden transition-colors`}
+        className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-transparent text-slate-900 dark:text-white antialiased overflow-x-hidden transition-colors min-h-screen flex flex-col`}
       >
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:p-4 focus:bg-white focus:text-black">
+          Skip to main content
+        </a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
-              name: 'Corpassion Events',
-              url: 'https://corpassion-events.vercel.app',
-              logo: 'https://corpassion-events.vercel.app/icon.svg',
+              name: siteConfig.name,
+              url: siteConfig.url,
+              logo: `${siteConfig.url}/icon.svg`,
               sameAs: [
-                'https://twitter.com/corpassion',
-                'https://linkedin.com/company/corpassion',
+                siteConfig.social.twitter,
+                siteConfig.social.linkedin,
               ],
             }),
           }}

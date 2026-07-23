@@ -4,12 +4,14 @@ import { useState } from 'react';
 import { Phone, MessageCircle, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import { siteConfig } from '@/config/site';
+
 export default function ContactActions() {
   const [isOpen, setIsOpen] = useState(false);
 
   const numbers = [
-    { country: 'UAE', phone: '+971543770146', display: '+971 543770146' },
-    { country: 'PK', phone: '+923091020225', display: '+92 309 1020225' },
+    { country: 'UAE', phone: siteConfig.contact.phones.primary, display: siteConfig.contact.phones.primary },
+    { country: 'PK', phone: siteConfig.contact.phones.secondary, display: siteConfig.contact.phones.secondary },
   ];
 
   const handleAction = (type: 'call' | 'whatsapp', phone: string) => {
@@ -25,6 +27,8 @@ export default function ContactActions() {
     <div className="relative mt-5 w-full">
       <button
         onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+        aria-controls="contact-actions-dropdown"
         className="w-full flex items-center justify-between px-4 py-3 bg-brand-600 hover:bg-brand-500 text-white font-medium rounded-xl transition-all shadow-lg shadow-brand-500/20 active:scale-95"
       >
         <div className="flex items-center gap-2">
@@ -37,10 +41,12 @@ export default function ContactActions() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="contact-actions-dropdown"
+            role="menu"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
-            className="absolute left-0 right-0 bottom-full mb-2 bg-white dark:bg-[#111] border border-slate-200 dark:border-white/10 rounded-xl overflow-hidden shadow-2xl z-50"
+            className="absolute left-0 right-0 top-full mt-2 bg-white dark:bg-[#111] border border-slate-200 dark:border-white/10 rounded-xl overflow-hidden shadow-2xl z-50"
           >
             <div className="p-2 space-y-2">
               {numbers.map((num) => (

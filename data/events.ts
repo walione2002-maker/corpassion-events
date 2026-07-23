@@ -25,6 +25,7 @@ export interface ITicketTier {
   price: number;
   deadline: string;
   emphasized?: boolean;
+  features?: string[];
 }
 
 export interface IBoothOption {
@@ -208,6 +209,7 @@ export const eventTicketTiers: Record<string, ITicketTier[]> = {
       name: 'Early Bird',
       price: 499,
       deadline: '1 Aug – 15 Sep',
+      features: ['Full 3-Day Access', 'Networking Lunches', 'Coffee Breaks', 'Access to Solutions Showcase']
     },
     {
       id: 'standard',
@@ -215,6 +217,7 @@ export const eventTicketTiers: Record<string, ITicketTier[]> = {
       price: 599,
       deadline: '16 Sep – 13 Oct',
       emphasized: true,
+      features: ['Full 3-Day Access', 'Networking Lunches', 'Coffee Breaks', 'Access to Solutions Showcase', '1-on-1 Meeting Booking']
     },
   ],
   'amsterdam-enterprise-ai-2026': [

@@ -34,9 +34,12 @@ export default function Hero() {
     if (openEvents.length <= 1) return;
 
     if (!isPaused) {
-      timerRef.current = setInterval(() => {
-        nextEvent();
-      }, 5000);
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReducedMotion) {
+        timerRef.current = setInterval(() => {
+          nextEvent();
+        }, 5000);
+      }
     }
 
     return () => {
@@ -61,9 +64,10 @@ export default function Hero() {
       {/* Faded Background Image specific to Hero */}
       <div className="absolute inset-0 z-0 opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity">
         <Image 
-          src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=3840&h=2160&q=100&fit=crop&auto=format&fit=crop" 
+          src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920&q=75&fit=crop&auto=format" 
           alt="Hero Background"
           fill
+          sizes="100vw"
           className="object-cover"
           priority
         />

@@ -13,7 +13,7 @@ export default function RegisterPage() {
   const openEvents = events.filter((e) => e.registrationOpen);
 
   return (
-    <main className="min-h-screen bg-transparent pt-32 pb-24 relative overflow-hidden">
+    <div className="min-h-screen bg-transparent pt-32 pb-24 relative overflow-hidden">
       {/* Background Effect */}
       <div className="absolute inset-0 z-[-1] bg-slate-50 dark:bg-[#0a0a0a]">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
@@ -89,6 +89,6 @@ export default function RegisterPage() {
           </div>
         )}
       </div>
-    </main>
+    </div>
   );
 }

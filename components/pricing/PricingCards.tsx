@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Users, ArrowRight, Sparkles } from 'lucide-react';
+import { Users, ArrowRight, Sparkles, Check } from 'lucide-react';
 import { eventTicketTiers } from '@/data/events';
 import Link from 'next/link';
 
@@ -66,17 +66,10 @@ export default function PricingCards({ eventId = 'dubai-ai-summit-2026', currenc
                   ease: 'easeOut',
                   delay: 0.15 + 0.1 * index,
                 }}
-                className={isEmphasized ? 'sm:-mt-3 sm:mb-[-12px]' : ''}
+                className={isEmphasized ? 'sm:-mt-3 sm:mb-[-12px] group' : 'group'}
               >
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: index * 0.2,
-                  }}
-                  className={`relative h-full flex flex-col rounded-2xl p-[1px] transition-all duration-300 shadow-[0_20px_50px_rgba(0,0,0,0.05)] glass-card ${
+                <div
+                  className={`relative h-full flex flex-col rounded-2xl p-[1px] transition-all duration-300 shadow-[0_20px_50px_rgba(0,0,0,0.05)] glass-card group-hover:-translate-y-2 group-hover:shadow-xl ${
                     isEmphasized
                       ? 'bg-gradient-to-b from-brand-400 via-brand-600 to-brand-900 shadow-lg shadow-brand-500/20'
                       : 'bg-slate-200 dark:bg-white/[0.08]'
@@ -125,12 +118,24 @@ export default function PricingCards({ eventId = 'dubai-ai-summit-2026', currenc
                     {/* Deadline */}
                     <p className="text-slate-800 dark:text-gray-400 text-sm mb-6">{tier.deadline}</p>
 
+                    {/* Features List */}
+                    {tier.features && tier.features.length > 0 && (
+                      <ul className="mb-6 space-y-3">
+                        {tier.features.map((feature, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm text-slate-700 dark:text-gray-300">
+                            <Check className="w-4 h-4 mt-0.5 text-brand-500 shrink-0" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+
                     {/* Spacer */}
                     <div className="flex-1" />
 
                     {/* CTA Button */}
                     <Link
-                      href={`/checkout/ticket/${tier.id}`}
+                      href={`/checkout/ticket/${eventId}_${tier.id}`}
                       className={`group/btn inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
                         isEmphasized
                           ? 'bg-brand-500 hover:bg-brand-600 text-white shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40'
@@ -141,7 +146,7 @@ export default function PricingCards({ eventId = 'dubai-ai-summit-2026', currenc
                       <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform duration-200" />
                     </Link>
                   </div>
-                </motion.div>
+                </div>
               </motion.div>
             );
           })}

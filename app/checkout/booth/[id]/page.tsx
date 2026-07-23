@@ -29,7 +29,7 @@ export default function BoothCheckoutPage({ params }: { params: { id: string } }
       email: '',
       phone: '',
       industry: '',
-      paymentMethod: 'paypal',
+      paymentMethod: 'stripe',
     },
   });
 
@@ -159,9 +159,10 @@ export default function BoothCheckoutPage({ params }: { params: { id: string } }
                 
                 <div className="grid gap-4">
                   {[
-                    { id: 'paypal', title: 'Credit Card / PayPal', desc: 'Pay securely via PayPal' },
+                    { id: 'stripe', title: 'Credit Card / Apple Pay', desc: 'Secure payment via Stripe' },
+                    { id: 'paypal', title: 'PayPal', desc: 'Pay with your PayPal balance' },
                     { id: 'bank_transfer', title: 'Bank Transfer', desc: 'Offline wire transfer instructions' },
-                    { id: 'whatsapp_uae', title: 'WhatsApp (UAE Office)', desc: 'Book via WhatsApp (+971 543770146)' },
+                    { id: 'whatsapp_uae', title: 'WhatsApp (UAE Office)', desc: 'Book via WhatsApp (+971 54 377 0146)' },
                     { id: 'whatsapp_pk', title: 'WhatsApp (PK Office)', desc: 'Book via WhatsApp (+92 309 1020225)' }
                   ].map(method => (
                     <label
