@@ -8,6 +8,7 @@ import { ROUTES } from '@/config/routes';
 import Image from 'next/image';
 import FeaturedEventCarousel from './FeaturedEventCarousel';
 import { events } from '@/data/events';
+import CountdownTimer from './CountdownTimer';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -150,6 +151,22 @@ export default function Hero() {
                 </Link>
               </motion.div>
             </motion.div>
+
+            {/* Countdown Timer */}
+            {currentEvent?.startDate && (
+              <motion.div
+                custom={0.5}
+                initial="hidden"
+                animate="visible"
+                variants={fadeInUp}
+                className="mt-12 lg:mt-16 flex justify-start w-full"
+              >
+                <CountdownTimer 
+                  targetDate={currentEvent.startDate} 
+                  label={`${currentEvent.title.replace('AI FOR NON-TECHNICAL LEADERS SUMMIT & SOLUTIONS SHOWCASE', 'Dubai AI Summit').replace('Enterprise AI & Workforce Transformation Summit Europe', 'Amsterdam Enterprise AI')} begins in`} 
+                />
+              </motion.div>
+            )}
           </div>
 
           {/* Right Column: Floating Flagship Card */}

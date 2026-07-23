@@ -87,8 +87,13 @@ const typeConfig: Record<
 
 export default function AgendaTabs({ eventId = 'dubai-ai-summit-2026' }: { eventId?: string }) {
   const [activeTab, setActiveTab] = useState(0);
+  const [filterType, setFilterType] = useState<IAgendaSession['type'] | 'all'>('all');
   const currentAgenda = eventAgendas[eventId] || eventAgendas['dubai-ai-summit-2026'];
   const activeDay = currentAgenda[activeTab];
+
+  const filteredSessions = activeDay.sessions.filter(session => 
+    filterType === 'all' ? true : session.type === filterType
+  );
 
   return (
     <section id="agenda" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden z-10">
@@ -161,6 +166,34 @@ export default function AgendaTabs({ eventId = 'dubai-ai-summit-2026' }: { event
           </motion.div>
         </AnimatePresence>
 
+        {/* Filter Bar */}
+        <div className="flex flex-wrap justify-center gap-2 mb-12 relative z-20">
+          <button
+            onClick={() => setFilterType('all')}
+            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 border ${
+              filterType === 'all' 
+                ? 'bg-slate-800 text-white border-slate-800 dark:bg-white dark:text-slate-900 dark:border-white shadow-lg' 
+                : 'bg-white/50 dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/10'
+            }`}
+          >
+            All Sessions
+          </button>
+          {(Object.keys(typeConfig) as Array<IAgendaSession['type']>).map(type => (
+            <button
+              key={type}
+              onClick={() => setFilterType(type)}
+              className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 border ${
+                filterType === type 
+                  ? 'bg-slate-800 text-white border-slate-800 dark:bg-white dark:text-slate-900 dark:border-white shadow-lg' 
+                  : 'bg-white/50 dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/10'
+              }`}
+            >
+              <span className={`w-2.5 h-2.5 rounded-full ${typeConfig[type].dot}`} />
+              {typeConfig[type].label}
+            </button>
+          ))}
+        </div>
+
         {/* Schedule Grid with Levitating Timeline */}
         <div className="relative">
           {/* Levitating Timeline Conduit */}
@@ -175,7 +208,7 @@ export default function AgendaTabs({ eventId = 'dubai-ai-summit-2026' }: { event
               transition={{ duration: 0.5 }}
               className="space-y-8 sm:space-y-12"
             >
-              {activeDay.sessions.map((session, index) => {
+              {filteredSessions.map((session, index) => {
                 const config = typeConfig[session.type];
                 const isEven = index % 2 === 0;
 
@@ -189,7 +222,7 @@ export default function AgendaTabs({ eventId = 'dubai-ai-summit-2026' }: { event
                     className={`relative flex flex-col sm:flex-row gap-8 sm:gap-16 items-start sm:items-center ${isEven ? 'sm:flex-row' : 'sm:flex-row-reverse'}`}
                   >
                     {/* Glowing Node */}
-                    <div className="absolute left-[19px] sm:left-1/2 sm:-translate-x-1/2 w-5 h-5 rounded-full bg-white dark:bg-slate-900 border-[4px] border-brand-400 shadow-[0_0_20px_rgba(167,139,250,0.9)] z-20" />
+                    <div className={`absolute left-[19px] sm:left-1/2 sm:-translate-x-1/2 w-5 h-5 rounded-full bg-white dark:bg-slate-900 border-[4px] ${config.border.replace('border-', 'border-').replace('/30', '')} shadow-[0_0_15px_${config.dot.replace('bg-', '')}] z-20`} />
                     
                     {/* Empty Space for Staggered Layout (Desktop) */}
                     <div className="hidden sm:block flex-1" />

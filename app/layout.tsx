@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AnnouncementBanner from "@/components/AnnouncementBanner";
+import PageTransition from "@/components/PageTransition";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -59,6 +61,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
+  manifest: "/manifest.webmanifest",
   twitter: {
     card: "summary_large_image",
     title: "Corpassion Events | Transformative Tech Summits",
@@ -91,10 +94,31 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-transparent text-slate-900 dark:text-white antialiased overflow-x-hidden transition-colors`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'Corpassion Events',
+              url: 'https://corpassion-events.vercel.app',
+              logo: 'https://corpassion-events.vercel.app/icon.svg',
+              sameAs: [
+                'https://twitter.com/corpassion',
+                'https://linkedin.com/company/corpassion',
+              ],
+            }),
+          }}
+        />
         <ThemeProvider attribute="class" defaultTheme="dark">
           <GlobalBackground />
+          <AnnouncementBanner />
           <Header />
-          {children}
+          <PageTransition>
+            <main id="main-content" className="flex-grow">
+              {children}
+            </main>
+          </PageTransition>
           <Footer />
         </ThemeProvider>
       </body>

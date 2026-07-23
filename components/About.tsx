@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import { Sparkles, Target, Compass } from 'lucide-react';
+import { Sparkles, Target, Compass, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 
 export default function About() {
@@ -49,9 +49,14 @@ export default function About() {
                 <p>
                   Our mission is to engineer environments where innovation flows effortlessly and connections are made without boundaries. By merging spatial design, bleeding-edge technology, and unparalleled curation, we create spaces that elevate human potential.
                 </p>
-                <p className="border-l-2 border-brand-400/50 pl-4 py-1 text-base mt-2">
-                  <strong className="text-slate-900 dark:text-white">Corpassion Events</strong> is proudly operated by <strong className="text-slate-900 dark:text-white">The Excellent Group FZC</strong>, a registered and highly-trusted company based in Dubai, UAE, with a proven track record of delivering world-class business experiences.
-                </p>
+                <div className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/5 mt-4">
+                  <div className="p-2 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5">
+                    <ShieldCheck className="w-5 h-5" />
+                  </div>
+                  <p className="text-sm leading-relaxed text-slate-700 dark:text-gray-300">
+                    <strong className="text-slate-900 dark:text-white">Corpassion Events</strong> is proudly operated by <strong className="text-slate-900 dark:text-white">The Excellent Group FZC</strong>, a registered and highly-trusted company based in Dubai, UAE, with a proven track record of delivering world-class business experiences.
+                  </p>
+                </div>
               </div>
             </div>
 

@@ -9,6 +9,14 @@ export interface IEvent {
   image: string;
   registrationOpen?: boolean;
   currency?: string;
+  category?: string;
+  startingPrice?: number;
+  startDate?: string;
+  endDate?: string;
+  description?: string;
+  keyTopics?: string[];
+  whoShouldAttend?: string[];
+  highlights?: string[];
 }
 
 export interface ITicketTier {
@@ -139,6 +147,14 @@ export const events: IEvent[] = [
       'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=3840&h=2160&q=100&fit=crop',
     registrationOpen: true,
     currency: '$',
+    category: 'AI & Business',
+    startingPrice: 499,
+    startDate: '2026-10-14T08:00:00Z',
+    endDate: '2026-10-16T17:00:00Z',
+    description: 'This summit is built for one audience: business leaders who need AI to deliver results, not more jargon. Across three days in Dubai, you will hear how companies are using AI to reduce costs and increase productivity, see live demonstrations from global solution providers, and sit down for one-to-one meetings matched to your business challenges.\n\nNo technical background is required. Every keynote, case study, and workshop is designed so that executives from finance, HR, sales, and operations leave with a practical AI roadmap they can start executing the following Monday.',
+    keyTopics: ['AI strategy without a technical team', 'Cost reduction & productivity', 'AI for finance & decision making', 'AI for HR & talent management', 'AI for sales, marketing & CX', 'Measuring the ROI of AI', 'Selecting the right AI partner', 'Live solution demonstrations'],
+    whoShouldAttend: ['CEOs, founders & managing directors', 'Finance, HR, sales & operations leaders', 'SME owners exploring AI adoption', 'Government & enterprise decision-makers', 'AI solution providers seeking regional clients'],
+    highlights: ['AI Solutions Showcase', 'Live Product Demonstrations', 'One-to-One Business Meetings', 'Executive Networking Lounge', 'Media Interviews', 'Sponsor & Partner Meetings'],
   },
   {
     id: 'amsterdam-enterprise-ai-2026',
@@ -152,6 +168,14 @@ export const events: IEvent[] = [
       '/amsterdam_summit_bg.png',
     registrationOpen: true,
     currency: '€',
+    category: 'Enterprise Tech',
+    startingPrice: 599,
+    startDate: '2026-11-04T08:00:00Z',
+    endDate: '2026-11-06T17:00:00Z',
+    description: 'Europe\'s premier gathering for enterprise leaders focused on workforce transformation through artificial intelligence. Join 500+ decision-makers in Amsterdam to explore how AI is reshaping the future of work.\n\nDiscover practical frameworks for upskilling your workforce, implementing enterprise-grade AI solutions securely, and navigating the evolving regulatory landscape in the EU.',
+    keyTopics: ['Workforce upskilling strategies', 'Enterprise AI security & compliance', 'EU AI Act implications', 'Change management in the AI era', 'Automating legacy processes'],
+    whoShouldAttend: ['CHROs & HR Directors', 'CIOs & IT Leaders', 'Operations Directors', 'Digital Transformation Leads', 'Enterprise AI Consultants'],
+    highlights: ['Interactive Workshops', 'Case Study Presentations', 'Peer-to-Peer Roundtables', 'Technology Exhibition', 'Networking Dinner'],
   },
   {
     id: 'china-healthtech-2027',
@@ -166,6 +190,14 @@ export const events: IEvent[] = [
       '/chinahealth.png',
     registrationOpen: true,
     currency: '$',
+    category: 'HealthTech',
+    startingPrice: 399,
+    startDate: '2027-01-14T08:00:00Z',
+    endDate: '2027-01-16T17:00:00Z',
+    description: 'The premier bridge connecting China\'s booming health technology sector with global buyers, distributors, and partners. Hosted in the strategic hub of Baku, this three-day expo features the latest in medical devices, telemedicine, and AI-driven healthcare solutions.\n\nMeet directly with vetted manufacturers, explore exclusive distribution rights, and build lasting partnerships that drive healthcare innovation forward.',
+    keyTopics: ['Medical AI diagnostics', 'Telemedicine platforms', 'Wearable health tech', 'Cross-border healthcare partnerships', 'Medical device manufacturing'],
+    whoShouldAttend: ['Healthcare Distributors', 'Hospital Administrators', 'Medical Device Buyers', 'HealthTech Investors', 'Government Health Officials'],
+    highlights: ['Manufacturer Matchmaking', 'Product Demos', 'Distributor Roundtables', 'Innovation Pitch Stage', 'Gala Reception'],
   },
 ];
 

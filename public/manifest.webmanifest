@@ -1,0 +1,17 @@
+{
+  "name": "Corpassion Events",
+  "short_name": "Corpassion",
+  "description": "Transformative Tech Summits for Global Leaders",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#0a0a14",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

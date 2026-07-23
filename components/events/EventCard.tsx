@@ -20,6 +20,9 @@ export default function EventCard({ event, priority = false }: EventCardProps) {
     image,
     registrationOpen,
     id,
+    category,
+    startingPrice,
+    currency,
   } = event;
 
   const x = useMotionValue(0);
@@ -68,15 +71,37 @@ export default function EventCard({ event, priority = false }: EventCardProps) {
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-80" />
 
-        {/* Badge */}
-        {registrationOpen ? (
-           <span className="absolute left-4 top-4 rounded-full bg-brand-400 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-950 shadow-lg">
-             Registration Open
-           </span>
-        ) : (
-           <span className="absolute left-4 top-4 rounded-full bg-white/10 backdrop-blur-md px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white border border-white/10">
-             Upcoming
-           </span>
+        {/* Badges container top-left */}
+        <div className="absolute left-4 top-4 flex flex-col items-start gap-2 z-10">
+          {category && (
+            <span className="rounded-full bg-white/95 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-900 shadow-sm backdrop-blur-md">
+              {category}
+            </span>
+          )}
+          {registrationOpen ? (
+            <div className="flex items-center gap-1.5 rounded-full bg-emerald-500/90 backdrop-blur-md px-3 py-1 shadow-sm border border-emerald-400/20">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+              </span>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-white">
+                Open
+              </span>
+            </div>
+          ) : (
+            <span className="rounded-full bg-black/50 backdrop-blur-md px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white border border-white/10">
+              Upcoming
+            </span>
+          )}
+        </div>
+
+        {/* Price badge bottom-right */}
+        {startingPrice && (
+          <div className="absolute right-4 bottom-8 z-10">
+             <span className="rounded-full bg-black/70 backdrop-blur-md px-3 py-1.5 text-xs font-semibold text-white border border-white/10 shadow-lg shadow-black/20">
+               From {currency || '$'}{startingPrice}
+             </span>
+          </div>
         )}
       </div>
 
@@ -110,7 +135,7 @@ export default function EventCard({ event, priority = false }: EventCardProps) {
           </p>
         )}
 
-        <div className="mt-6 pt-6 border-t border-slate-200 dark:border-white/5">
+        <div className="mt-6 pt-6 border-t border-slate-200 dark:border-white/5 flex items-center justify-between">
           <a
             href={`/events/${id}`}
             className="inline-flex items-center gap-2 text-sm font-semibold text-brand-500 dark:text-brand-400 transition-colors duration-200 hover:text-brand-600 dark:hover:text-brand-300 group/link"

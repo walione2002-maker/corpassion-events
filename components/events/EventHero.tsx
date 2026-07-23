@@ -2,7 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { IEvent } from '@/data/events';
-
+import Link from 'next/link';
+import { ChevronRight } from 'lucide-react';
+import AddToCalendarButton from './AddToCalendarButton';
+import ShareButton from './ShareButton';
+import CountdownTimer from '@/components/CountdownTimer';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -13,106 +17,118 @@ const fadeInUp = {
   }),
 };
 
-const ctaButtons = [
-  {
-    label: 'Attend',
-    sub: 'Register as a Delegate',
-    href: '#pricing',
-    style: 'filled' as const,
-  },
-  {
-    label: 'Exhibit',
-    sub: 'Book Your Booth',
-    href: '#sponsorship',
-    style: 'outlined' as const,
-  },
-  {
-    label: 'Sponsor',
-    sub: 'Promote Your Brand',
-    href: '#sponsorship',
-    style: 'outlined' as const,
-  },
-];
-
 export default function EventHero({ event }: { event: IEvent }) {
   return (
-    <section
-      className="relative min-h-screen flex lg:items-center justify-center overflow-hidden pt-32 pb-24 lg:pt-16 lg:pb-0"
-    >
-      {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-28 pb-20">
-        {/* Badge */}
-        <motion.div
-          custom={0}
-          initial="hidden"
-          animate="visible"
-          variants={fadeInUp}
-          className="mb-8 inline-flex"
-        >
-          <span className="border border-brand-400/30 bg-brand-400/10 text-brand-700 dark:text-brand-300 font-medium text-sm rounded-full px-5 py-1.5 tracking-wide">
-            {event.location} &bull; {event.dates}
-          </span>
-        </motion.div>
+    <section className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-[1400px] mx-auto">
+      <div className="relative rounded-3xl overflow-hidden min-h-[85vh] flex flex-col justify-end shadow-2xl">
+        {/* Background Image with Overlay */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${event.image})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/80 via-transparent to-transparent" />
 
-        {/* Headline */}
-        <motion.h1
-          custom={0.15}
-          initial="hidden"
-          animate="visible"
-          variants={fadeInUp}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight mb-6 leading-[1.08]"
-        >
-          <span className="bg-gradient-to-r from-slate-900 via-slate-800 to-brand-600 dark:from-white dark:via-white dark:to-brand-400 bg-clip-text text-transparent">
+        {/* Top Breadcrumbs */}
+        <div className="absolute top-8 left-8 right-8 z-20 flex items-center justify-between">
+          <nav className="flex items-center text-sm font-medium text-white/70">
+            <Link href="/events" className="hover:text-white transition-colors">
+              Events
+            </Link>
+            <ChevronRight className="w-4 h-4 mx-2" />
+            <span className="text-white truncate max-w-[200px] sm:max-w-none">{event.title}</span>
+          </nav>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 w-full p-8 sm:p-12 lg:p-16 max-w-5xl">
+          {/* Badges */}
+          <motion.div
+            custom={0}
+            initial="hidden"
+            animate="visible"
+            variants={fadeInUp}
+            className="flex flex-wrap items-center gap-3 mb-6"
+          >
+            {event.category && (
+              <span className="px-4 py-1.5 rounded-full text-sm font-semibold bg-brand-500 text-white shadow-sm backdrop-blur-md">
+                {event.category}
+              </span>
+            )}
+            <span className={`px-4 py-1.5 rounded-full text-sm font-semibold backdrop-blur-md border shadow-sm ${
+              event.registrationOpen 
+                ? 'bg-green-500/20 text-green-300 border-green-500/30' 
+                : 'bg-white/10 text-white border-white/20'
+            }`}>
+              {event.registrationOpen ? 'Registration Open' : 'Upcoming'}
+            </span>
+          </motion.div>
+
+          {/* Headline */}
+          <motion.h1
+            custom={0.1}
+            initial="hidden"
+            animate="visible"
+            variants={fadeInUp}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight text-white mb-6 leading-[1.1]"
+          >
             {event.title}
-          </span>
-        </motion.h1>
+          </motion.h1>
 
-        {/* Subtitle */}
-        <motion.p
-          custom={0.3}
-          initial="hidden"
-          animate="visible"
-          variants={fadeInUp}
-          className="text-lg md:text-xl text-slate-700 dark:text-gray-400 max-w-3xl mx-auto mb-12"
-        >
-          {event.taglines[0]}
-        </motion.p>
+          {/* Subtitle & Info */}
+          <motion.div
+            custom={0.2}
+            initial="hidden"
+            animate="visible"
+            variants={fadeInUp}
+            className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8 text-lg text-gray-300 mb-10"
+          >
+            <div className="flex items-center gap-2">
+              <span className="font-semibold text-white">{event.dates}</span>
+            </div>
+            <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-brand-500" />
+            <div className="flex items-center gap-2">
+              <span>{event.location}</span>
+            </div>
+          </motion.div>
 
-        {/* Three CTA Buttons */}
-        <motion.div
-          custom={0.45}
-          initial="hidden"
-          animate="visible"
-          variants={fadeInUp}
-          className="flex flex-col sm:flex-row items-stretch justify-center gap-4 max-w-2xl mx-auto"
-        >
-          {ctaButtons.map((cta, i) => (
-            <motion.a
-              key={cta.label}
-              href={cta.href}
-              custom={0.5 + i * 0.1}
+          {/* Actions */}
+          <motion.div
+            custom={0.3}
+            initial="hidden"
+            animate="visible"
+            variants={fadeInUp}
+            className="flex flex-wrap items-center gap-4 mb-12"
+          >
+            <a 
+              href="#pricing"
+              className="flex items-center justify-center px-8 py-3.5 rounded-xl font-semibold bg-brand-600 hover:bg-brand-500 text-white transition-colors w-full sm:w-auto shadow-lg shadow-brand-500/25"
+            >
+              Get tickets
+            </a>
+            <a 
+              href="#sponsorship"
+              className="flex items-center justify-center px-8 py-3.5 rounded-xl font-semibold bg-white/10 hover:bg-white/20 text-white backdrop-blur border border-white/10 transition-colors w-full sm:w-auto"
+            >
+              Exhibit or sponsor
+            </a>
+            <AddToCalendarButton event={event} />
+            <ShareButton />
+          </motion.div>
+
+          {/* Countdown */}
+          {event.startDate && (
+            <motion.div
+              custom={0.4}
               initial="hidden"
               animate="visible"
               variants={fadeInUp}
-              className={`group flex-1 flex flex-col items-center justify-center gap-1 rounded-xl px-6 py-4 font-medium transition-all duration-300 ${
-                cta.style === 'filled'
-                  ? 'bg-gradient-to-r from-brand-500 to-brand-600 text-white hover:shadow-[0_0_30px_rgba(99,102,241,0.5)] hover:brightness-110 active:scale-[0.97]'
-                  : 'border border-slate-300 dark:border-white/20 bg-white/50 dark:bg-white/5 text-slate-900 dark:text-white hover:border-brand-500/50 dark:hover:border-brand-400/50 hover:bg-slate-100 dark:hover:bg-white/10 active:scale-[0.97]'
-              }`}
+              className="inline-block"
             >
-              <span className="text-lg font-semibold">{cta.label}</span>
-              <span
-                className={`text-xs ${
-                  cta.style === 'filled'
-                    ? 'text-white/70'
-                    : 'text-slate-600 dark:text-gray-500 group-hover:text-slate-800 dark:group-hover:text-gray-400'
-                } transition-colors`}
-              >
-                {cta.sub}
-              </span>
-            </motion.a>
-          ))}
-        </motion.div>
+              <CountdownTimer targetDate={event.startDate} label="Event begins in" />
+            </motion.div>
+          )}
+        </div>
       </div>
     </section>
   );

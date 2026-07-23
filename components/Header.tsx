@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import { motion } from 'framer-motion';
-import { Menu, X, Settings as SettingsIcon } from 'lucide-react';
+import { motion, useScroll, useSpring } from 'framer-motion';
+import { Menu, X, Settings as SettingsIcon, Phone } from 'lucide-react';
 import Link from 'next/link';
 import { navLinks, INavLink } from '@/data/events';
 import { ThemeToggle } from '@/components/ThemeToggle';
@@ -21,6 +21,13 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -40,6 +47,16 @@ export default function Header() {
         scrolled ? 'shadow-lg shadow-black/10 dark:shadow-black/40' : ''
       }`}
     >
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-[9999] focus:p-4 focus:bg-brand-500 focus:text-slate-900 focus:font-bold">
+        Skip to content
+      </a>
+      
+      {/* Scroll Progress Bar */}
+      <motion.div
+        className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-brand-500 via-violet-400 to-indigo-400 origin-left z-[101]"
+        style={{ scaleX }}
+      />
+
       <nav className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-[100]">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -59,39 +76,47 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              link.label === 'Register' ? (
+            {navLinks.map((link) => {
+              const isEventsRoute = link.href === '/events' && pathname.startsWith('/events');
+              const isActive = pathname === link.href || isEventsRoute;
+              return (
                 <Link
                   key={link.label}
-                  href="/events"
-                  className="text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white transition-colors duration-200 relative group flex items-center gap-2"
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors duration-200 relative group flex items-center gap-2 ${
+                    isActive
+                      ? 'text-brand-500 dark:text-brand-400'
+                      : 'text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white'
+                  }`}
                 >
                   {link.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-400 transition-all duration-300 group-hover:w-full" />
+                  {link.isNew && (
+                    <span className="px-1.5 py-0.5 rounded-full bg-brand-400/10 text-brand-400 text-[10px] font-bold tracking-wider uppercase">
+                      New
+                    </span>
+                  )}
+                  <span
+                    className={`absolute -bottom-1 left-0 h-0.5 bg-brand-400 transition-all duration-300 ${
+                      isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                    }`}
+                  />
                 </Link>
-              ) : (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white transition-colors duration-200 relative group flex items-center gap-2"
-              >
-                {link.label}
-                {link.isNew && (
-                  <span className="px-1.5 py-0.5 rounded-full bg-brand-400/10 text-brand-400 text-[10px] font-bold tracking-wider uppercase">
-                    New
-                  </span>
-                )}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-400 transition-all duration-300 group-hover:w-full" />
-              </Link>
-              )
-            ))}
+              );
+            })}
           </div>
 
           {/* Desktop CTA & Theme Toggle */}
           <div className="hidden lg:flex items-center gap-4">
+            <a 
+              href="tel:+971543770146"
+              className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white transition-colors"
+            >
+              <Phone className="w-4 h-4" />
+              <span className="hidden xl:inline">+971 54 377 0146</span>
+            </a>
             <Link
               href="/settings"
-              className="p-2 text-slate-500 hover:text-slate-900 dark:text-gray-400 dark:hover:text-white transition-colors"
+              className="p-2 text-slate-500 hover:text-slate-900 dark:text-gray-400 dark:hover:text-white transition-colors ml-2"
               aria-label="Settings"
             >
               <SettingsIcon className="w-5 h-5" />
