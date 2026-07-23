@@ -14,7 +14,21 @@ export default function TicketCheckoutPage({ params }: { params: { id: string } 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const tier = Object.values(eventTicketTiers).flat().find(t => t.id === params.id);
+  // params.id is now a composite: "eventId_tierId" (e.g. "dubai-ai-summit-2026_standard")
+  // For backwards compatibility, handle both formats
+  let tierId = params.id;
+  let tier;
+  
+  if (params.id.includes('_')) {
+    const parts = params.id.split('_');
+    tierId = parts.pop() || '';
+    const eventId = parts.join('_');
+    const eventTiers = eventTicketTiers[eventId] || [];
+    tier = eventTiers.find(t => t.id === tierId);
+  } else {
+    tier = Object.values(eventTicketTiers).flat().find(t => t.id === tierId);
+  }
+
   if (!tier) {
     notFound();
   }
