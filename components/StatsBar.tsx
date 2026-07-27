@@ -11,7 +11,7 @@ export default function StatsBar() {
 
   return (
     <section className="relative z-10 -mt-16 pb-8 overflow-hidden bg-transparent">
-      <div className="absolute inset-0 z-[-1] opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-overlay">
+      <div className="absolute inset-0 z-[-1] opacity-[0.40] dark:opacity-[0.35] pointer-events-none">
         <Image 
           src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?w=3840&h=2160&q=100&fit=crop&auto=format&fit=crop" 
           alt="Workshop Background"

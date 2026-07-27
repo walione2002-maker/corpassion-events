@@ -7,16 +7,8 @@ import { events } from '@/data/events';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export default function AnnouncementBanner() {
-  const [isVisible, setIsVisible] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-
-  useEffect(() => {
-    const dismissed = sessionStorage.getItem('announcement-dismissed');
-    if (!dismissed) {
-      setIsVisible(true);
-    }
-  }, []);
 
   // Find all upcoming events, sorted by date
   const now = new Date();
@@ -35,14 +27,7 @@ export default function AnnouncementBanner() {
     return () => clearInterval(interval);
   }, [displayEvents.length, isPaused]);
 
-  const handleClose = useCallback((e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsVisible(false);
-    sessionStorage.setItem('announcement-dismissed', 'true');
-  }, []);
-
-  if (!isVisible || displayEvents.length === 0) return null;
+  if (displayEvents.length === 0) return null;
 
   const currentEvent = displayEvents[activeIndex];
 
@@ -53,7 +38,7 @@ export default function AnnouncementBanner() {
 
   return (
     <div
-      className="relative z-[110] overflow-hidden border-b border-white/[0.06] bg-[#0a0a14]"
+      className="fixed top-0 left-0 right-0 z-[110] h-10 overflow-hidden border-b border-white/[0.06] bg-[#0a0a14]"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -111,13 +96,7 @@ export default function AnnouncementBanner() {
         </motion.div>
       </AnimatePresence>
 
-      <button
-        onClick={handleClose}
-        className="absolute right-4 top-1/2 -translate-y-1/2 p-1.5 text-slate-500 hover:text-slate-300 transition-colors rounded-full hover:bg-white/10"
-        aria-label="Dismiss announcement"
-      >
-        <X className="w-3.5 h-3.5" />
-      </button>
+
     </div>
   );
 }

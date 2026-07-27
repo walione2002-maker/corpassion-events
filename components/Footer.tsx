@@ -53,7 +53,7 @@ export default function Footer() {
 
   return (
     <footer id="contact" className="relative overflow-hidden border-t border-slate-200 dark:border-white/10 bg-transparent">
-      <div className="absolute inset-0 z-[-1] opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-overlay">
+      <div className="absolute inset-0 z-[-1] opacity-[0.40] dark:opacity-[0.35] pointer-events-none">
         <Image 
           src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1920&q=75&fit=crop&auto=format" 
           alt="Workshop Background"

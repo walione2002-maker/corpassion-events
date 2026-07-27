@@ -24,7 +24,7 @@ export default function WhyAttend() {
       className="relative py-24 sm:py-32 bg-transparent overflow-hidden"
     >
       {/* Faded Background Image specific to Why Attend */}
-      <div className="absolute inset-0 z-0 opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-overlay">
+      <div className="absolute inset-0 z-0 opacity-[0.40] dark:opacity-[0.35] pointer-events-none">
         <Image 
           src="https://images.unsplash.com/photo-1591115765373-5f9cf1da3607?w=3840&h=2160&q=100&fit=crop&auto=format&fit=crop" 
           alt="Exhibition Background"

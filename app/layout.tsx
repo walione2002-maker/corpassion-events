@@ -118,7 +118,7 @@ export default function RootLayout({
           <AnnouncementBanner />
           <Header />
           <PageTransition>
-            <main id="main-content" className="flex-grow">
+            <main id="main-content" className="flex-grow pt-10">
               {children}
             </main>
           </PageTransition>

@@ -62,7 +62,7 @@ export default function Hero() {
       className="relative min-h-screen flex lg:items-center justify-center overflow-hidden pt-32 pb-24 lg:pt-20 lg:pb-0 bg-transparent"
     >
       {/* Faded Background Image specific to Hero */}
-      <div className="absolute inset-0 z-0 opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-overlay">
+      <div className="absolute inset-0 z-0 opacity-[0.40] dark:opacity-[0.35] pointer-events-none">
         <Image 
           src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920&q=75&fit=crop&auto=format" 
           alt="Hero Background"
