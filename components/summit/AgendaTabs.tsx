@@ -142,7 +142,7 @@ export default function AgendaTabs({ eventId = 'dubai-ai-summit-2026' }: { event
                 <span className={`block text-lg font-bold ${activeTab === index ? 'text-brand-600 dark:text-brand-300' : 'text-slate-700 dark:text-slate-400'}`}>
                   Day {day.day}
                 </span>
-                <span className={`block text-sm mt-1 ${activeTab === index ? 'text-slate-800 dark:text-slate-200' : 'text-slate-500 dark:text-slate-500'}`}>
+                <span className={`block text-sm mt-1 ${activeTab === index ? 'text-slate-800 dark:text-slate-200' : 'text-slate-500 dark:text-slate-400'}`}>
                   {day.date}
                 </span>
               </span>

@@ -13,8 +13,8 @@ export default function Services() {
     <section className="py-24 px-4 sm:px-6 lg:px-8 bg-transparent relative overflow-hidden" id="services">
       <div className="max-w-7xl mx-auto text-center mb-16 relative z-10">
         <span className="text-sm tracking-widest text-brand-700 dark:text-brand-400 uppercase font-medium">What We Do</span>
-        <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-slate-900 dark:text-white mt-3">
-          Our Services
+        <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-slate-900 dark:text-white mt-3">
+          End-to-End Event <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-500">Solutions</span>
         </h2>
       </div>
 
@@ -47,7 +47,7 @@ export default function Services() {
             >
               <div 
                 className={`relative w-full h-full p-8 rounded-3xl backdrop-blur-xl border border-slate-200 dark:border-white/10 transition-all duration-300 flex flex-col items-center text-center glass-card shadow-[0_20px_50px_rgba(0,0,0,0.1)] ${
-                  isHovered ? 'bg-slate-200 dark:bg-white/10 border-slate-300 dark:border-white/30 shadow-[0_30px_60px_rgba(0,0,0,0.2)]' : 'bg-slate-50 dark:bg-white/5'
+                  isHovered ? 'bg-slate-200 dark:bg-white/10 border-slate-300 dark:border-brand-400/40 shadow-[0_30px_60px_rgba(0,0,0,0.2)]' : 'bg-slate-50 dark:bg-white/5'
                 }`}
               >
                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand-500/20 to-indigo-500/20 flex items-center justify-center mb-6">
@@ -88,7 +88,7 @@ export default function Services() {
           </div>
         </div>
 
-        <p className="text-sm text-slate-500 dark:text-gray-500 italic">
+        <p className="text-sm text-slate-500 dark:text-gray-400 italic">
           Disclaimer: The invitation letter supports your visa application but does not guarantee visa approval. Visa decisions are made solely by the relevant embassy or consulate.
         </p>
       </div>

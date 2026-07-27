@@ -44,7 +44,7 @@ export default function Gallery() {
           </span>
           <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-slate-900 dark:text-white">
             Past Event{' '}
-            <span className="gradient-text">Highlights</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-500">Highlights</span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-slate-800 dark:text-gray-400">
             Relive the energy, insights, and connections from our previous summits.
@@ -78,7 +78,7 @@ export default function Gallery() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
               {/* Hover overlay */}
-              <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              <div className="absolute inset-0 flex items-center justify-center bg-brand-900/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100 backdrop-blur-[2px]">
                 <div className="flex flex-col items-center gap-2 translate-y-4 transition-transform duration-300 group-hover:translate-y-0">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
                     <Eye className="h-5 w-5 text-white" />

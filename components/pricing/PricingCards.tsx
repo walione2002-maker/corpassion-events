@@ -25,7 +25,7 @@ export default function PricingCards({ eventId = 'dubai-ai-summit-2026', currenc
             Pricing
           </span>
           <h2 className="text-4xl md:text-5xl font-display font-bold tracking-tight text-slate-900 dark:text-white mt-3">
-            Registration &amp; Pricing
+            Registration &amp; <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-500">Pricing</span>
           </h2>
         </motion.div>
 
@@ -72,7 +72,7 @@ export default function PricingCards({ eventId = 'dubai-ai-summit-2026', currenc
                   className={`relative h-full flex flex-col rounded-2xl p-[1px] transition-all duration-300 shadow-[0_20px_50px_rgba(0,0,0,0.05)] glass-card group-hover:-translate-y-2 group-hover:shadow-xl ${
                     isEmphasized
                       ? 'bg-gradient-to-b from-brand-400 via-brand-600 to-brand-900 shadow-lg shadow-brand-500/20'
-                      : 'bg-slate-200 dark:bg-white/[0.08]'
+                      : 'bg-slate-200 dark:bg-white/[0.08] dark:group-hover:bg-brand-500/30'
                   }`}
                 >
                   {/* Inner card */}
@@ -112,7 +112,7 @@ export default function PricingCards({ eventId = 'dubai-ai-summit-2026', currenc
                       >
                         {tier.price}
                       </span>
-                      <span className="text-slate-800 dark:text-gray-500 text-sm ml-1">/person</span>
+                      <span className="text-slate-800 dark:text-gray-400 text-sm ml-1">/person</span>
                     </div>
 
                     {/* Deadline */}
@@ -139,7 +139,7 @@ export default function PricingCards({ eventId = 'dubai-ai-summit-2026', currenc
                       className={`group/btn inline-flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ${
                         isEmphasized
                           ? 'bg-brand-500 hover:bg-brand-600 text-white shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40'
-                          : 'bg-slate-100 dark:bg-white/[0.06] hover:bg-slate-200 dark:hover:bg-white/[0.12] text-slate-900 dark:text-white border border-slate-200 dark:border-white/[0.08] hover:border-slate-300 dark:hover:border-white/[0.15]'
+                          : 'bg-slate-100 dark:bg-brand-500/10 hover:bg-slate-200 dark:hover:bg-brand-500/20 text-slate-900 dark:text-brand-300 border border-slate-200 dark:border-brand-500/20 hover:border-slate-300 dark:hover:border-brand-400/40'
                       }`}
                     >
                       Register Now
@@ -165,7 +165,7 @@ export default function PricingCards({ eventId = 'dubai-ai-summit-2026', currenc
             </div>
             <p className="text-xs text-slate-800 dark:text-gray-400 font-medium text-left leading-relaxed">
               Payments securely processed by <strong className="text-slate-900 dark:text-white font-bold">The Excellent Group FZC</strong><br/>
-              <span className="text-[11px] text-slate-600 dark:text-gray-500 uppercase tracking-wider">Dubai, UAE — Safe & Registered</span>
+              <span className="text-[11px] text-slate-600 dark:text-gray-400 uppercase tracking-wider">Dubai, UAE — Safe & Registered</span>
             </p>
           </div>
         </motion.div>

@@ -93,15 +93,15 @@ export default function FeaturedEventCarousel({
             <div className="grid grid-cols-3 gap-4 border-t border-slate-200 dark:border-white/10 pt-6 mb-8">
               <div className="text-center">
                 <div className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">3</div>
-                <div className="text-[10px] text-slate-500 dark:text-gray-500 uppercase tracking-widest mt-1">Days</div>
+                <div className="text-[10px] text-slate-500 dark:text-gray-400 uppercase tracking-widest mt-1">Days</div>
               </div>
               <div className="text-center border-l border-slate-200 dark:border-white/10">
                 <div className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">40+</div>
-                <div className="text-[10px] text-slate-500 dark:text-gray-500 uppercase tracking-widest mt-1">Talks</div>
+                <div className="text-[10px] text-slate-500 dark:text-gray-400 uppercase tracking-widest mt-1">Talks</div>
               </div>
               <div className="text-center border-l border-slate-200 dark:border-white/10">
                 <div className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">2K</div>
-                <div className="text-[10px] text-slate-500 dark:text-gray-500 uppercase tracking-widest mt-1">Attendees</div>
+                <div className="text-[10px] text-slate-500 dark:text-gray-400 uppercase tracking-widest mt-1">Attendees</div>
               </div>
             </div>
 

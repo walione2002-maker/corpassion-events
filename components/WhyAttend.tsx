@@ -24,7 +24,7 @@ export default function WhyAttend() {
       className="relative py-24 sm:py-32 bg-transparent overflow-hidden"
     >
       {/* Faded Background Image specific to Why Attend */}
-      <div className="absolute inset-0 z-0 opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity">
+      <div className="absolute inset-0 z-0 opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-overlay">
         <Image 
           src="https://images.unsplash.com/photo-1591115765373-5f9cf1da3607?w=3840&h=2160&q=100&fit=crop&auto=format&fit=crop" 
           alt="Exhibition Background"
@@ -46,7 +46,7 @@ export default function WhyAttend() {
             The Value
           </p>
           <h2 className="mt-3 font-display text-3xl font-bold text-slate-900 dark:text-white sm:text-4xl lg:text-5xl">
-            Why Attend
+            Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-500">Attend</span>
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-slate-800 dark:text-gray-400">
             Four reasons this summit will transform your approach to AI
@@ -69,7 +69,7 @@ export default function WhyAttend() {
                   delay: 0.15 * index,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="group relative rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-400/30"
+                className="group relative rounded-2xl border border-slate-200 dark:border-brand-500/10 bg-white dark:bg-brand-500/5 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-slate-300 dark:hover:border-brand-400/40"
               >
                 {/* Subtle hover glow */}
                 <div className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">

@@ -62,7 +62,7 @@ export default function Hero() {
       className="relative min-h-screen flex lg:items-center justify-center overflow-hidden pt-32 pb-24 lg:pt-20 lg:pb-0 bg-transparent"
     >
       {/* Faded Background Image specific to Hero */}
-      <div className="absolute inset-0 z-0 opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity">
+      <div className="absolute inset-0 z-0 opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-overlay">
         <Image 
           src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920&q=75&fit=crop&auto=format" 
           alt="Hero Background"
@@ -137,7 +137,7 @@ export default function Hero() {
               <motion.div whileHover={{ scale: 1.05, y: -4 }} transition={{ type: "spring", stiffness: 400, damping: 10 }} className="w-full sm:w-auto z-10">
                 <Link
                   href={currentEvent ? `/events/${currentEvent.id}#sponsorship` : '/events/dubai-ai-summit-2026#sponsorship'}
-                  className="flex flex-col items-center justify-center gap-0.5 rounded-full px-7 py-3.5 font-semibold transition-all duration-300 bg-white dark:bg-white/5 backdrop-blur-md border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-white/10 hover:border-brand-500/50 dark:hover:border-brand-400/50 hover:shadow-[0_0_20px_rgba(167,139,250,0.15)] shadow-sm dark:shadow-none active:scale-[0.98] w-full"
+                  className="flex flex-col items-center justify-center gap-0.5 rounded-full px-7 py-3.5 font-semibold transition-all duration-300 bg-white dark:bg-brand-500/10 backdrop-blur-md border border-slate-200 dark:border-brand-500/20 text-slate-900 dark:text-brand-300 hover:bg-slate-50 dark:hover:bg-brand-500/20 hover:border-brand-500/50 dark:hover:border-brand-400/50 hover:shadow-[0_0_20px_rgba(167,139,250,0.15)] shadow-sm dark:shadow-none active:scale-[0.98] w-full"
                 >
                   <span className="text-base leading-tight">Exhibit</span>
                   <span className="text-xs whitespace-nowrap uppercase tracking-wider text-slate-500 dark:text-gray-400 mt-0.5">Book Your Booth</span>
@@ -148,7 +148,7 @@ export default function Hero() {
               <motion.div whileHover={{ scale: 1.05, y: -4, x: 2 }} transition={{ type: "spring", stiffness: 400, damping: 10 }} className="w-full sm:w-auto z-10">
                 <Link
                   href={currentEvent ? `/events/${currentEvent.id}#sponsorship` : '/events/dubai-ai-summit-2026#sponsorship'}
-                  className="flex flex-col items-center justify-center gap-0.5 rounded-full px-7 py-3.5 font-semibold transition-all duration-300 bg-white dark:bg-white/5 backdrop-blur-md border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-white/10 hover:border-brand-500/50 dark:hover:border-brand-400/50 hover:shadow-[0_0_20px_rgba(167,139,250,0.15)] shadow-sm dark:shadow-none active:scale-[0.98] w-full"
+                  className="flex flex-col items-center justify-center gap-0.5 rounded-full px-7 py-3.5 font-semibold transition-all duration-300 bg-white dark:bg-brand-500/10 backdrop-blur-md border border-slate-200 dark:border-brand-500/20 text-slate-900 dark:text-brand-300 hover:bg-slate-50 dark:hover:bg-brand-500/20 hover:border-brand-500/50 dark:hover:border-brand-400/50 hover:shadow-[0_0_20px_rgba(167,139,250,0.15)] shadow-sm dark:shadow-none active:scale-[0.98] w-full"
                 >
                   <span className="text-base leading-tight">Sponsor</span>
                   <span className="text-xs whitespace-nowrap uppercase tracking-wider text-slate-500 dark:text-gray-400 mt-0.5">Promote Your Brand</span>

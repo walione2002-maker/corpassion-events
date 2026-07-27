@@ -53,7 +53,7 @@ export default function FAQ() {
       />
 
       <section id="faq" className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-transparent">
-        <div className="absolute inset-0 z-[-1] opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity">
+        <div className="absolute inset-0 z-[-1] opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-overlay">
           <Image 
             src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=3840&h=2160&q=100&fit=crop&auto=format&fit=crop" 
             alt="Workshop Background"
@@ -77,7 +77,7 @@ export default function FAQ() {
             </span>
             <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-slate-900 dark:text-white">
               Frequently Asked{' '}
-              <span className="gradient-text">Questions</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-500">Questions</span>
             </h2>
             <p className="mt-4 text-slate-800 dark:text-gray-400">
               Everything you need to know about attending, sponsoring, or exhibiting at our summits.
@@ -137,7 +137,7 @@ export default function FAQ() {
                   return (
                     <div
                       key={`${activeCategory}-${index}`}
-                      className="rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 backdrop-blur-sm overflow-hidden transition-colors hover:border-slate-300 dark:hover:border-white/15"
+                      className="rounded-xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 backdrop-blur-sm overflow-hidden transition-colors hover:border-slate-300 dark:hover:border-brand-400/40"
                     >
                       <button
                         onClick={() => handleToggle(index)}

@@ -53,7 +53,7 @@ export default function Footer() {
 
   return (
     <footer id="contact" className="relative overflow-hidden border-t border-slate-200 dark:border-white/10 bg-transparent">
-      <div className="absolute inset-0 z-[-1] opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity">
+      <div className="absolute inset-0 z-[-1] opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-overlay">
         <Image 
           src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1920&q=75&fit=crop&auto=format" 
           alt="Workshop Background"
@@ -76,7 +76,7 @@ export default function Footer() {
               Corpassion<span className="text-brand-700 dark:text-brand-400">.</span>{' '}
               {pathname !== '/' && <span className="text-slate-800 dark:text-gray-400">Events</span>}
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-slate-800 dark:text-gray-500 max-w-sm">
+            <p className="mt-4 text-sm leading-relaxed text-slate-800 dark:text-gray-400 max-w-sm">
               Empowering global leaders through transformative AI summits and
               innovation conferences.
             </p>
@@ -209,16 +209,16 @@ export default function Footer() {
             <p className="text-sm text-slate-800 dark:text-gray-400">
               <strong className="text-slate-900 dark:text-white font-semibold">Corpassion Event</strong> is a business event brand operated by <strong className="text-slate-900 dark:text-white font-semibold">The Excellent Group FZC, Dubai, UAE</strong>.
             </p>
-            <p className="text-xs text-slate-600 dark:text-gray-500 max-w-3xl">
+            <p className="text-xs text-slate-600 dark:text-gray-400 max-w-3xl">
               Payments are securely processed by The Excellent Group FZC (UAE) — a safe and registered company in the UAE with a proven track record of excellence and reliability.
             </p>
           </div>
 
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <span className="text-sm text-slate-800 dark:text-gray-500 text-center sm:text-left">
+            <span className="text-sm text-slate-800 dark:text-gray-400 text-center sm:text-left">
               Copyright © 2026 Corpassion Events. All rights reserved.
             </span>
-            <span className="text-sm text-slate-800 dark:text-gray-600">
+            <span className="text-sm text-slate-800 dark:text-gray-400">
               Built for global innovators.
             </span>
           </div>
