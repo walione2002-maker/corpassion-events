@@ -17,7 +17,7 @@ export default function EventCatalog() {
       className="relative py-24 sm:py-32 bg-transparent overflow-hidden"
     >
       {/* Faded Background Image specific to Event Catalog */}
-      <div className="absolute inset-0 z-0 opacity-[0.40] dark:opacity-[0.35] pointer-events-none mix-blend-luminosity">
+      <div className="absolute inset-0 z-0 opacity-[0.40] dark:opacity-[0.35] pointer-events-none">
         <Image 
           src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=3840&h=2160&q=100&fit=crop&auto=format&fit=crop" 
           alt="Audience Background"
