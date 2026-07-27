@@ -81,6 +81,7 @@ const config: Config = {
         "float": "float 6s ease-in-out infinite",
         "float-delayed": "float 6s ease-in-out 3s infinite",
         "radial-wipe": "radial-wipe 0.8s ease-out forwards",
+        "shimmer": "shimmer 3s ease-in-out infinite",
       },
       keyframes: {
         "accordion-down": {
@@ -98,6 +99,10 @@ const config: Config = {
         "radial-wipe": {
           "0%": { clipPath: "circle(0% at right bottom)" },
           "100%": { clipPath: "circle(150% at right bottom)" },
+        },
+        "shimmer": {
+          "0%, 100%": { transform: "translateX(-100%)" },
+          "50%": { transform: "translateX(100%)" },
         },
       },
     },
