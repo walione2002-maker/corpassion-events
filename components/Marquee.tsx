@@ -10,10 +10,10 @@ function MarqueeRow() {
       {/* Render the image strips multiple times for a seamless loop */}
       {[...Array(4)].map((_, i) => (
         <div key={i} className="flex flex-shrink-0 gap-12">
-          <img src="/logos1.png" alt="Client logos group 1" className="h-32 md:h-48 w-auto object-contain md:transition-transform md:duration-500 md:hover:-translate-y-2 md:hover:scale-105" />
-          <img src="/logos2.png" alt="Client logos group 2" className="h-32 md:h-48 w-auto object-contain md:transition-transform md:duration-500 md:hover:-translate-y-2 md:hover:scale-105" />
-          <img src="/logos3.png" alt="Client logos group 3" className="h-32 md:h-48 w-auto object-contain md:transition-transform md:duration-500 md:hover:-translate-y-2 md:hover:scale-105" />
-          <img src="/logos4.png" alt="Client logos group 4" className="h-32 md:h-48 w-auto object-contain md:transition-transform md:duration-500 md:hover:-translate-y-2 md:hover:scale-105" />
+          <img src="/logos1.png" alt="Client logos group 1" className="h-16 sm:h-24 md:h-32 lg:h-48 w-auto object-contain md:transition-transform md:duration-500 md:hover:-translate-y-2 md:hover:scale-105" />
+          <img src="/logos2.png" alt="Client logos group 2" className="h-16 sm:h-24 md:h-32 lg:h-48 w-auto object-contain md:transition-transform md:duration-500 md:hover:-translate-y-2 md:hover:scale-105" />
+          <img src="/logos3.png" alt="Client logos group 3" className="h-16 sm:h-24 md:h-32 lg:h-48 w-auto object-contain md:transition-transform md:duration-500 md:hover:-translate-y-2 md:hover:scale-105" />
+          <img src="/logos4.png" alt="Client logos group 4" className="h-16 sm:h-24 md:h-32 lg:h-48 w-auto object-contain md:transition-transform md:duration-500 md:hover:-translate-y-2 md:hover:scale-105" />
         </div>
       ))}
     </div>
@@ -31,6 +31,7 @@ export default function Marquee() {
           src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=3840&h=2160&q=100&fit=crop&auto=format&fit=crop" 
           alt="Workshop Background"
           fill
+          sizes="100vw"
           className="object-cover"
         />
       </div>
@@ -52,10 +53,12 @@ export default function Marquee() {
       </div>
 
       {/* Marquee Container */}
-      <div className="relative w-full max-w-[100vw] left-[50%] right-[50%] -ml-[50vw] -mr-[50vw]">
-        {/* Row 1 — scrolls left */}
-        <div className="flex animate-marquee py-8">
-          <MarqueeRow />
+      <div className="overflow-hidden">
+        <div className="relative w-full max-w-[100vw] left-[50%] right-[50%] -ml-[50vw] -mr-[50vw]">
+          {/* Row 1 — scrolls left */}
+          <div className="flex animate-marquee py-8">
+            <MarqueeRow />
+          </div>
         </div>
       </div>
     </section>

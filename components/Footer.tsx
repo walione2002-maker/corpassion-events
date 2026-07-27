@@ -68,7 +68,7 @@ export default function Footer() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12"
         >
           {/* Column 1 — Brand (3 cols) */}
           <motion.div variants={itemVariants} className="lg:col-span-4">
@@ -90,7 +90,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={social.label}
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-100 dark:bg-white/5 text-slate-800 dark:text-gray-400 transition-all duration-300 hover:bg-brand-500/20 hover:text-brand-700 dark:hover:text-brand-400 hover:scale-110"
+                    className="flex h-11 w-11 items-center justify-center rounded-full bg-slate-100 dark:bg-white/5 text-slate-800 dark:text-gray-400 transition-all duration-300 hover:bg-brand-500/20 hover:text-brand-700 dark:hover:text-brand-400 hover:scale-110"
                   >
                     <Icon className="h-4 w-4" />
                   </a>

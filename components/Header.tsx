@@ -89,7 +89,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => {
               const isEventsRoute = link.href === '/events' && pathname.startsWith('/events');
               const isActive = pathname === link.href || isEventsRoute;
@@ -120,7 +120,7 @@ export default function Header() {
           </div>
 
           {/* Desktop CTA & Theme Toggle */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-4">
             <a 
               href="tel:+971543770146"
               className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-gray-300 dark:hover:text-white transition-colors"
@@ -148,7 +148,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden relative z-[110] p-2 text-slate-500 hover:text-slate-900 dark:text-gray-400 dark:hover:text-white transition-colors"
+            className="md:hidden relative z-[110] p-2.5 text-slate-500 hover:text-slate-900 dark:text-gray-400 dark:hover:text-white transition-colors"
             aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-menu"

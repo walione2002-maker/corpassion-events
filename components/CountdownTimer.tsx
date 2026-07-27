@@ -67,7 +67,7 @@ export default function CountdownTimer({ targetDate, label }: CountdownTimerProp
 
   return (
     <div className="flex flex-col items-center gap-4">
-      {label && <p className="text-sm font-medium text-brand-300 uppercase tracking-widest">{label}</p>}
+      {label && <p className="text-sm font-medium text-brand-300 uppercase tracking-widest truncate max-w-[80vw] sm:max-w-md text-center">{label}</p>}
       <div className="flex items-center gap-2 sm:gap-4">
         {timeUnits.map((unit, index) => (
           <div key={unit.label} className="flex items-center gap-2 sm:gap-4">

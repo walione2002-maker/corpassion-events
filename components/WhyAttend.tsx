@@ -29,6 +29,7 @@ export default function WhyAttend() {
           src="https://images.unsplash.com/photo-1591115765373-5f9cf1da3607?w=3840&h=2160&q=100&fit=crop&auto=format&fit=crop" 
           alt="Exhibition Background"
           fill
+          sizes="100vw"
           className="object-cover"
         />
       </div>

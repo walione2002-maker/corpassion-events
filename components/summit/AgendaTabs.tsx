@@ -170,7 +170,7 @@ export default function AgendaTabs({ eventId = 'dubai-ai-summit-2026' }: { event
         <div className="flex flex-wrap justify-center gap-2 mb-12 relative z-20">
           <button
             onClick={() => setFilterType('all')}
-            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 border ${
+            className={`px-4 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 border ${
               filterType === 'all' 
                 ? 'bg-slate-800 text-white border-slate-800 dark:bg-white dark:text-slate-900 dark:border-white shadow-lg' 
                 : 'bg-white/50 dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/10'
@@ -182,7 +182,7 @@ export default function AgendaTabs({ eventId = 'dubai-ai-summit-2026' }: { event
             <button
               key={type}
               onClick={() => setFilterType(type)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 border ${
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 border ${
                 filterType === type 
                   ? 'bg-slate-800 text-white border-slate-800 dark:bg-white dark:text-slate-900 dark:border-white shadow-lg' 
                   : 'bg-white/50 dark:bg-white/5 border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/10'
@@ -240,7 +240,7 @@ export default function AgendaTabs({ eventId = 'dubai-ai-summit-2026' }: { event
                             </span>
                           </div>
                           
-                          <h4 className="font-bold text-slate-900 dark:text-white text-lg sm:text-xl leading-snug">
+                          <h4 className="font-bold text-slate-900 dark:text-white text-lg sm:text-xl leading-snug line-clamp-2">
                             {session.title}
                           </h4>
                           

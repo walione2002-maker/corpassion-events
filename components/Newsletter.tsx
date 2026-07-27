@@ -30,6 +30,7 @@ export default function Newsletter() {
           src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=3840&h=2160&q=100&fit=crop&auto=format&fit=crop" 
           alt="Workshop Background"
           fill
+          sizes="100vw"
           className="object-cover"
         />
       </div>

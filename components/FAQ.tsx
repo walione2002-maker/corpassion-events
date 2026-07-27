@@ -58,6 +58,7 @@ export default function FAQ() {
             src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=3840&h=2160&q=100&fit=crop&auto=format&fit=crop" 
             alt="Workshop Background"
             fill
+            sizes="100vw"
             className="object-cover"
           />
         </div>

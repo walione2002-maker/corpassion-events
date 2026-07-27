@@ -55,14 +55,14 @@ export default function ContactActions() {
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => handleAction('whatsapp', num.phone)}
-                      className="flex-1 flex items-center justify-center gap-1.5 py-2 bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#25D366] rounded-md transition-colors text-sm font-semibold"
+                      className="flex-1 flex items-center justify-center gap-1.5 py-3 bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#25D366] rounded-md transition-colors text-sm font-semibold"
                     >
                       <MessageCircle className="w-4 h-4" />
                       WhatsApp
                     </button>
                     <button
                       onClick={() => handleAction('call', num.phone)}
-                      className="flex-1 flex items-center justify-center gap-1.5 py-2 bg-blue-500/10 hover:bg-blue-500/20 text-blue-500 rounded-md transition-colors text-sm font-semibold"
+                      className="flex-1 flex items-center justify-center gap-1.5 py-3 bg-blue-500/10 hover:bg-blue-500/20 text-blue-500 rounded-md transition-colors text-sm font-semibold"
                     >
                       <Phone className="w-4 h-4" />
                       Call

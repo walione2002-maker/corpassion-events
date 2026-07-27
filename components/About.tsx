@@ -15,6 +15,7 @@ export default function About() {
           src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=3840&h=2160&q=100&fit=crop&auto=format&fit=crop" 
           alt="Networking Background"
           fill
+          sizes="100vw"
           className="object-cover"
         />
       </div>
